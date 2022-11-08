@@ -514,7 +514,7 @@ namespace WebLogETL30
         #endregion
 
         private System.Windows.Forms.Button ImportFormBtn;
-        public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button SettingsBtn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;

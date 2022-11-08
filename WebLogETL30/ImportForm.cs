@@ -95,6 +95,7 @@ namespace WebLogETL30
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Log (*.log)|*.log";
             openFileDialog1.FilterIndex = 2;
