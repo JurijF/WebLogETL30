@@ -29,119 +29,118 @@ namespace WebLogETL30
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Typ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Event = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hash = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImportFormButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridV_import_Main = new System.Windows.Forms.DataGridView();
+            this.btn_import_Load = new System.Windows.Forms.Button();
+            this.btn_import_ImportStart = new System.Windows.Forms.Button();
+            this.column_import_IP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_import_DateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_import_Typ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_import_Event = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_import_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_import_Nummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_import_Hash = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridV_import_Main)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridV_import_Main
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IP,
-            this.DateTime,
-            this.Typ,
-            this.Event,
-            this.Status,
-            this.Nummer,
-            this.Hash});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1240, 501);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridV_import_Main.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridV_import_Main.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.column_import_IP,
+            this.column_import_DateTime,
+            this.column_import_Typ,
+            this.column_import_Event,
+            this.column_import_Status,
+            this.column_import_Nummer,
+            this.column_import_Hash});
+            this.dataGridV_import_Main.Location = new System.Drawing.Point(12, 43);
+            this.dataGridV_import_Main.Name = "dataGridV_import_Main";
+            this.dataGridV_import_Main.Size = new System.Drawing.Size(1240, 501);
+            this.dataGridV_import_Main.TabIndex = 0;
             // 
-            // IP
+            // btn_import_Load
             // 
-            this.IP.HeaderText = "IP";
-            this.IP.Name = "IP";
+            this.btn_import_Load.Location = new System.Drawing.Point(1177, 12);
+            this.btn_import_Load.Name = "btn_import_Load";
+            this.btn_import_Load.Size = new System.Drawing.Size(75, 23);
+            this.btn_import_Load.TabIndex = 1;
+            this.btn_import_Load.Text = "Datei öffnen";
+            this.btn_import_Load.UseVisualStyleBackColor = true;
+            this.btn_import_Load.Click += new System.EventHandler(this.btn_import_Load_Click);
             // 
-            // DateTime
+            // btn_import_ImportStart
             // 
-            this.DateTime.HeaderText = "DateTime";
-            this.DateTime.Name = "DateTime";
-            this.DateTime.Width = 150;
+            this.btn_import_ImportStart.Location = new System.Drawing.Point(1090, 12);
+            this.btn_import_ImportStart.Name = "btn_import_ImportStart";
+            this.btn_import_ImportStart.Size = new System.Drawing.Size(81, 23);
+            this.btn_import_ImportStart.TabIndex = 2;
+            this.btn_import_ImportStart.Text = "Import starten";
+            this.btn_import_ImportStart.UseVisualStyleBackColor = true;
+            this.btn_import_ImportStart.Click += new System.EventHandler(this.btn_import_ImportStart_Click);
             // 
-            // Typ
+            // column_import_IP
             // 
-            this.Typ.HeaderText = "Typ";
-            this.Typ.Name = "Typ";
+            this.column_import_IP.HeaderText = "IP";
+            this.column_import_IP.Name = "column_import_IP";
             // 
-            // Event
+            // column_import_DateTime
             // 
-            this.Event.HeaderText = "Event";
-            this.Event.Name = "Event";
-            this.Event.Width = 640;
+            this.column_import_DateTime.HeaderText = "DateTime";
+            this.column_import_DateTime.Name = "column_import_DateTime";
+            this.column_import_DateTime.Width = 150;
             // 
-            // Status
+            // column_import_Typ
             // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
+            this.column_import_Typ.HeaderText = "Typ";
+            this.column_import_Typ.Name = "column_import_Typ";
             // 
-            // Nummer
+            // column_import_Event
             // 
-            this.Nummer.HeaderText = "Nummer";
-            this.Nummer.Name = "Nummer";
+            this.column_import_Event.HeaderText = "Event";
+            this.column_import_Event.Name = "column_import_Event";
+            this.column_import_Event.Width = 640;
             // 
-            // Hash
+            // column_import_Status
             // 
-            this.Hash.HeaderText = "Hash";
-            this.Hash.Name = "Hash";
+            this.column_import_Status.HeaderText = "Status";
+            this.column_import_Status.Name = "column_import_Status";
             // 
-            // ImportFormButton
+            // column_import_Nummer
             // 
-            this.ImportFormButton.Location = new System.Drawing.Point(1177, 12);
-            this.ImportFormButton.Name = "ImportFormButton";
-            this.ImportFormButton.Size = new System.Drawing.Size(75, 23);
-            this.ImportFormButton.TabIndex = 1;
-            this.ImportFormButton.Text = "Datei öffnen";
-            this.ImportFormButton.UseVisualStyleBackColor = true;
-            this.ImportFormButton.Click += new System.EventHandler(this.button1_Click);
+            this.column_import_Nummer.HeaderText = "Nummer";
+            this.column_import_Nummer.Name = "column_import_Nummer";
             // 
-            // button1
+            // column_import_Hash
             // 
-            this.button1.Location = new System.Drawing.Point(1090, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Import starten";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.column_import_Hash.HeaderText = "Hash";
+            this.column_import_Hash.Name = "column_import_Hash";
             // 
             // ImportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 555);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.ImportFormButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btn_import_ImportStart);
+            this.Controls.Add(this.btn_import_Load);
+            this.Controls.Add(this.dataGridV_import_Main);
             this.Name = "ImportForm";
             this.Text = "ImportForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridV_import_Main)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button ImportFormButton;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Typ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Event;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nummer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hash;
+        private System.Windows.Forms.DataGridView dataGridV_import_Main;
+        private System.Windows.Forms.Button btn_import_Load;
+        private System.Windows.Forms.Button btn_import_ImportStart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column_import_IP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column_import_DateTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column_import_Typ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column_import_Event;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column_import_Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column_import_Nummer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column_import_Hash;
     }
 }
