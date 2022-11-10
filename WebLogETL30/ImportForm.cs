@@ -8,33 +8,30 @@ using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
 
-
 namespace WebLogETL30
 {
     public partial class ImportForm : Form
     {
         private string OpenedFile;
+        #region Methods
         public ImportForm()
         {
             InitializeComponent();
         }
-
-
+        
         private void WriteToDb()
         {
             string Insert = "INSERT INTO Logs (IP, DT_EVENT, TYP, EVENT, Status, Number, Hash) Values ";
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in dataGridV_import_Main.Rows)
             {
                 if (!row.IsNewRow)
-                    Insert += ("('"+row.Cells[0].Value+ "','" + row.Cells[1].Value + "','" + row.Cells[2].Value + "','" + row.Cells[3].Value + "','" + row.Cells[4].Value + "','" + row.Cells[5].Value + "','" + row.Cells[6].Value + "'),");
+                {
+                    Insert += "('" + row.Cells[0].Value + "','" + row.Cells[1].Value + "','" + row.Cells[2].Value + "','" + row.Cells[3].Value + "','" + row.Cells[4].Value + "','" + row.Cells[5].Value + "','" + row.Cells[6].Value + "'),";
+                } 
             }
             DBHandler.NonQuery(Insert.Remove(Insert.Length - 1, 1) + ";") ;
             DBHandler.NonQuery("INSERT INTO ImportedFiles (FileHash) VALUES ('" + GetFilekMD5(OpenedFile) + "');");
             MessageBox.Show("done");
-        }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void CreateDataGridFromFile(string path)
@@ -47,12 +44,11 @@ namespace WebLogETL30
                 }
             }
         }
-
         
         private void HandleLine(string logLine)
         {
             string eventCode = GetLogEventCode(logLine);
-            dataGridView1.Rows.Add(GetIP(logLine), GetDateTime(logLine), eventCode, GetLogEvent(logLine, eventCode), GetStatusCode(logLine), GetLastCode(logLine), GetStringMD5(logLine));
+            dataGridV_import_Main.Rows.Add(GetIP(logLine), GetDateTime(logLine), eventCode, GetLogEvent(logLine, eventCode), GetStatusCode(logLine), GetLastCode(logLine), GetStringMD5(logLine));
             Application.DoEvents();
         }
 
@@ -93,47 +89,14 @@ namespace WebLogETL30
             return logLine.Split(' ')[logLine.Split(' ').Length - 1];
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "Log (*.log)|*.log";
-            openFileDialog1.FilterIndex = 2;
-            openFileDialog1.RestoreDirectory = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                OpenedFile = openFileDialog1.FileName;
-                if (DBHandler.ExecuteQuery("SELECT * FROM ImportedFiles WHERE FileHash = '" + GetFilekMD5(openFileDialog1.FileName) + "'").Rows.Count == 0)
-                {
-                    CreateDataGridFromFile(openFileDialog1.FileName);
-                    MessageBox.Show("done");
-                }
-                else
-                {
-                    MessageBox.Show("Diese Datei wurde bereits importiert!");
-                }
-               
-            }
-            
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            if (OpenedFile != null && dataGridView1.Rows.Count > 1)
-            {
-                WriteToDb();
-                this.Close();
-            }
-        }
-
         private string GetStringMD5(string s)
         {
-
             StringBuilder builder = new StringBuilder();
 
             foreach (byte b in System.Security.Cryptography.MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(s)))
+            {
                 builder.Append(b.ToString("x2").ToLower());
-
+            }
             return builder.ToString();
         }
 
@@ -148,6 +111,38 @@ namespace WebLogETL30
                 }
             }
         }
+        #endregion Methods
+        #region Events
+        private void btn_import_Load_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Log (*.log)|*.log",
+                FilterIndex = 2,
+                RestoreDirectory = true
+            };
 
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                OpenedFile = openFileDialog.FileName;
+                if (DBHandler.ExecuteQuery("SELECT * FROM ImportedFiles WHERE FileHash = '" + GetFilekMD5(openFileDialog.FileName) + "'").Rows.Count == 0)
+                {
+                    CreateDataGridFromFile(openFileDialog.FileName);
+                    MessageBox.Show("done");
+                }
+                else
+                { MessageBox.Show("Diese Datei wurde bereits importiert!"); }  
+            }   
+        }
+
+        private void btn_import_ImportStart_Click(object sender, EventArgs e)
+        {
+            if (OpenedFile != null && dataGridV_import_Main.Rows.Count > 1)
+            {
+                WriteToDb();
+                this.Close();
+            }
+        }
+        #endregion Events
     }
 }

@@ -12,6 +12,7 @@ namespace WebLogETL30
         {
             string connection = @"Data Source="+ Properties.Settings.Default.DB_FILE + ";Version=3;New=True;Compress=True;";
             SQLiteConnection sqlite_conn = new SQLiteConnection(connection);
+            
             sqlite_conn.Open();
             var SqliteCmd = sqlite_conn.CreateCommand();
             SqliteCmd.CommandText = squery;
@@ -23,8 +24,10 @@ namespace WebLogETL30
         {
             SQLiteDataReader sqlite_datareader;
             DataTable queryDG = new DataTable();
+
             string connection = @"Data Source=" + Properties.Settings.Default.DB_FILE + ";Version=3;New=True;Compress=True;";
             SQLiteConnection sqlite_conn = new SQLiteConnection(connection);
+            
             sqlite_conn.Open();
             var SqliteCmd = sqlite_conn.CreateCommand();
             SqliteCmd.CommandText = squery;
@@ -37,6 +40,7 @@ namespace WebLogETL30
             
             sqlite_datareader.Close();
             sqlite_datareader = SqliteCmd.ExecuteReader();
+
             while (sqlite_datareader.Read())
             {
                 List<string> dataRows = new List<string>();
@@ -50,6 +54,5 @@ namespace WebLogETL30
 
             return queryDG;
         }
-
     }
 }

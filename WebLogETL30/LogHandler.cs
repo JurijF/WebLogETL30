@@ -25,9 +25,7 @@ namespace WebLogETL30
                 {
                     HandleLine(logStream.ReadLine());
                 }
-            }
-            
-               
+            }     
         }
 
         private void AddClmsToDt()
@@ -82,8 +80,5 @@ namespace WebLogETL30
         {
             return logLine.Split(' ')[logLine.Split(' ').Length - 1];
         }
-
     }
-
-
 }
