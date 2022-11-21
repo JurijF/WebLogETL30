@@ -197,6 +197,7 @@
 
         <Grid Background="#1a1a1a">
 
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition Width="*"/>
