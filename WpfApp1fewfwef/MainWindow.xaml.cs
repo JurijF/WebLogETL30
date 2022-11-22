@@ -116,5 +116,12 @@ namespace WpfApp1fewfwef
         {
             DragMove();
         }
+
+        private void btn_Settings_Click(object sender, RoutedEventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Owner = this;
+            settings.Show();
+        }
     }
 }

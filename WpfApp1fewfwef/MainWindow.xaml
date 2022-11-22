@@ -401,7 +401,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
-                            <Button Grid.Column="0" Margin="20 0 0 0" HorizontalAlignment="Left" Height="20" Width="16" Background="Transparent" BorderBrush="Transparent">
+                            <Button Name="btn_Settings" Click="btn_Settings_Click" Grid.Column="0" Margin="20 0 0 0" HorizontalAlignment="Left" Height="20" Width="16" Background="Transparent" BorderBrush="Transparent">
                                 <MaterialDesign:PackIcon Kind="Settings" Height="20" Width="16" Panel.ZIndex="3" Margin="-16 -4 0 0" Foreground="White" />
                             </Button>
 
