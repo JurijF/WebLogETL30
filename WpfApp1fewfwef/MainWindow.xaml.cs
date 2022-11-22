@@ -44,7 +44,38 @@ namespace WpfApp1fewfwef
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //
+            switch (test.SelectedIndex)
+            {
+                case 0:
+                    this.CollapseAllPanels();
+                    this.panel_FirstAnalyse.Visibility = Visibility.Visible;
+                    break;
+                case 1:
+                    this.CollapseAllPanels();
+                    this.panel_SecondAnalyse.Visibility = Visibility.Visible;
+                    break;
+                case 2:
+                    this.CollapseAllPanels();
+                    this.panel_ThirdAnalyse.Visibility = Visibility.Visible;
+                    break;
+                case 3:
+                    this.CollapseAllPanels();
+                    this.panel_FourthAnalyse.Visibility = Visibility.Visible;
+                    break;
+                default:
+                    this.CollapseAllPanels();
+                    this.panel_FirstAnalyse.Visibility = Visibility.Visible;
+                    break;
+            }
+        }
 
+        private void CollapseAllPanels()
+        {
+            this.panel_FirstAnalyse.Visibility = Visibility.Collapsed;
+            this.panel_SecondAnalyse.Visibility = Visibility.Collapsed;
+            this.panel_ThirdAnalyse.Visibility = Visibility.Collapsed;
+            this.panel_FourthAnalyse.Visibility = Visibility.Collapsed;
         }
 
         private void btn_Create_Login_Click(object sender, RoutedEventArgs e)
