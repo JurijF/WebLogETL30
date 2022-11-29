@@ -375,6 +375,7 @@ namespace WebLogETL30
             this.tb_main_IP.Name = "tb_main_IP";
             this.tb_main_IP.Size = new System.Drawing.Size(1220, 20);
             this.tb_main_IP.TabIndex = 2;
+            this.tb_main_IP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_main_IP_KeyPress);
             // 
             // cb_main_Date
             // 

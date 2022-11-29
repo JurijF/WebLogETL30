@@ -57,6 +57,12 @@ namespace WebLogETL30
             bindingSource.DataSource = DBHandler.ExecuteQuery("SELECT * FROM ImportedFiles");
             dataGrid_main_MainGrid.DataSource = bindingSource;
         }
+        private void tb_main_IP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string allowedCharacters = "0123456789,.";
+            if (!allowedCharacters.Contains(e.KeyChar.ToString())) { e.Handled = true; }
+            else e.Handled = false;
+        }
 
         private void btn_main_LoadData_FirstAnalyse_Click(object sender, EventArgs e)
         {
@@ -121,6 +127,6 @@ namespace WebLogETL30
 
             ExecuteQuery("SELECT Status as Error, COUNT(*) as Anzahl FROM Logs " + whereS + " GROUP BY Status");
         }
-        #endregion Events
+        #endregion Events        
     }
 }
