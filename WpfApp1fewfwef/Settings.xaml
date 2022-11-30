@@ -11,7 +11,7 @@
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
         Height="230" 
-        Width="450"
+        Width="{Binding}"
         >
     <Grid>
 
@@ -118,7 +118,7 @@
                         </Grid.ColumnDefinitions>
 
                         <MaterialDesign:PackIcon HorizontalAlignment="Center" Grid.Column="0" Kind="DatabaseLocation" Height="30" Width="30" Panel.ZIndex="3" Margin="0 0 0 0" Foreground="White" />
-                        <TextBox Grid.Column="1" Name="kek" FontSize="8" IsEnabled="True" IsManipulationEnabled="True" Width="255" MaterialDesign:HintAssist.Hint="Ausgewählte Datenbank" Height="20" FontFamily="Segoe UI Variable Text Semibold" Foreground="White"/>
+                        <TextBox Grid.Column="1" Name="kek" FontSize="12" IsEnabled="True" IsManipulationEnabled="True" Width="255" MaterialDesign:HintAssist.Hint="Ausgewählte Datenbank" Height="25" FontFamily="Segoe UI Variable Text Semibold" Foreground="White" Cursor="IBeam"/>
 
                     </Grid>
 

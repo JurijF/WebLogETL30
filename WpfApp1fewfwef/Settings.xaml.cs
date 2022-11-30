@@ -22,6 +22,8 @@ namespace WpfApp1fewfwef
         public Settings()
         {
             InitializeComponent();
+            MainWindow w = new MainWindow();
+            this.Width = w.CurrentWindowWidth;
         }
     }
 }
