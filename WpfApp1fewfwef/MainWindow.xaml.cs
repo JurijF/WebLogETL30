@@ -25,10 +25,12 @@ namespace WpfApp1fewfwef
     {
         private bool mRestoreIfMove = false;
         public int CurrentWindowWidth = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenWidth * 0.8));
+        public int CurrentWindowHeight = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenHeight * 0.8));
         public MainWindow()
         {
             InitializeComponent();
             this.setAllWidths();
+            this.setAllHeights();
             this.MaxHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
             //Rectangle resolution = Screen.PrimaryScreen.Bounds;
             //MaxHeight = SystemParameters.VirtualScreenHeight;
@@ -105,10 +107,19 @@ namespace WpfApp1fewfwef
         {
             if (this.WindowState == WindowState.Normal)
             {
+                
+                this.CurrentWindowWidth = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenWidth * 1));
+                this.CurrentWindowHeight = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenHeight * 1));
+                setAllWidths();
+                setAllHeights();
                 this.WindowState = WindowState.Maximized;
             }
             else if (this.WindowState == WindowState.Maximized)
             {
+                this.CurrentWindowWidth = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenWidth * 0.8));
+                this.CurrentWindowHeight = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenHeight * 0.8));
+                setAllWidths();
+                setAllHeights();
                 this.WindowState = WindowState.Normal;
             }
         }
@@ -162,12 +173,12 @@ namespace WpfApp1fewfwef
             this.panel_2.Width = this.border_6.Width;
             this.test.Width = this.panel_2.Width * 0.9;
             this.panel_FirstAnalyse.Width = this.border_6.Width;
-            this.column_def_5_1.Width = new GridLength(12, GridUnitType.Star);
-            this.column_def_5_2.Width = new GridLength(88, GridUnitType.Star);
+            this.column_def_5_1.Width = new GridLength(30, GridUnitType.Star);
+            this.column_def_5_2.Width = new GridLength(70, GridUnitType.Star);
             this.ckbx_IP.Width = this.panel_2.Width * 0.08;
             this.txt_bl_IP_Filter.Width = this.panel_2.Width * 0.075;
-            this.column_def_6_1.Width = new GridLength(10, GridUnitType.Star);
-            this.column_def_6_2.Width = new GridLength(90, GridUnitType.Star);
+            this.column_def_6_1.Width = new GridLength(30, GridUnitType.Star);
+            this.column_def_6_2.Width = new GridLength(70, GridUnitType.Star);
             this.ckbx_IP.Width = this.panel_2.Width * 0.08;
             this.txt_bl_Timestamp_Filter.Width = this.panel_2.Width * 0.375;
             this.panel_SecondAnalyse.Width = this.panel_FirstAnalyse.Width;
@@ -177,14 +188,211 @@ namespace WpfApp1fewfwef
             this.border_7.Width = this.border_6.Width;
             this.panel_4.Width = this.border_7.Width;
             this.border_8.Width = this.border_7.Width * 0.55;
-            this.btn_import.Width = this.border_8.Width;
+            //this.btn_import.Width = this.border_8.Width;
             this.grid_1.Width = this.btn_import.Width;
-            this.column_def_7_1.Width = new GridLength(31.8181, GridUnitType.Star);
-            this.column_def_7_2.Width = new GridLength(68.1819, GridUnitType.Star);
             this.border_9.Width = this.border_8.Width;
             this.btn_load.Width = this.border_9.Width;
+            this.column_def_8_1.Width = new GridLength(30, GridUnitType.Star);
+            this.column_def_8_2.Width = new GridLength(70, GridUnitType.Star);
+            this.column_def_10_1.Width = new GridLength(30, GridUnitType.Star);
+            this.column_def_10_2.Width = new GridLength(70, GridUnitType.Star);
+            this.column_def_11_1.Width = new GridLength(30, GridUnitType.Star);
+            this.column_def_11_2.Width = new GridLength(70, GridUnitType.Star);
+            this.column_def_12_1.Width = new GridLength(30, GridUnitType.Star);
+            this.column_def_12_2.Width = new GridLength(70, GridUnitType.Star);
+            this.column_def_13_1.Width = new GridLength(30, GridUnitType.Star);
+            this.column_def_13_2.Width = new GridLength(70, GridUnitType.Star);
             //test1.Text = this.border_6.Width.ToString();
 
+        }
+
+        public void setAllHeights()
+        {
+            //Good luck!
+            
+
+            //450 
+            this.Height = this.CurrentWindowHeight;
+            this.border_1.Height = this.Height;
+            this.row_def_1_1.Height = new GridLength(4.44, GridUnitType.Star);
+            this.row_def_1_2.Height = new GridLength(95.56, GridUnitType.Star);
+            this.row_def_2_1.Height = new GridLength(73, GridUnitType.Star);
+            this.row_def_2_2.Height = new GridLength(this.Height * 0.0222, GridUnitType.Pixel);
+            this.row_def_2_3.Height = new GridLength(21.255, GridUnitType.Star);
+            //this.panel_test.Height = this.Height * 0.6222;
+            //this.panel_test2.Height = this.border_3.Height = this.Height * 0.2222;
+            this.border_2.Height = this.Height * 0.6222;
+            this.border_3.Height = this.Height * 0.2222;
+            this.panel_1.Height = this.border_3.Height;
+            this.panel_5.Height = this.Height * 0.99711;
+            this.row_def_3_1.Height = new GridLength(4.457, GridUnitType.Star);
+            this.row_def_3_2.Height = new GridLength(69.979, GridUnitType.Star);
+            this.row_def_3_2.Height = new GridLength(25.564, GridUnitType.Star);
+            this.border_6.Height = this.Height * 0.6666;
+            this.row_def_4_1.Height = new GridLength(30, GridUnitType.Star);
+            this.row_def_4_2.Height = new GridLength(56.66, GridUnitType.Star);
+            this.row_def_4_3.Height = new GridLength(13.33, GridUnitType.Star);
+            this.panel_2.Height = this.Height * 0.2222;
+            this.border_6.Margin = new Thickness(0, this.Height * 0.04, 0, 0);
+            this.sep_1.Margin = new Thickness(0, this.Height * 0.04, 0, 0);
+            this.panel_FirstAnalyse.Height = this.Height * 0.3777;
+            this.row_def_5_1.Height = new GridLength(16.66, GridUnitType.Star);
+            this.row_def_5_2.Height = new GridLength(16.66, GridUnitType.Star);
+            this.row_def_5_3.Height = new GridLength(16.66, GridUnitType.Star);
+            this.row_def_5_4.Height = new GridLength(16.66, GridUnitType.Star);
+            this.row_def_5_5.Height = new GridLength(16.66, GridUnitType.Star);
+            this.row_def_5_6.Height = new GridLength(16.66, GridUnitType.Star);
+
+            this.datagrid_ip.Width = (this.border_2.Width - 5) / 6;
+            this.datagrid_dt_event.Width = (this.border_2.Width - 5) / 6;
+            this.datagrid_event.Width = (this.border_2.Width - 5) / 6;
+            this.datagrid_status.Width = (this.border_2.Width - 5) / 6;
+            this.datagrid_typ.Width = (this.border_2.Width - 5) / 6;
+            this.datagrid_number.Width = (this.border_2.Width - 5) / 6;
+
+            this.ckbx_IP.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
+            this.ckbx_IP.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
+            this.ckbx_IP.LayoutTransform = new ScaleTransform(3, 3);
+            this.ckbx_IP.Margin = new Thickness(this.Height * 0.02, this.Height * 0.04, 0, 0);
+            this.ckbx_IP.Width = this.panel_FirstAnalyse.Height * 0.04137;
+            this.ckbx_IP.Height = this.panel_FirstAnalyse.Height * 0.04137;
+
+            this.ckbx_Timestamp.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
+            this.ckbx_Timestamp.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
+            this.ckbx_Timestamp.LayoutTransform = new ScaleTransform(3, 3);
+            this.ckbx_Timestamp.Margin = new Thickness(this.Height * 0.02, 0, 0, 0);
+            this.ckbx_Timestamp.Width = this.panel_FirstAnalyse.Height * 0.04137;
+            this.ckbx_Timestamp.Height = this.panel_FirstAnalyse.Height * 0.04137;
+
+            this.ckbx_Method.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
+            this.ckbx_Method.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
+            this.ckbx_Method.LayoutTransform = new ScaleTransform(3, 3);
+            this.ckbx_Method.Margin = new Thickness(this.Height * 0.02, 0, 0, 0);
+            this.ckbx_Method.Width = this.panel_FirstAnalyse.Height * 0.04137;
+            this.ckbx_Method.Height = this.panel_FirstAnalyse.Height * 0.04137;
+
+            this.ckbx_Event.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
+            this.ckbx_Event.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
+            this.ckbx_Event.LayoutTransform = new ScaleTransform(3, 3);
+            this.ckbx_Event.Margin = new Thickness(this.Height * 0.02, 0, 0, 0);
+            this.ckbx_Event.Width = this.panel_FirstAnalyse.Height * 0.04137;
+            this.ckbx_Event.Height = this.panel_FirstAnalyse.Height * 0.04137;
+
+            this.ckbx_Status.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
+            this.ckbx_Status.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
+            this.ckbx_Status.LayoutTransform = new ScaleTransform(3, 3);
+            this.ckbx_Status.Margin = new Thickness(this.Height * 0.02, 0, 0, 0);
+            this.ckbx_Status.Width = this.panel_FirstAnalyse.Height * 0.04137;
+            this.ckbx_Status.Height = this.panel_FirstAnalyse.Height * 0.04137;
+
+            this.ckbx_Number.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
+            this.ckbx_Number.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
+            this.ckbx_Number.LayoutTransform = new ScaleTransform(3, 3);
+            this.ckbx_Number.Margin = new Thickness(this.Height * 0.02, 0, 0, 0);
+            this.ckbx_Number.Width = this.panel_FirstAnalyse.Height * 0.04137;
+            this.ckbx_Number.Height = this.panel_FirstAnalyse.Height * 0.04137;
+
+            this.txt_bl_IP_Filter.Height = this.panel_FirstAnalyse.Height * 0.08;
+            this.txt_bl_IP_Filter.Width = this.panel_FirstAnalyse.Width * 0.7;
+            this.txt_bl_IP_Filter.FontSize = this.Height * 0.025;
+            this.txt_bl_IP_Filter.Margin = new Thickness(this.Height * 0.01, this.Height * 0.04, 0, 0);
+
+            this.txt_bl_Timestamp_Filter.Height = this.panel_FirstAnalyse.Height * 0.08;
+            this.txt_bl_Timestamp_Filter.Width = this.panel_FirstAnalyse.Width * 0.7;
+            this.txt_bl_Timestamp_Filter.FontSize = this.Height * 0.025;
+            this.txt_bl_Timestamp_Filter.Margin = new Thickness(this.Height * 0.01, 0, 0, 0);
+
+            this.txt_bl_Method_Filter.Height = this.panel_FirstAnalyse.Height * 0.08;
+            this.txt_bl_Method_Filter.Width = this.panel_FirstAnalyse.Width * 0.7;
+            this.txt_bl_Method_Filter.FontSize = this.Height * 0.025;
+            this.txt_bl_Method_Filter.Margin = new Thickness(this.Height * 0.01, 0, 0, 0);
+
+            this.txt_bl_Event_Filter.Height = this.panel_FirstAnalyse.Height * 0.08;
+            this.txt_bl_Event_Filter.Width = this.panel_FirstAnalyse.Width * 0.7;
+            this.txt_bl_Event_Filter.FontSize = this.Height * 0.025;
+            this.txt_bl_Event_Filter.Margin = new Thickness(this.Height * 0.01, 0, 0, 0);
+
+            this.txt_bl_Status_Filter.Height = this.panel_FirstAnalyse.Height * 0.08;
+            this.txt_bl_Status_Filter.Width = this.panel_FirstAnalyse.Width * 0.7;
+            this.txt_bl_Status_Filter.FontSize = this.Height * 0.025;
+            this.txt_bl_Status_Filter.Margin = new Thickness(this.Height * 0.01, 0, 0, 0);
+
+            this.txt_bl_Number_Filter.Height = this.panel_FirstAnalyse.Height * 0.08;
+            this.txt_bl_Number_Filter.Width = this.panel_FirstAnalyse.Width * 0.7;
+            this.txt_bl_Number_Filter.FontSize = this.Height * 0.025;
+            this.txt_bl_Number_Filter.Margin = new Thickness(this.Height * 0.01, 0, 0, 0);
+
+            this.panel_3.Height = this.Height * 0.0888;
+            this.border_7.Height = this.Height * 0.185;
+            this.panel_4.Height = this.border_7.Height;
+            this.txt_bl_Analysis.Margin = new Thickness(0, this.Height * 0.03, 0, this.Height * 0.02);
+            this.txt_bl_Analysis.FontSize = this.Height * 0.04;
+            this.test.FontSize = this.Height * 0.02;
+            
+            this.border_10.Width = this.Width * 0.125;
+            this.border_10.Height = this.Height * 0.0444;
+            this.border_10.Margin = new Thickness(0, this.Height * 0.02, 0, 0);
+            
+            this.btn_start.Width = this.Width * 0.125;
+            this.btn_start.Height = this.Height * 0.0444;
+            this.btn_start.FontSize = this.Height * 0.02;
+            
+            this.grid_2.Width = this.border_10.Width;
+            this.grid_2.Height = this.border_10.Height;
+            
+            this.column_def_8_1.Width = new GridLength(30, GridUnitType.Star);
+            this.column_def_8_2.Width = new GridLength(70, GridUnitType.Star);
+            this.icon_check_start.Width = this.grid_2.Width * 0.15;
+            this.icon_check_start.Height = this.border_10.Height;
+            this.icon_check_start.Margin = new Thickness(this.Height * 0.02, 0, 0, 0);
+            
+            this.txt_bl_start.Width = this.grid_2.Width * 0.70;
+            this.txt_bl_start.Height = this.grid_2.Height;
+            this.txt_bl_start.FontSize = this.grid_2.Width * 0.13;
+            this.txt_bl_start.Margin = new Thickness(0, 0, this.Height * 0.03, 0);
+            
+            this.border_8.Height = this.border_10.Height;
+            this.border_8.Width = this.border_10.Width;
+            this.border_8.Margin = new Thickness(0, this.Height * 0.03, 0, 0);
+            this.btn_import.Height = this.Height * 0.0444;
+            
+            this.grid_1.Width = this.border_8.Width;
+            this.grid_1.Height = this.border_8.Height;
+            
+            this.column_def_7_1.Width = new GridLength(30, GridUnitType.Star);
+            this.column_def_7_2.Width = new GridLength(70, GridUnitType.Star);
+            
+            this.icon_import.Width = this.grid_1.Width * 0.15;
+            this.icon_import.Height = this.border_8.Height;
+            this.icon_import.Margin = new Thickness(0, 0, this.Height * 0.03, 0);
+
+            this.txt_bl_import.Width = this.grid_1.Width * 0.7;
+            this.txt_bl_import.Height = this.grid_1.Height;
+            this.txt_bl_import.FontSize = this.grid_1.Width * 0.13;
+            this.txt_bl_import.Margin = new Thickness(0, 0, this.Height * 0.06, 0);
+
+            this.border_9.Height = this.border_10.Height;
+            this.border_9.Width = this.border_10.Width;
+            this.border_9.Margin = new Thickness(0, this.Height * 0.03, 0, 0);
+            this.btn_load.Height = this.Height * 0.0444;
+
+            this.grid_3.Width = this.border_9.Width;
+            this.grid_3.Height = this.border_9.Height;
+
+            this.column_def_9_1.Width = new GridLength(30, GridUnitType.Star);
+            this.column_def_9_2.Width = new GridLength(70, GridUnitType.Star);
+
+            this.icon_load.Width = this.grid_3.Width * 0.15;
+            this.icon_load.Height = this.border_9.Height;
+            this.icon_load.Margin = new Thickness(this.Height * 0.015, 0, 0, 0);
+
+            this.txt_bl_load.Width = this.grid_3.Width * 0.7;
+            this.txt_bl_load.Height = this.grid_3.Height;
+            this.txt_bl_load.FontSize = this.grid_3.Width * 0.13;
+            this.txt_bl_load.Margin = new Thickness(0, 0, this.Height * 0.03, 0);
+
+            this.test1.Text = this.panel_FirstAnalyse.Height.ToString();
+            
         }
     }
 }

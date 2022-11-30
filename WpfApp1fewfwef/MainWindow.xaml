@@ -6,13 +6,14 @@
         xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:WpfApp1fewfwef"
         mc:Ignorable="d"
-        Title="MainWindow" 
+        Title="Arch Sucks" 
         AllowsTransparency="True"
         Background="Transparent"
-        Height="450" 
+        Height="{Binding}" 
         Width="{Binding}"
-        ResizeMode="CanResize"
+        ResizeMode="NoResize"
         WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
         MouseDown="Window_MouseDown"
         >
 
@@ -184,7 +185,7 @@
         </Style>
     </Window.Resources>
 
-    <Border x:Name="border_1"  Grid.Row="0" Width="{Binding}" Height="450" CornerRadius="25,10,25,15" Padding="0" BorderThickness=".65">
+    <Border x:Name="border_1"  Grid.Row="0" Width="{Binding}" Height="{Binding}" CornerRadius="25,10,25,15" Padding="0" BorderThickness=".65">
 
         <Border.BorderBrush>
             
@@ -206,45 +207,45 @@
             <Grid Grid.Column="1" Background="#FF111111">
 
                 <Grid.RowDefinitions>
-                    <RowDefinition x:Name="row_def_2_1" Height="20"/>
-                    <RowDefinition x:Name="row_def_2_2" Height="*"/>
+                    <RowDefinition x:Name="row_def_1_1" Height="{Binding}"/>
+                    <RowDefinition x:Name="row_def_1_2" Height="{Binding}"/>
                 </Grid.RowDefinitions>
 
-                <Border Grid.Row="2" >
+                <Border Grid.Row="1" >
 
-                    <StackPanel Grid.Row="2" Background="#1a1a1a">
+                    <StackPanel Grid.Row="1" Background="#1a1a1a">
 
                         <Grid>
                             
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="315"/>
-                                <RowDefinition Height="100"/>
+                                <RowDefinition x:Name="row_def_2_1" Height="315"/>
+                                <RowDefinition x:Name="row_def_2_2" Height="10"/>
+                                <RowDefinition x:Name="row_def_2_3" Height="100"/>
                             </Grid.RowDefinitions>
 
-                            <StackPanel Grid.Row="0">
+                            <StackPanel x:Name="panel_test" Height="{Binding}" Grid.Row="0">
 
                                 <Border x:Name="border_2" Width="{Binding}" Margin="0 20 0 0" Height="280" Grid.Row="0" BorderBrush="#490ba1" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2">
 
                                     <DataGrid x:Name="keke" Foreground="White" Background="#1a1a1a">
-                                        
+
                                         <DataGrid.Columns>
 
-                                            <DataGridTextColumn x:Name="abc" Header="IP" Foreground="White"/>
-                                            <DataGridTextColumn Header="DT-EVENT"/>
-                                            <DataGridTextColumn Width="*" Header="TYP"/>
-                                            <DataGridTextColumn Width="*" Header="EVENT"/>
-                                            <DataGridTextColumn Width="*" Header="STATUS"/>
-                                            <DataGridTextColumn Width="*" Header="Number"/>
+                                            <DataGridTextColumn x:Name="datagrid_ip" Header="IP" Foreground="White"/>
+                                            <DataGridTextColumn x:Name="datagrid_dt_event" Header="DT-EVENT"/>
+                                            <DataGridTextColumn x:Name="datagrid_typ" Width="*" Header="TYP"/>
+                                            <DataGridTextColumn x:Name="datagrid_event" Width="*" Header="EVENT"/>
+                                            <DataGridTextColumn x:Name="datagrid_status" Width="*" Header="STATUS"/>
+                                            <DataGridTextColumn x:Name="datagrid_number" Width="*" Header="Number"/>
 
                                         </DataGrid.Columns>
-                                        
+
                                     </DataGrid>
 
                                 </Border>
 
                             </StackPanel>
-
-                            <Border x:Name="border_3" Width="{Binding}" Height="100" Grid.Row="2" BorderBrush="#490ba1" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2">
+                            <Border VerticalAlignment="Center" x:Name="border_3" Width="{Binding}" Height="100" Grid.Row="2" BorderBrush="#490ba1" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2">
 
                                 <StackPanel x:Name="panel_1" Height="100" Width="{Binding}" Background="#121212">
 
@@ -338,7 +339,7 @@
                                 </StackPanel>
 
                             </Border>
-
+                            
                         </Grid>
 
                     </StackPanel>
@@ -373,7 +374,7 @@
 
             </Grid>
 
-            <StackPanel Height="448.7" Grid.Column="0" Background="#180336" Margin="0,-0,8,0">
+            <StackPanel x:Name="panel_5" Height="448.7" Grid.Column="0" Background="#180336" Margin="0,-0,8,0">
 
                 <StackPanel.Effect>
                     <DropShadowEffect BlurRadius="7" Color="Black" ShadowDepth="4" Direction="360" />
@@ -382,9 +383,9 @@
                 <Grid>
 
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="20"/>
-                        <RowDefinition Height="314"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition x:Name="row_def_3_1" Height="{Binding}"/>
+                        <RowDefinition x:Name="row_def_3_2" Height="{Binding}"/>
+                        <RowDefinition x:Name="row_def_3_3" Height="{Binding}"/>
                     </Grid.RowDefinitions>
 
                     <StackPanel Grid.Row="0" Background="#180336">
@@ -417,21 +418,21 @@
 
                     </StackPanel>
 
-                    <Border x:Name="border_6" Grid.Row="1" BorderBrush="White" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2" Margin="0 10 0 0" Width="{Binding}">
+                    <Border x:Name="border_6" Grid.Row="1" BorderBrush="White" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2" Margin="{Binding}" Width="{Binding}" Height="{Binding}">
 
                         <Grid>
 
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="90"/>
-                                <RowDefinition Height="170"/>
-                                <RowDefinition Height="40"/>
+                                <RowDefinition x:Name="row_def_4_1" Height="{Binding}"/>
+                                <RowDefinition x:Name="row_def_4_2" Height="{Binding}"/>
+                                <RowDefinition x:Name="row_def_4_3" Height="{Binding}"/>
                             </Grid.RowDefinitions>
 
-                            <StackPanel x:Name="panel_2" Grid.Row="0" Height="100" Width="{Binding}" Background="#0d011f">
+                            <StackPanel x:Name="panel_2" Grid.Row="0" Height="{Binding}" Width="{Binding}" Background="#0d011f">
 
-                                <TextBlock Text="Analyse" Margin="0 10 0 10" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Segoe UI Variable Text Semibold"/>
-                                <ComboBox Text="hg" Foreground="White" x:Name="test" Width="{Binding}" HorizontalAlignment="Center" Margin="0,0,0,0" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Segoe UI Variable Text Semibold"/>
-                                <Separator Margin="0 10 0 0"/>
+                                <TextBlock x:Name="txt_bl_Analysis" Text="Analyse" Margin="0 10 0 10" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Segoe UI Variable Text Semibold"/>
+                                <ComboBox Text="hg" Foreground="White" x:Name="test" Width="{Binding}" Height="50" HorizontalAlignment="Center" Margin="0,0,0,0" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Segoe UI Variable Text Semibold"/>
+                                <Separator x:Name="sep_1" Margin="{Binding}"/>
 
                             </StackPanel>
 
@@ -440,12 +441,12 @@
                                 <Grid>
 
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="26.7"/>
-                                        <RowDefinition Height="26.7"/>
-                                        <RowDefinition Height="26.7"/>
-                                        <RowDefinition Height="26.7"/>
-                                        <RowDefinition Height="26.7"/>
-                                        <RowDefinition Height="26.7"/>
+                                        <RowDefinition x:Name="row_def_5_1" Height="{Binding}"/>
+                                        <RowDefinition x:Name="row_def_5_2" Height="{Binding}"/>
+                                        <RowDefinition x:Name="row_def_5_3" Height="{Binding}"/>
+                                        <RowDefinition x:Name="row_def_5_4" Height="{Binding}"/>
+                                        <RowDefinition x:Name="row_def_5_5" Height="{Binding}"/>
+                                        <RowDefinition x:Name="row_def_5_6" Height="{Binding}"/>
                                     </Grid.RowDefinitions>
 
                                     <Grid Grid.Row="0">
@@ -455,13 +456,13 @@
                                             <ColumnDefinition x:Name="column_def_5_2" Width="{Binding}"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox x:Name="ckbx_IP" Grid.Column="0" Width="{Binding}" HorizontalAlignment="Center" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
+                                        <CheckBox Height="20" x:Name="ckbx_IP" Grid.Column="0" Width="{Binding}" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
                                         </CheckBox>
                                         
-                                        <TextBlock x:Name="txt_bl_IP_Filter" Margin="10 0 0 0" Height="21.5" Width="13" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Text="IP" FontFamily="Segoe UI Variable Text Semibold" FontSize="15" TextAlignment="Left"/>
+                                        <TextBlock x:Name="txt_bl_IP_Filter" Margin="10 0 0 0" Height="21.5" Width="13" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Text="IP-Addresse" FontFamily="Segoe UI Variable Text Semibold" FontSize="15" TextAlignment="Left"/>
 
                                     </Grid>
 
@@ -472,7 +473,7 @@
                                             <ColumnDefinition x:Name="column_def_6_2" Width="{Binding}"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox x:Name="ckbx_Timestamp" Grid.Column="0" Width="{Binding}" HorizontalAlignment="Center" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
+                                        <CheckBox x:Name="ckbx_Timestamp" Grid.Column="0" Width="{Binding}" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
@@ -485,68 +486,68 @@
                                     <Grid Grid.Row="2">
 
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="26"/>
-                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition x:Name="column_def_10_1" Width="{Binding}"/>
+                                            <ColumnDefinition x:Name="column_def_10_2" Width="{Binding}"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox Grid.Column="0" Width="16" HorizontalAlignment="Center" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
+                                        <CheckBox x:Name="ckbx_Method" Grid.Column="0" Width="16" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
                                         </CheckBox>
                                         
-                                        <TextBlock Margin="10 0 0 0" Height="21.5" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Text="Methode" FontFamily="Segoe UI Variable Text Semibold" FontSize="15" TextAlignment="Left"/>
+                                        <TextBlock x:Name="txt_bl_Method_Filter" Margin="10 0 0 0" Height="21.5" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Text="Methode" FontFamily="Segoe UI Variable Text Semibold" FontSize="15" TextAlignment="Left"/>
 
                                     </Grid>
 
                                     <Grid Grid.Row="3">
 
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="26"/>
-                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition x:Name="column_def_11_1" Width="{Binding}"/>
+                                            <ColumnDefinition x:Name="column_def_11_2" Width="{Binding}"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox Grid.Column="0" Width="16" HorizontalAlignment="Center" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
+                                        <CheckBox x:Name="ckbx_Event" Grid.Column="0" Width="16" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
                                         </CheckBox>
-                                        
-                                        <TextBlock Margin="10 0 0 0" Height="21.5" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Text="Event" FontFamily="Segoe UI Variable Text Semibold" FontSize="15" TextAlignment="Left"/>
+
+                                        <TextBlock x:Name="txt_bl_Event_Filter" Margin="10 0 0 0" Height="21.5" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Text="Event" FontFamily="Segoe UI Variable Text Semibold" FontSize="15" TextAlignment="Left"/>
 
                                     </Grid>
 
                                     <Grid Grid.Row="4">
 
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="26"/>
-                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition x:Name="column_def_12_1" Width="{Binding}"/>
+                                            <ColumnDefinition x:Name="column_def_12_2" Width="{Binding}"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox Grid.Column="0" Width="16" HorizontalAlignment="Center" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
+                                        <CheckBox x:Name="ckbx_Status" Grid.Column="0" Width="16" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
                                         </CheckBox>
-                                        
-                                        <TextBlock Margin="10 0 0 0" Height="21.5" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Text="Status" FontFamily="Segoe UI Variable Text Semibold" FontSize="15" TextAlignment="Left"/>
+
+                                        <TextBlock x:Name="txt_bl_Status_Filter" Margin="10 0 0 0" Height="21.5" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Text="Status" FontFamily="Segoe UI Variable Text Semibold" FontSize="15" TextAlignment="Left"/>
 
                                     </Grid>
 
                                     <Grid Grid.Row="5">
 
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="26"/>
-                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition x:Name="column_def_13_1" Width="{Binding}"/>
+                                            <ColumnDefinition x:Name="column_def_13_2" Width="{Binding}"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox Grid.Column="0" Width="16" HorizontalAlignment="Center" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
+                                        <CheckBox x:Name="ckbx_Number" Grid.Column="0" Width="16" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
                                         </CheckBox>
-                                        
-                                        <TextBlock Margin="10 0 0 0" Height="21.5" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Text="Nummer" FontFamily="Segoe UI Variable Text Semibold" FontSize="15" TextAlignment="Left"/>
+
+                                        <TextBlock x:Name="txt_bl_Number_Filter" Margin="10 0 0 0" Height="21.5" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Text="Nummer" FontFamily="Segoe UI Variable Text Semibold" FontSize="15" TextAlignment="Left"/>
 
                                     </Grid>
 
@@ -657,24 +658,24 @@
 
                                 <Separator Margin="0 0 0 0"/>
 
-                                <Border BorderBrush="#490ba1" CornerRadius="6 6 6 6" BorderThickness="2,2,2,2" Margin="0 9 0 0" Width="110" Height="20" >
+                                <Border x:Name="border_10" BorderBrush="#490ba1" CornerRadius="6 6 6 6" BorderThickness="2,2,2,2" Margin="0 9 0 0" Width="110" Height="20" >
 
-                                    <Button VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Width="110" Height="20">
+                                    <Button x:Name="btn_start" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Width="110" Height="20">
 
-                                        <Grid Width="110" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Grid x:Name="grid_2" Width="110" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
 
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="35"/>
-                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition x:Name="column_def_8_1" Width="{Binding}"/>
+                                                <ColumnDefinition x:Name="column_def_8_2" Width="{Binding}"/>
                                             </Grid.ColumnDefinitions>
 
                                             <StackPanel Grid.Column="0">
-                                                <MaterialDesign:PackIcon Kind="Check" Height="20" Width="16" Panel.ZIndex="3" Margin="19 0 0 0" Foreground="White" />
+                                                <MaterialDesign:PackIcon x:Name="icon_check_start" Kind="Check" Height="20" Width="16" Panel.ZIndex="3" Margin="0 0 0 0" Foreground="White" />
                                             </StackPanel>
 
                                             <StackPanel Grid.Column="1">
                                                 
-                                                <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Width="75" Height="20" Margin="0 0 0 0" Panel.ZIndex="3">
+                                                <TextBlock x:Name="txt_bl_start" TextAlignment="Center" HorizontalAlignment="Center" Width="75" Height="20" Margin="0 0 50 0" Panel.ZIndex="3">
                                                     start
                                                 </TextBlock>
                                                 
@@ -694,13 +695,13 @@
 
                     <Border x:Name="border_7" Grid.Row="2" BorderBrush="White" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2" Margin="0 20 0 0" Width="{Binding}">
 
-                        <StackPanel x:Name="panel_4" Height="70" Width="{Binding}" Background="#0d011f">
+                        <StackPanel x:Name="panel_4" Height="{Binding}" Width="{Binding}" Background="#0d011f">
 
                             <Border x:Name="border_8" BorderBrush="#490ba1" CornerRadius="6 6 6 6" BorderThickness="2,2,2,2" Margin="0 9 0 0" Width="{Binding}" Height="20" >
 
                                 <Button x:Name="btn_import" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Width="{Binding}" Height="20">
 
-                                    <Grid x:Name="grid_1" Width="{Binding}" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Grid x:Name="grid_1" Width="{Binding}" Height="20" VerticalAlignment="Center">
 
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition x:Name="column_def_7_1" Width="{Binding}"/>
@@ -708,12 +709,12 @@
                                         </Grid.ColumnDefinitions>
 
                                         <StackPanel Grid.Column="0">
-                                            <MaterialDesign:PackIcon Kind="Import" Height="20" Width="16" Panel.ZIndex="3" Margin="19 0 0 0" Foreground="White" />
+                                            <MaterialDesign:PackIcon x:Name="icon_import" Kind="Import" Height="20" Width="16" Panel.ZIndex="3" Margin="19 0 0 0" Foreground="White" />
                                         </StackPanel>
 
                                         <StackPanel Grid.Column="1">
                                             
-                                            <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Width="75" Height="20" Margin="0 0 0 0" Panel.ZIndex="3">
+                                            <TextBlock x:Name="txt_bl_import" HorizontalAlignment="Center" TextAlignment="Center" Width="75" Height="20" Margin="0 0 0 0" Panel.ZIndex="4">
                                                 import
                                             </TextBlock>
                                             
@@ -729,20 +730,20 @@
 
                                 <Button x:Name="btn_load" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Width="{Binding}" Height="20">
 
-                                    <Grid Width="110" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Grid x:Name="grid_3" Width="110" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
 
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="35"/>
-                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition x:Name="column_def_9_1" Width="35"/>
+                                            <ColumnDefinition x:Name="column_def_9_2" Width="*"/>
                                         </Grid.ColumnDefinitions>
 
                                         <StackPanel Grid.Column="0">
-                                            <MaterialDesign:PackIcon Kind="FileDocument" Height="20" Width="16" Panel.ZIndex="3" Margin="19 0 0 0" Foreground="White" />
+                                            <MaterialDesign:PackIcon x:Name="icon_load" Kind="FileDocument" Height="20" Width="16" Panel.ZIndex="3" Margin="0 0 0 0" Foreground="White" />
                                         </StackPanel>
 
                                         <StackPanel Grid.Column="1">
                                             
-                                            <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Width="75" Height="20" Margin="0 0 0 0" Panel.ZIndex="3">
+                                            <TextBlock x:Name="txt_bl_load" TextAlignment="Center" HorizontalAlignment="Center" Width="75" Height="20" Margin="0 0 0 0" Panel.ZIndex="3">
                                                 load
                                             </TextBlock>
                                         
