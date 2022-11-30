@@ -24,8 +24,8 @@ namespace WpfApp1fewfwef
     public partial class MainWindow : Window
     {
         private bool mRestoreIfMove = false;
-        public int CurrentWindowWidth = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenWidth * 0.8));
-        public int CurrentWindowHeight = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenHeight * 0.8));
+        public int CurrentWindowWidth = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenWidth * 0.5));
+        public int CurrentWindowHeight = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenHeight * 0.5));
         public MainWindow()
         {
             InitializeComponent();
@@ -251,76 +251,76 @@ namespace WpfApp1fewfwef
             this.datagrid_number.Width = (this.border_2.Width - 5) / 6;
 
             this.ckbx_IP.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
-            this.ckbx_IP.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
-            this.ckbx_IP.LayoutTransform = new ScaleTransform(3, 3);
-            this.ckbx_IP.Margin = new Thickness(this.Height * 0.02, this.Height * 0.04, 0, 0);
-            this.ckbx_IP.Width = this.panel_FirstAnalyse.Height * 0.04137;
+            this.ckbx_IP.MinWidth = this.panel_FirstAnalyse.Width / 100 * 0.1666;
+            this.ckbx_IP.LayoutTransform = new ScaleTransform(this.panel_FirstAnalyse.Width / 165, this.panel_FirstAnalyse.Height / 140);
+            this.ckbx_IP.Margin = new Thickness(this.Width * 0.02, this.Height * 0.04, 0, 0);
+            this.ckbx_IP.Width = this.panel_FirstAnalyse.Width * 0.04137;
             this.ckbx_IP.Height = this.panel_FirstAnalyse.Height * 0.04137;
 
             this.ckbx_Timestamp.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
             this.ckbx_Timestamp.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
             this.ckbx_Timestamp.LayoutTransform = new ScaleTransform(3, 3);
-            this.ckbx_Timestamp.Margin = new Thickness(this.Height * 0.02, 0, 0, 0);
+            this.ckbx_Timestamp.Margin = new Thickness(this.Width * 0.02, 0, 0, 0);
             this.ckbx_Timestamp.Width = this.panel_FirstAnalyse.Height * 0.04137;
             this.ckbx_Timestamp.Height = this.panel_FirstAnalyse.Height * 0.04137;
 
             this.ckbx_Method.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
             this.ckbx_Method.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
             this.ckbx_Method.LayoutTransform = new ScaleTransform(3, 3);
-            this.ckbx_Method.Margin = new Thickness(this.Height * 0.02, 0, 0, 0);
+            this.ckbx_Method.Margin = new Thickness(this.Width * 0.02, 0, 0, 0);
             this.ckbx_Method.Width = this.panel_FirstAnalyse.Height * 0.04137;
             this.ckbx_Method.Height = this.panel_FirstAnalyse.Height * 0.04137;
 
             this.ckbx_Event.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
             this.ckbx_Event.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
             this.ckbx_Event.LayoutTransform = new ScaleTransform(3, 3);
-            this.ckbx_Event.Margin = new Thickness(this.Height * 0.02, 0, 0, 0);
+            this.ckbx_Event.Margin = new Thickness(this.Width * 0.02, 0, 0, 0);
             this.ckbx_Event.Width = this.panel_FirstAnalyse.Height * 0.04137;
             this.ckbx_Event.Height = this.panel_FirstAnalyse.Height * 0.04137;
 
             this.ckbx_Status.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
             this.ckbx_Status.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
             this.ckbx_Status.LayoutTransform = new ScaleTransform(3, 3);
-            this.ckbx_Status.Margin = new Thickness(this.Height * 0.02, 0, 0, 0);
+            this.ckbx_Status.Margin = new Thickness(this.Width * 0.02, 0, 0, 0);
             this.ckbx_Status.Width = this.panel_FirstAnalyse.Height * 0.04137;
             this.ckbx_Status.Height = this.panel_FirstAnalyse.Height * 0.04137;
 
             this.ckbx_Number.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
-            this.ckbx_Number.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
+            this.ckbx_Number.MinWidth = this.panel_FirstAnalyse.Width / 100 * 0.1666;
             this.ckbx_Number.LayoutTransform = new ScaleTransform(3, 3);
-            this.ckbx_Number.Margin = new Thickness(this.Height * 0.02, 0, 0, 0);
+            this.ckbx_Number.Margin = new Thickness(this.Width * 0.02, 0, 0, 0);
             this.ckbx_Number.Width = this.panel_FirstAnalyse.Height * 0.04137;
             this.ckbx_Number.Height = this.panel_FirstAnalyse.Height * 0.04137;
 
             this.txt_bl_IP_Filter.Height = this.panel_FirstAnalyse.Height * 0.08;
             this.txt_bl_IP_Filter.Width = this.panel_FirstAnalyse.Width * 0.7;
             this.txt_bl_IP_Filter.FontSize = this.Height * 0.025;
-            this.txt_bl_IP_Filter.Margin = new Thickness(this.Height * 0.01, this.Height * 0.04, 0, 0);
+            this.txt_bl_IP_Filter.Margin = new Thickness(this.Width * 0.01, this.Height * 0.04, 0, 0);
 
             this.txt_bl_Timestamp_Filter.Height = this.panel_FirstAnalyse.Height * 0.08;
             this.txt_bl_Timestamp_Filter.Width = this.panel_FirstAnalyse.Width * 0.7;
             this.txt_bl_Timestamp_Filter.FontSize = this.Height * 0.025;
-            this.txt_bl_Timestamp_Filter.Margin = new Thickness(this.Height * 0.01, 0, 0, 0);
+            this.txt_bl_Timestamp_Filter.Margin = new Thickness(this.Width * 0.01, 0, 0, 0);
 
             this.txt_bl_Method_Filter.Height = this.panel_FirstAnalyse.Height * 0.08;
             this.txt_bl_Method_Filter.Width = this.panel_FirstAnalyse.Width * 0.7;
             this.txt_bl_Method_Filter.FontSize = this.Height * 0.025;
-            this.txt_bl_Method_Filter.Margin = new Thickness(this.Height * 0.01, 0, 0, 0);
+            this.txt_bl_Method_Filter.Margin = new Thickness(this.Width * 0.01, 0, 0, 0);
 
             this.txt_bl_Event_Filter.Height = this.panel_FirstAnalyse.Height * 0.08;
             this.txt_bl_Event_Filter.Width = this.panel_FirstAnalyse.Width * 0.7;
             this.txt_bl_Event_Filter.FontSize = this.Height * 0.025;
-            this.txt_bl_Event_Filter.Margin = new Thickness(this.Height * 0.01, 0, 0, 0);
+            this.txt_bl_Event_Filter.Margin = new Thickness(this.Width * 0.01, 0, 0, 0);
 
             this.txt_bl_Status_Filter.Height = this.panel_FirstAnalyse.Height * 0.08;
             this.txt_bl_Status_Filter.Width = this.panel_FirstAnalyse.Width * 0.7;
             this.txt_bl_Status_Filter.FontSize = this.Height * 0.025;
-            this.txt_bl_Status_Filter.Margin = new Thickness(this.Height * 0.01, 0, 0, 0);
+            this.txt_bl_Status_Filter.Margin = new Thickness(this.Width * 0.01, 0, 0, 0);
 
             this.txt_bl_Number_Filter.Height = this.panel_FirstAnalyse.Height * 0.08;
             this.txt_bl_Number_Filter.Width = this.panel_FirstAnalyse.Width * 0.7;
             this.txt_bl_Number_Filter.FontSize = this.Height * 0.025;
-            this.txt_bl_Number_Filter.Margin = new Thickness(this.Height * 0.01, 0, 0, 0);
+            this.txt_bl_Number_Filter.Margin = new Thickness(this.Width * 0.01, 0, 0, 0);
 
             this.panel_3.Height = this.Height * 0.0888;
             this.border_7.Height = this.Height * 0.185;
@@ -391,8 +391,9 @@ namespace WpfApp1fewfwef
             this.txt_bl_load.FontSize = this.grid_3.Width * 0.13;
             this.txt_bl_load.Margin = new Thickness(0, 0, this.Height * 0.03, 0);
 
-            this.test1.Text = this.panel_FirstAnalyse.Height.ToString();
-            
+            this.test1.Text = (this.panel_FirstAnalyse.Width / 165).ToString() + " : " + (this.panel_FirstAnalyse.Height / 140.22).ToString();
+
+
         }
     }
 }
