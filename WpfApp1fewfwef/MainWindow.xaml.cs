@@ -209,11 +209,11 @@ namespace WpfApp1fewfwef
         public void setAllHeights()
         {
             //Good luck!
-            
 
             //450 
             this.Height = this.CurrentWindowHeight;
             this.border_1.Height = this.Height;
+            
             this.row_def_1_1.Height = new GridLength(4.44, GridUnitType.Star);
             this.row_def_1_2.Height = new GridLength(95.56, GridUnitType.Star);
             this.row_def_2_1.Height = new GridLength(73, GridUnitType.Star);
@@ -223,19 +223,25 @@ namespace WpfApp1fewfwef
             //this.panel_test2.Height = this.border_3.Height = this.Height * 0.2222;
             this.border_2.Height = this.Height * 0.6222;
             this.border_3.Height = this.Height * 0.2222;
+
             this.panel_1.Height = this.border_3.Height;
             this.panel_5.Height = this.Height * 0.99711;
+            
             this.row_def_3_1.Height = new GridLength(4.457, GridUnitType.Star);
             this.row_def_3_2.Height = new GridLength(69.979, GridUnitType.Star);
             this.row_def_3_2.Height = new GridLength(25.564, GridUnitType.Star);
+            
             this.border_6.Height = this.Height * 0.6666;
+            
             this.row_def_4_1.Height = new GridLength(30, GridUnitType.Star);
             this.row_def_4_2.Height = new GridLength(56.66, GridUnitType.Star);
             this.row_def_4_3.Height = new GridLength(13.33, GridUnitType.Star);
+            
             this.panel_2.Height = this.Height * 0.2222;
             this.border_6.Margin = new Thickness(0, this.Height * 0.04, 0, 0);
             this.sep_1.Margin = new Thickness(0, this.Height * 0.04, 0, 0);
             this.panel_FirstAnalyse.Height = this.Height * 0.3777;
+            
             this.row_def_5_1.Height = new GridLength(16.66, GridUnitType.Star);
             this.row_def_5_2.Height = new GridLength(16.66, GridUnitType.Star);
             this.row_def_5_3.Height = new GridLength(16.66, GridUnitType.Star);
@@ -252,45 +258,50 @@ namespace WpfApp1fewfwef
 
             this.ckbx_IP.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
             this.ckbx_IP.MinWidth = this.panel_FirstAnalyse.Width / 100 * 0.1666;
-            this.ckbx_IP.LayoutTransform = new ScaleTransform(this.panel_FirstAnalyse.Width / 165, this.panel_FirstAnalyse.Height / 140);
+            this.ckbx_IP.LayoutTransform = new ScaleTransform(this.panel_FirstAnalyse.Width / 165.0, this.panel_FirstAnalyse.Height / 140.0);
             this.ckbx_IP.Margin = new Thickness(this.Width * 0.02, this.Height * 0.04, 0, 0);
             this.ckbx_IP.Width = this.panel_FirstAnalyse.Width * 0.04137;
             this.ckbx_IP.Height = this.panel_FirstAnalyse.Height * 0.04137;
 
+            //TODO: Fix Checkbox-scaling-bug, occuring on lower resolutions 
+            #region Fix Checkbox-scaling-bug
+
             this.ckbx_Timestamp.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
-            this.ckbx_Timestamp.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
-            this.ckbx_Timestamp.LayoutTransform = new ScaleTransform(3, 3);
+            this.ckbx_Timestamp.MinWidth = this.panel_FirstAnalyse.Width * 0.006;
+            this.ckbx_Timestamp.LayoutTransform = new ScaleTransform(this.panel_FirstAnalyse.Width * 0.006, this.panel_FirstAnalyse.Height / 140);
             this.ckbx_Timestamp.Margin = new Thickness(this.Width * 0.02, 0, 0, 0);
-            this.ckbx_Timestamp.Width = this.panel_FirstAnalyse.Height * 0.04137;
+            this.ckbx_Timestamp.Width = this.panel_FirstAnalyse.Width * 0.05137;
             this.ckbx_Timestamp.Height = this.panel_FirstAnalyse.Height * 0.04137;
 
             this.ckbx_Method.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
-            this.ckbx_Method.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
-            this.ckbx_Method.LayoutTransform = new ScaleTransform(3, 3);
+            this.ckbx_Method.MinWidth = this.panel_FirstAnalyse.Width / 100 * 0.1666;
+            this.ckbx_Method.LayoutTransform = new ScaleTransform(this.panel_FirstAnalyse.Width / 165, this.panel_FirstAnalyse.Height / 140);
             this.ckbx_Method.Margin = new Thickness(this.Width * 0.02, 0, 0, 0);
-            this.ckbx_Method.Width = this.panel_FirstAnalyse.Height * 0.04137;
+            this.ckbx_Method.Width = this.panel_FirstAnalyse.Width * 0.04137;
             this.ckbx_Method.Height = this.panel_FirstAnalyse.Height * 0.04137;
 
             this.ckbx_Event.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
-            this.ckbx_Event.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
-            this.ckbx_Event.LayoutTransform = new ScaleTransform(3, 3);
+            this.ckbx_Event.MinWidth = this.panel_FirstAnalyse.Width / 100 * 0.1666;
+            this.ckbx_Event.LayoutTransform = new ScaleTransform(this.panel_FirstAnalyse.Width / 165, this.panel_FirstAnalyse.Height / 140);
             this.ckbx_Event.Margin = new Thickness(this.Width * 0.02, 0, 0, 0);
-            this.ckbx_Event.Width = this.panel_FirstAnalyse.Height * 0.04137;
+            this.ckbx_Event.Width = this.panel_FirstAnalyse.Width * 0.04137;
             this.ckbx_Event.Height = this.panel_FirstAnalyse.Height * 0.04137;
 
             this.ckbx_Status.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
-            this.ckbx_Status.MinWidth = this.panel_FirstAnalyse.Height / 100 * 0.1666;
-            this.ckbx_Status.LayoutTransform = new ScaleTransform(3, 3);
+            this.ckbx_Status.MinWidth = this.panel_FirstAnalyse.Width / 100 * 0.1666;
+            this.ckbx_Status.LayoutTransform = new ScaleTransform(this.panel_FirstAnalyse.Width / 165, this.panel_FirstAnalyse.Height / 140);
             this.ckbx_Status.Margin = new Thickness(this.Width * 0.02, 0, 0, 0);
-            this.ckbx_Status.Width = this.panel_FirstAnalyse.Height * 0.04137;
+            this.ckbx_Status.Width = this.panel_FirstAnalyse.Width * 0.04137;
             this.ckbx_Status.Height = this.panel_FirstAnalyse.Height * 0.04137;
 
             this.ckbx_Number.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
             this.ckbx_Number.MinWidth = this.panel_FirstAnalyse.Width / 100 * 0.1666;
-            this.ckbx_Number.LayoutTransform = new ScaleTransform(3, 3);
+            this.ckbx_Number.LayoutTransform = new ScaleTransform(this.panel_FirstAnalyse.Width / 165, this.panel_FirstAnalyse.Height / 140);
             this.ckbx_Number.Margin = new Thickness(this.Width * 0.02, 0, 0, 0);
-            this.ckbx_Number.Width = this.panel_FirstAnalyse.Height * 0.04137;
+            this.ckbx_Number.Width = this.panel_FirstAnalyse.Width * 0.04137;
             this.ckbx_Number.Height = this.panel_FirstAnalyse.Height * 0.04137;
+
+            #endregion
 
             this.txt_bl_IP_Filter.Height = this.panel_FirstAnalyse.Height * 0.08;
             this.txt_bl_IP_Filter.Width = this.panel_FirstAnalyse.Width * 0.7;
@@ -391,9 +402,14 @@ namespace WpfApp1fewfwef
             this.txt_bl_load.FontSize = this.grid_3.Width * 0.13;
             this.txt_bl_load.Margin = new Thickness(0, 0, this.Height * 0.03, 0);
 
-            this.test1.Text = (this.panel_FirstAnalyse.Width / 165).ToString() + " : " + (this.panel_FirstAnalyse.Height / 140.22).ToString();
+            this.test1.Text = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenWidth * 0.8)) + " x " + Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenHeight * 0.8));
 
 
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
