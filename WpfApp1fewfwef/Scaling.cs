@@ -50,9 +50,9 @@ namespace WpfApp1fewfwef
 
             main.icon_DateRange_1.Width = main.border_4.Width * 0.04255;
             main.txt_bl_bis.Width = main.border_4.Width * 0.14894;
-            main.icon_TimeRange_1.Width = main.border_4.Width * 0.17021;
+            main.dTPicker_main_TimeUntil.Width = main.border_4.Width * 0.17021;
             main.txt_bl_von.Width = main.border_4.Width * 0.14894;
-            main.icon_TimeRange_2.Width = main.border_4.Width * 0.14894;
+            main.dTPicker_main_TimeFrom.Width = main.border_4.Width * 0.14894;
             main.txt_bl_IP.Width = main.panel_1.Width * 0.976;
 
             main.border_5.Width = main.panel_1.Width * 0.94;
@@ -399,11 +399,11 @@ namespace WpfApp1fewfwef
             main.txt_bl_von.Margin = new Thickness(main.border_4.Width * 0.004, 0, 0, 0);
 
             main.view_1.Height = main.border_4.Height * 0.6;
-            main.datepicker_first.FontSize = main.border_4.Height * 0.15;
+            main.dTPicker_main_DateUntil.FontSize = main.border_4.Height * 0.15;
 
-            main.icon_TimeRange_1.Height = main.border_4.Height * 0.585;
-            main.icon_TimeRange_1.FontSize = main.border_4.Height * 0.3;
-            main.icon_TimeRange_1.Width = main.border_4.Width * 0.15;
+            main.dTPicker_main_TimeUntil.Height = main.border_4.Height * 0.585;
+            main.dTPicker_main_TimeUntil.FontSize = main.border_4.Height * 0.3;
+            main.dTPicker_main_TimeUntil.Width = main.border_4.Width * 0.15;
 
             main.txt_bl_bis.Width = main.border_4.Width * 0.07;
             main.txt_bl_bis.Height = main.border_4.Height * 0.55;
@@ -412,11 +412,11 @@ namespace WpfApp1fewfwef
 
             main.view_2.Height = main.border_4.Height * 0.6;
             main.view_2.Width = main.border_4.Width * 0.25;
-            main.datepicker_second.FontSize = main.border_4.Height * 0.15;
+            main.dTPicker_main_DateFrom.FontSize = main.border_4.Height * 0.15;
 
-            main.icon_TimeRange_2.Height = main.border_4.Height * 0.585;
-            main.icon_TimeRange_2.FontSize = main.border_4.Height * 0.3;
-            main.icon_TimeRange_2.Width = main.border_4.Width * 0.15;
+            main.dTPicker_main_TimeFrom.Height = main.border_4.Height * 0.585;
+            main.dTPicker_main_TimeFrom.FontSize = main.border_4.Height * 0.3;
+            main.dTPicker_main_TimeFrom.Width = main.border_4.Width * 0.15;
 
             main.ckbx_GET.MinHeight = main.panel_ThirdAnalyse.Height / 100 * 0.1666;
             main.ckbx_GET.MinWidth = main.panel_ThirdAnalyse.Width / 100 * 0.1666;

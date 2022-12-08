@@ -228,7 +228,7 @@
 
                                 <Border x:Name="border_2" Width="{Binding}" Margin="0 20 0 0" Height="280" Grid.Row="0" BorderBrush="#490ba1" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2">
 
-                                    <DataGrid x:Name="keke" Foreground="White" Background="#1a1a1a">
+                                    <DataGrid x:Name="DataGrid" Foreground="White" Background="#1a1a1a">
 
                                         <DataGrid.Columns>
 
@@ -283,7 +283,7 @@
                                                 <TextBlock x:Name="txt_bl_bis" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="4" FontSize="11" IsEnabled="True" IsManipulationEnabled="True" Width="{Binding}" Text="Bis:" Height="15" FontFamily="Segoe UI Variable Text Semibold" Foreground="White"/>
 
                                                 <Viewbox x:Name="view_1" Grid.Column="5">
-                                                    <DatePicker x:Name="datepicker_first" MaterialDesign:HintAssist.Hint="04.02.2020" Foreground="White"  Margin="0 0 0 0" Height="25">
+                                                    <DatePicker x:Name="dTPicker_main_DateUntil" MaterialDesign:HintAssist.Hint="04.02.2020" Foreground="White"  Margin="0 0 0 0" Height="25">
 
                                                         <DatePicker.Resources>
 
@@ -297,12 +297,12 @@
 
                                                     </DatePicker>
                                                 </Viewbox>
-                                                <MaterialDesign:TimePicker VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="icon_TimeRange_1" Width="{Binding}" MaterialDesign:HintAssist.Hint="12:00 AM" Background="White" Height="25" Foreground="White" Grid.Column="6"/>
+                                                <MaterialDesign:TimePicker VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="dTPicker_main_TimeUntil" Width="{Binding}" MaterialDesign:HintAssist.Hint="12:00 AM" Background="White" Height="25" Foreground="White" Grid.Column="6"/>
                                                 <TextBlock VerticalAlignment="Bottom" x:Name="txt_bl_von" Margin="0 0 0 0" HorizontalAlignment="Center" Grid.Column="1" FontSize="11" IsEnabled="True" IsManipulationEnabled="True" Width="{Binding}" Text="Von:" Height="15" FontFamily="Segoe UI Variable Text Semibold" Foreground="White"/>
 
 
                                                 <Viewbox x:Name="view_2" Grid.Column="2">
-                                                    <DatePicker Name="datepicker_second" MaterialDesign:HintAssist.Hint="04.02.2020" Foreground="White" Grid.Column="2" Margin="0 0 0 0" Height="25">
+                                                    <DatePicker x:Name="dTPicker_main_DateFrom" MaterialDesign:HintAssist.Hint="04.02.2020" Foreground="White" Grid.Column="2" Margin="0 0 0 0" Height="25">
 
                                                         <DatePicker.Resources>
 
@@ -318,7 +318,7 @@
                                                     
                                                 </Viewbox>
                                                 
-                                                <MaterialDesign:TimePicker VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="icon_TimeRange_2" Width="{Binding}" MaterialDesign:HintAssist.Hint="12:00 AM" Background="White" Height="25" Foreground="White" Grid.Column="3"/>
+                                                <MaterialDesign:TimePicker VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="dTPicker_main_TimeFrom" Width="{Binding}" MaterialDesign:HintAssist.Hint="12:00 AM" Background="White" Height="25" Foreground="White" Grid.Column="3"/>
         
                                             </Grid>
 
@@ -337,7 +337,7 @@
                                                 </Grid.ColumnDefinitions>
 
                                                 <MaterialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="icon_IP" Grid.Column="0" Kind="Ip" Height="23" Width="{Binding}" Panel.ZIndex="3" Margin="0 0 0 0" Foreground="White" />
-                                                <TextBox Grid.Column="1" Name="txt_bl_IP_In" FontSize="8" TextChanged="TextBox_TextChanged" IsEnabled="True" IsManipulationEnabled="True" Width="{Binding}" MaterialDesign:HintAssist.Hint="IP-Adresse angeben" Height="20" FontFamily="Segoe UI Variable Text Semibold" Foreground="White"/>
+                                                <TextBox Grid.Column="1" Name="txt_bl_IP_In" FontSize="8" TextChanged="TextBox_TextChanged" IsEnabled="True" IsManipulationEnabled="True" Width="{Binding}" MaterialDesign:HintAssist.Hint="IP-Adresse angeben" Height="20" FontFamily="Segoe UI Variable Text Semibold" Foreground="White" KeyDown="txt_bl_IP_In_KeyDown"/>
 
                                             </Grid>
 
