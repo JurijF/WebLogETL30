@@ -457,7 +457,7 @@
 
                             <StackPanel Name="panel_FirstAnalyse" Visibility="Collapsed" Grid.Row="1" Height="170" Width="{Binding}" Background="#0d011f">
 
-                                <Grid>
+                                <Grid x:Name="grid_6">
 
                                     <Grid.RowDefinitions>
                                         <RowDefinition x:Name="row_def_5_1" Height="{Binding}"/>

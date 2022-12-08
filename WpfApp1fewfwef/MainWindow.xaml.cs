@@ -290,6 +290,8 @@ namespace WpfApp1fewfwef
             this.panel_ThirdAnalyse.Height = this.Height * 0.3777;
             this.panel_FourthAnalyse.Height = this.Height * 0.3777;
 
+            this.grid_6.Height = this.panel_FirstAnalyse.Height * 0.95;
+
             this.row_def_5_1.Height = new GridLength(16.66, GridUnitType.Star);
             this.row_def_5_2.Height = new GridLength(16.66, GridUnitType.Star);
             this.row_def_5_3.Height = new GridLength(16.66, GridUnitType.Star);
@@ -325,8 +327,8 @@ namespace WpfApp1fewfwef
 
             this.ckbx_IP.MinHeight = this.panel_FirstAnalyse.Height / 100 * 0.1666;
             this.ckbx_IP.MinWidth = this.panel_FirstAnalyse.Width / 100 * 0.1666;
-            this.ckbx_IP.LayoutTransform = new ScaleTransform(this.panel_FirstAnalyse.Width * 0.0060606, this.panel_FirstAnalyse.Height / 140.0);
-            this.ckbx_IP.Margin = new Thickness(this.Width * 0.02, this.Height * 0.04, 0, 0);
+            this.ckbx_IP.LayoutTransform = new ScaleTransform(this.panel_FirstAnalyse.Width * 0.0060606, this.panel_FirstAnalyse.Height / 140);
+            this.ckbx_IP.Margin = new Thickness(this.Width * 0.02, 0, 0, 0);
             this.ckbx_IP.Width = this.panel_FirstAnalyse.Width * 0.04137;
             this.ckbx_IP.Height = this.panel_FirstAnalyse.Height * 0.04137;
 
@@ -373,7 +375,7 @@ namespace WpfApp1fewfwef
             this.txt_bl_IP_Filter.Height = this.panel_FirstAnalyse.Height * 0.08;
             this.txt_bl_IP_Filter.Width = this.panel_FirstAnalyse.Width * 0.7;
             this.txt_bl_IP_Filter.FontSize = this.Height * 0.025;
-            this.txt_bl_IP_Filter.Margin = new Thickness(this.Width * 0.01, this.Height * 0.04, 0, 0);
+            this.txt_bl_IP_Filter.Margin = new Thickness(this.Width * 0.01, 0, 0, 0);
 
             this.txt_bl_Timestamp_Filter.Height = this.panel_FirstAnalyse.Height * 0.08;
             this.txt_bl_Timestamp_Filter.Width = this.panel_FirstAnalyse.Width * 0.7;
