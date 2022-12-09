@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.IO;
 using Microsoft.Win32;
 using System.Windows.Input;
+using System;
 
 namespace WpfApp1fewfwef
 {
@@ -12,12 +13,15 @@ namespace WpfApp1fewfwef
     /// </summary>
     public partial class Settings : Window
     {
+        public int CurrentWindowWidth = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenWidth * 0.8));
+        public int CurrentWindowHeight = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenHeight * 0.8));
+        Scaling scaling = new();
         public Settings()
         {
             InitializeComponent();
             textBoxSelectedDB.Text = WpfApp1fewfwef.Properties.Settings.Default.DB_FILE;
-            MainWindow w = new MainWindow();
-            this.Width = w.CurrentWindowWidth;
+            scaling.settings = this;
+            scaling.SetSettingSizes();
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)

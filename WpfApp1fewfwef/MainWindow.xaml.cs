@@ -116,6 +116,7 @@ namespace WpfApp1fewfwef
         {
             Settings settings = new Settings();
             settings.Owner = this;
+            //scaling.SetSettingSizes();
             settings.Show();
         }
 

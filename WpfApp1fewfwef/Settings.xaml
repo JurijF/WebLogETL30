@@ -10,124 +10,139 @@
         WindowStyle="None"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
-        Height="230" 
+        Height="{Binding}" 
         Width="{Binding}" MouseDown="Window_MouseDown"
+        BorderBrush="#490ba1"
+        BorderThickness="1"
+        Background="#1a1a1a"
         >
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition x:Name="settings_row_def_1_1"/>
+            <RowDefinition x:Name="settings_row_def_1_2"/>
         </Grid.RowDefinitions>
 
-        <Border CornerRadius="0,20,20,0" Background="black">
+        <StackPanel Grid.Row="0" Background="#FF111111" Margin="0 0 0 0">
+
+            <StackPanel.Effect>
+                <DropShadowEffect BlurRadius="7" Color="Black" ShadowDepth="4" Direction="270" />
+            </StackPanel.Effect>
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Name="settings_column_def_1_1"/>
+                    <ColumnDefinition x:Name="settings_column_def_1_2"/>
+                    <ColumnDefinition x:Name="settings_column_def_1_3"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" x:Name="settings_txt_bl_Head" Text="Settings" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Segoe UI Variable Text Semibold"/>
+
+                <Button Grid.Column="2" x:Name="btnExit" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}" Click="btnExit_Click">
+                    <MaterialDesign:PackIcon x:Name="settings_icon_exit" Kind="Close"/>
+                </Button>
+
+                <Button Grid.Column="1" x:Name="btnMin" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource MaterialDesignFlatButton}" Click="btnMin_Click">
+                    <MaterialDesign:PackIcon x:Name="settings_icon_min" Kind="WindowMinimize"/>
+                </Button>
+                
+            </Grid>
             
-            <StackPanel Grid.Row="0" Background="#FF111111" Margin="0 0 0 0">
+        </StackPanel>
 
-                <StackPanel.Effect>
-                    <DropShadowEffect BlurRadius="7" Color="Black" ShadowDepth="4" Direction="270" />
-                </StackPanel.Effect>
-
-                <Grid>
-
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="410"/>
-                        <ColumnDefinition Width="20"/>
-                        <ColumnDefinition Width="20"/>
-                    </Grid.ColumnDefinitions>
-                    
-                    <TextBlock Grid.Column="0" x:Name="test1" Text="Settings" Margin="40 0 0 0" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Segoe UI Variable Text Semibold"/>
-
-                    <Button Grid.Column="2" Width="16" Height="16" x:Name="btnExit" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatButton}" Click="btnExit_Click">
-                        <MaterialDesign:PackIcon Kind="Close" Margin="-16 -4 0 0"/>
-                    </Button>
-
-                    <Button Grid.Column="1" Height="16" Width="16" x:Name="btnMin" HorizontalAlignment="Center" Margin="0 0 0 0" Foreground="White" Style="{StaticResource MaterialDesignFlatButton}" Click="btnMin_Click">
-                        <MaterialDesign:PackIcon Kind="WindowMinimize" Margin="-16 -4 0 0"/>
-                    </Button>
-                </Grid>
-            </StackPanel>
-        </Border>
-
-        <StackPanel Grid.Row="1" Background="#1a1a1a">
+        <StackPanel x:Name="settings_panel" Grid.Row="1" Background="#1a1a1a" Height="205" VerticalAlignment="Bottom">
 
             <Grid>
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="70"/>
-                    <RowDefinition Height="70"/>
-                    <RowDefinition Height="70"/>
+                    <RowDefinition x:Name="settings_row_def_2_1"/>
+                    <RowDefinition x:Name="settings_row_def_2_2"/>
+                    <RowDefinition x:Name="settings_row_def_2_3"/>
                 </Grid.RowDefinitions>
 
-                <Button x:Name="btnCreateDB" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Width="300" Height="40" Click="btnCreateDB_Click">
+                <StackPanel x:Name="settings_viewbox_createDB" Grid.Row="0">
 
-                    <Grid Width="300" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button x:Name="btnCreateDB" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White"  Click="btnCreateDB_Click">
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                        <Grid x:Name="settings_grid_createDB" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                        <StackPanel Grid.Column="0">
-                            <MaterialDesign:PackIcon Kind="DatabaseAdd" Height="40" Width="40" Panel.ZIndex="3" Margin="10 0 0 0" Foreground="White" />
-                        </StackPanel>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition x:Name="settings_column_def_2_1"/>
+                                <ColumnDefinition x:Name="settings_column_def_2_2"/>
+                            </Grid.ColumnDefinitions>
 
-                        <StackPanel Grid.Column="1">
+                            <StackPanel Grid.Column="0">
+                                <MaterialDesign:PackIcon x:Name="settings_icon_addDB" HorizontalAlignment="Center" Kind="DatabaseAdd" Foreground="White" />
+                            </StackPanel>
 
-                            <TextBlock FontSize="18" TextAlignment="Center" HorizontalAlignment="Center" Width="250" Height="20" Margin="0 9 0 0" Panel.ZIndex="3" FontFamily="Segoe UI Variable Text Semibold">
-                                Neue Datenbank erstellen
-                            </TextBlock>
+                            <StackPanel Grid.Column="1">
 
-                        </StackPanel>
+                                <TextBlock x:Name="settings_txt_bl_createNewDB" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Variable Text Semibold">
+                                    Datenbank Erstellen
+                                </TextBlock>
 
-                    </Grid>
+                            </StackPanel>
 
-                </Button>
+                        </Grid>
 
-                <Button x:Name="btnSelectDB" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Width="300" Height="40" Click="btnSelectDB_Click">
+                    </Button>
 
-                    <Grid Width="300" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center">
+                </StackPanel>
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                <StackPanel x:Name="settings_viewbox_selectDB" Grid.Row="1">
 
-                        <StackPanel Grid.Column="0">
-                            <MaterialDesign:PackIcon Kind="DatabaseTick" Height="40" Width="40" Panel.ZIndex="3" Margin="10 0 0 0" Foreground="White" />
-                        </StackPanel>
+                    <Button x:Name="btnSelectDB" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Click="btnSelectDB_Click">
 
-                        <StackPanel Grid.Column="1">
+                        <Grid x:Name="settings_grid_selectDB" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                            <TextBlock FontSize="18" TextAlignment="Center" HorizontalAlignment="Center" Width="250" Height="20" Margin="0 9 0 0" Panel.ZIndex="3" FontFamily="Segoe UI Variable Text Semibold">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition x:Name="settings_column_def_3_1"/>
+                                <ColumnDefinition x:Name="settings_column_def_3_2"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <MaterialDesign:PackIcon x:Name="settings_icon_selectDB" HorizontalAlignment="Center" Kind="DatabaseTick" Foreground="White" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+
+                                <TextBlock x:Name="settings_txt_bl_selectDB" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Variable Text Semibold">
                                 Datenbank wählen
-                            </TextBlock>
+                                </TextBlock>
 
-                        </StackPanel>
+                            </StackPanel>
 
-                    </Grid>
+                        </Grid>
 
-                </Button>
+                    </Button>
 
-                <Border Grid.Row="2" Width="300" Height="35" BorderBrush="White" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2" VerticalAlignment="Center" Margin="0 0 0 0">
+                </StackPanel>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="35"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                <StackPanel x:Name="settings_viewbox_TextBox" Grid.Row="2">
 
-                        <MaterialDesign:PackIcon HorizontalAlignment="Center" Grid.Column="0" Kind="DatabaseLocation" Height="30" Width="30" Panel.ZIndex="3" Margin="0 0 0 0" Foreground="White" />
-                        <TextBox Grid.Column="1" x:Name="textBoxSelectedDB" FontSize="12" IsEnabled="True" IsManipulationEnabled="True" Width="255" MaterialDesign:HintAssist.Hint="Ausgewählte Datenbank" Height="25" FontFamily="Segoe UI Variable Text Semibold" Foreground="White" Cursor="IBeam" IsReadOnly="True"/>
+                    <Border x:Name="settings_border" Grid.Row="2" BorderBrush="White" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2" VerticalAlignment="Center" Margin="0 0 0 0">
 
-                    </Grid>
+                        <Grid>
 
-                </Border>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition x:Name="settings_column_def_4_1"/>
+                                <ColumnDefinition x:Name="settings_column_def_4_2"/>
+                            </Grid.ColumnDefinitions>
+
+                            <MaterialDesign:PackIcon x:Name="settings_icon_DBLocation" HorizontalAlignment="Center" Grid.Column="0" Kind="DatabaseLocation" Foreground="White" />
+                            <TextBox Grid.Column="1" x:Name="textBoxSelectedDB" IsEnabled="True" IsManipulationEnabled="True" MaterialDesign:HintAssist.Hint="Ausgewählte Datenbank" FontFamily="Segoe UI Variable Text Semibold" Foreground="White" Cursor="IBeam" IsReadOnly="True"/>
+
+                        </Grid>
+
+                    </Border>
+
+                </StackPanel>
 
             </Grid>
-            
-            
-            
+
         </StackPanel>
+
     </Grid>
+
 </Window>

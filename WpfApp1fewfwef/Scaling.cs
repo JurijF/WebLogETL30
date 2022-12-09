@@ -19,8 +19,10 @@ namespace WpfApp1fewfwef
 {
     internal class Scaling
     {
-        public MainWindow main = null;
+        public MainWindow? main;
+        public Settings? settings;
 
+        #pragma warning disable CS8602
         public void SetSizes()
         {
             //Good Luck!
@@ -132,6 +134,8 @@ namespace WpfApp1fewfwef
             main.column_def_18_1.Width = new GridLength(20, GridUnitType.Star);
             main.column_def_18_2.Width = new GridLength(80, GridUnitType.Star);
 
+            //TODO: SCALE THIS SHIT I FORGOT
+            #region this shit
             main.btnExit.Width = 30;
             main.btnExit.Height = 30;
 
@@ -156,6 +160,7 @@ namespace WpfApp1fewfwef
             main.icon_min.Height = 30;
             main.btnMin.Margin = new Thickness(0, 10, 0, 0);
             main.icon_min.Margin = new Thickness(-17, -15, -14, -15);
+            #endregion
 
             main.Height = main.CurrentWindowHeight;
             main.border_1.Height = main.Height;
@@ -465,6 +470,93 @@ namespace WpfApp1fewfwef
             main.txtbox_Analysis.FontSize = main.panel_FourthAnalyse.Height * 0.07;
 
             main.test1.Text = "WebLog-ETL";
+        }
+        
+        public void SetSettingSizes()
+        {
+            settings.Width = settings.CurrentWindowWidth * 0.3;
+            settings.Height = settings.CurrentWindowHeight * 0.3;
+
+            settings.settings_row_def_1_1.Height = new GridLength(10, GridUnitType.Star);
+            settings.settings_row_def_1_2.Height = new GridLength(90, GridUnitType.Star);
+
+            settings.settings_column_def_1_1.Width = new GridLength(90, GridUnitType.Star);
+            settings.settings_column_def_1_2.Width = new GridLength(5, GridUnitType.Star);
+            settings.settings_column_def_1_3.Width = new GridLength(5, GridUnitType.Star);
+
+            settings.settings_txt_bl_Head.FontSize = settings.Height * 0.07;
+            settings.settings_txt_bl_Head.Margin = new Thickness(settings.Width * 0.1, 0, 0, 0);
+
+            settings.btnExit.Width = settings.Height * 0.07;
+            settings.btnExit.Height = settings.Height * 0.07;
+            settings.btnExit.Margin = new Thickness(0, settings.Height * 0.01, 0, 0);
+
+            settings.settings_icon_exit.Width = settings.Height * 0.07;
+            settings.settings_icon_exit.Height = settings.Height * 0.07;
+            settings.settings_icon_exit.Margin = new Thickness(-(settings.Height * 0.045), -(settings.Height * 0.03), -(settings.Height * 0.045), -(settings.Height * 0.03));
+
+            settings.btnMin.Width = settings.Height * 0.07;
+            settings.btnMin.Height = settings.Height * 0.07;
+            settings.btnMin.Margin = new Thickness(0, settings.Height * 0.01, 0, 0);
+
+            settings.settings_icon_min.Width = settings.Height * 0.07;
+            settings.settings_icon_min.Height = settings.Height * 0.07;
+            settings.settings_icon_min.Margin = new Thickness(-(settings.Height * 0.047), -(settings.Height * 0.03), -(settings.Height * 0.047), -(settings.Height * 0.03));
+
+            settings.settings_panel.Height = settings.Height * 0.85;
+            settings.settings_row_def_2_1.Height = new GridLength(33.33, GridUnitType.Star);
+            settings.settings_row_def_2_2.Height = new GridLength(33.33, GridUnitType.Star);
+            settings.settings_row_def_2_3.Height = new GridLength(33.33, GridUnitType.Star);
+
+            settings.settings_viewbox_createDB.Height = settings.settings_panel.Height * 0.33;
+            settings.settings_viewbox_selectDB.Height = settings.settings_panel.Height * 0.33;
+            settings.settings_viewbox_TextBox.Height = settings.settings_panel.Height * 0.33;
+
+            settings.btnCreateDB.Width = settings.Width * 0.7;
+            settings.btnCreateDB.Height = settings.settings_panel.Height * 0.2;
+            settings.btnCreateDB.Margin = new Thickness(0, settings.settings_panel.Height * 0.05, 0, 0);
+            settings.settings_grid_createDB.Width = settings.btnCreateDB.Width;
+            settings.settings_grid_createDB.Height = settings.btnCreateDB.Height;
+
+            settings.settings_column_def_2_1.Width = new GridLength(17, GridUnitType.Star);
+            settings.settings_column_def_2_2.Width = new GridLength(83, GridUnitType.Star);
+
+            settings.settings_icon_addDB.Height = settings.btnCreateDB.Height;
+            settings.settings_icon_addDB.Width = settings.btnCreateDB.Height;
+
+            settings.settings_txt_bl_createNewDB.Height = settings.btnCreateDB.Height * 0.6;
+            settings.settings_txt_bl_createNewDB.Width = settings.btnCreateDB.Width * 0.8;
+            settings.settings_txt_bl_createNewDB.Margin = new Thickness(0, settings.btnCreateDB.Height * 0.16, 0, 0);
+            settings.settings_txt_bl_createNewDB.FontSize = settings.btnCreateDB.Height * 0.5;
+
+            settings.btnSelectDB.Width = settings.Width * 0.7;
+            settings.btnSelectDB.Height = settings.settings_panel.Height * 0.2;
+            settings.settings_grid_selectDB.Width = settings.btnSelectDB.Width;
+            settings.settings_grid_selectDB.Height = settings.btnSelectDB.Height;
+
+            settings.settings_column_def_3_1.Width = new GridLength(17, GridUnitType.Star);
+            settings.settings_column_def_3_2.Width = new GridLength(83, GridUnitType.Star);
+
+            settings.settings_icon_selectDB.Height = settings.btnSelectDB.Height;
+            settings.settings_icon_selectDB.Width = settings.btnSelectDB.Height;
+
+            settings.settings_txt_bl_selectDB.Height = settings.btnSelectDB.Height * 0.6;
+            settings.settings_txt_bl_selectDB.Width = settings.btnSelectDB.Width * 0.8;
+            settings.settings_txt_bl_selectDB.Margin = new Thickness(0, settings.btnSelectDB.Height * 0.16, 0, 0);
+            settings.settings_txt_bl_selectDB.FontSize = settings.btnSelectDB.Height * 0.5;
+
+            settings.settings_border.Height = settings.settings_panel.Height * 0.2;
+            settings.settings_border.Width = settings.Width * 0.7;
+
+            settings.settings_column_def_4_1.Width = new GridLength(17, GridUnitType.Star);
+            settings.settings_column_def_4_2.Width = new GridLength(83, GridUnitType.Star);
+
+            settings.settings_icon_DBLocation.Height = settings.settings_border.Height * 0.95;
+            settings.settings_icon_DBLocation.Width = settings.settings_border.Height * 0.95;
+
+            settings.textBoxSelectedDB.Height = settings.settings_border.Height * 0.90;
+            settings.textBoxSelectedDB.Width = settings.settings_border.Width * 0.8;
+            settings.textBoxSelectedDB.FontSize = settings.settings_border.Height * 0.5;
         }
     }
 }
