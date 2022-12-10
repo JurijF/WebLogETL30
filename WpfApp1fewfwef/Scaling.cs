@@ -505,17 +505,19 @@ namespace WpfApp1fewfwef
             settings.settings_icon_min.Margin = new Thickness(-(settings.Height * 0.047), -(settings.Height * 0.03), -(settings.Height * 0.047), -(settings.Height * 0.03));
 
             settings.settings_panel.Height = settings.Height * 0.85;
-            settings.settings_row_def_2_1.Height = new GridLength(33.33, GridUnitType.Star);
-            settings.settings_row_def_2_2.Height = new GridLength(33.33, GridUnitType.Star);
-            settings.settings_row_def_2_3.Height = new GridLength(33.33, GridUnitType.Star);
+            settings.settings_row_def_2_1.Height = new GridLength(27, GridUnitType.Star);
+            settings.settings_row_def_2_2.Height = new GridLength(27, GridUnitType.Star);
+            settings.settings_row_def_2_3.Height = new GridLength(27, GridUnitType.Star);
+            settings.settings_row_def_2_4.Height = new GridLength(19, GridUnitType.Star);
 
-            settings.settings_viewbox_createDB.Height = settings.settings_panel.Height * 0.33;
-            settings.settings_viewbox_selectDB.Height = settings.settings_panel.Height * 0.33;
-            settings.settings_viewbox_TextBox.Height = settings.settings_panel.Height * 0.33;
+            settings.settings_viewbox_createDB.Height = settings.settings_panel.Height * 0.27;
+            settings.settings_viewbox_selectDB.Height = settings.settings_panel.Height * 0.27;
+            settings.settings_viewbox_TextBox.Height = settings.settings_panel.Height * 0.27;
+            settings.settings_viewbox_apply.Height = settings.settings_panel.Height * 0.19;
 
             settings.btnCreateDB.Width = settings.Width * 0.7;
             settings.btnCreateDB.Height = settings.settings_panel.Height * 0.2;
-            settings.btnCreateDB.Margin = new Thickness(0, settings.settings_panel.Height * 0.05, 0, 0);
+            settings.btnCreateDB.Margin = new Thickness(0, settings.settings_panel.Height * 0.03, 0, 0);
             settings.settings_grid_createDB.Width = settings.btnCreateDB.Width;
             settings.settings_grid_createDB.Height = settings.btnCreateDB.Height;
 
@@ -558,6 +560,45 @@ namespace WpfApp1fewfwef
             settings.textBoxSelectedDB.Height = settings.settings_border.Height * 0.90;
             settings.textBoxSelectedDB.Width = settings.settings_border.Width * 0.8;
             settings.textBoxSelectedDB.FontSize = settings.settings_border.Height * 0.5;
+
+            settings.settings_grid_apply_cancel.Width = settings.Width * 0.8;
+
+            settings.settings_column_def_5_1.Width = new GridLength(50, GridUnitType.Star);
+            settings.settings_column_def_5_2.Width = new GridLength(50, GridUnitType.Star);
+
+            settings.settings_btn_apply.Width = settings.Width * 0.2;
+            settings.settings_btn_apply.Height = settings.settings_panel.Height * 0.1;
+            settings.settings_btn_apply.Margin = new Thickness(0, 0, settings.settings_btn_apply.Width * 0.075, settings.settings_btn_apply.Height * 0.1);
+            settings.settings_grid_apply.Width = settings.settings_btn_apply.Width;
+            settings.settings_grid_apply.Height = settings.settings_btn_apply.Height;
+
+            settings.settings_column_def_6_1.Width = new GridLength(45, GridUnitType.Star);
+            settings.settings_column_def_6_2.Width = new GridLength(55, GridUnitType.Star);
+
+            settings.settings_icon_apply.Height = settings.settings_btn_apply.Height;
+            settings.settings_icon_apply.Width = settings.settings_btn_apply.Height;
+
+            settings.settings_txt_bl_apply.Height = settings.settings_btn_apply.Height * 0.6;
+            settings.settings_txt_bl_apply.Width = settings.settings_btn_apply.Width * 0.35;
+            settings.settings_txt_bl_apply.Margin = new Thickness(0, settings.settings_btn_apply.Height * 0.16, 0, 0);
+            settings.settings_txt_bl_apply.FontSize = settings.settings_btn_apply.Height * 0.5;
+
+            settings.settings_btn_cancel.Width = settings.Width * 0.2;
+            settings.settings_btn_cancel.Height = settings.settings_panel.Height * 0.1;
+            settings.settings_btn_cancel.Margin = new Thickness(settings.settings_btn_apply.Width * 0.075, 0, 0, settings.settings_btn_cancel.Height * 0.1);
+            settings.settings_grid_cancel.Width = settings.settings_btn_apply.Width;
+            settings.settings_grid_cancel.Height = settings.settings_btn_cancel.Height;
+
+            settings.settings_column_def_7_1.Width = new GridLength(45, GridUnitType.Star);
+            settings.settings_column_def_7_2.Width = new GridLength(55, GridUnitType.Star);
+
+            settings.settings_icon_cancel.Height = settings.settings_btn_cancel.Height;
+            settings.settings_icon_cancel.Width = settings.settings_btn_cancel.Height;
+
+            settings.settings_txt_bl_cancel.Height = settings.settings_btn_cancel.Height * 0.6;
+            settings.settings_txt_bl_cancel.Width = settings.settings_btn_cancel.Width * 0.35;
+            settings.settings_txt_bl_cancel.Margin = new Thickness(0, settings.settings_btn_cancel.Height * 0.16, 0, 0);
+            settings.settings_txt_bl_cancel.FontSize = settings.settings_btn_cancel.Height * 0.5;
         }
 
         public void SetImportSizes()

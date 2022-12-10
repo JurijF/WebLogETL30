@@ -60,6 +60,7 @@
                     <RowDefinition x:Name="settings_row_def_2_1"/>
                     <RowDefinition x:Name="settings_row_def_2_2"/>
                     <RowDefinition x:Name="settings_row_def_2_3"/>
+                    <RowDefinition x:Name="settings_row_def_2_4"/>
                 </Grid.RowDefinitions>
 
                 <StackPanel x:Name="settings_viewbox_createDB" Grid.Row="0">
@@ -146,6 +147,73 @@
                     </Border>
 
                 </StackPanel>
+
+                <Grid Grid.Row="3" x:Name="settings_grid_apply_cancel">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition x:Name="settings_column_def_5_1"/>
+                        <ColumnDefinition x:Name="settings_column_def_5_2"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Right" x:Name="settings_viewbox_apply" >
+
+                        <Button x:Name="settings_btn_apply" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White">
+
+                            <Grid x:Name="settings_grid_apply" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition x:Name="settings_column_def_6_1"/>
+                                    <ColumnDefinition x:Name="settings_column_def_6_2"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0">
+                                    <MaterialDesign:PackIcon x:Name="settings_icon_apply" HorizontalAlignment="Center" Kind="Check" Foreground="White" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="1">
+
+                                    <TextBlock x:Name="settings_txt_bl_apply" TextAlignment="Left" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Segoe UI Variable Text Semibold">
+                                        Okay
+                                    </TextBlock>
+
+                                </StackPanel>
+
+                            </Grid>
+
+                        </Button>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Left" x:Name="settings_viewbox_cancel" >
+
+                        <Button x:Name="settings_btn_cancel" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White">
+
+                            <Grid x:Name="settings_grid_cancel" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition x:Name="settings_column_def_7_1"/>
+                                    <ColumnDefinition x:Name="settings_column_def_7_2"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0">
+                                    <MaterialDesign:PackIcon x:Name="settings_icon_cancel" HorizontalAlignment="Center" Kind="CancelBox" Foreground="White" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="1">
+
+                                    <TextBlock x:Name="settings_txt_bl_cancel" TextAlignment="Left" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Segoe UI Variable Text Semibold">
+                                        Cancel
+                                    </TextBlock>
+
+                                </StackPanel>
+
+                            </Grid>
+
+                        </Button>
+
+                    </StackPanel>
+
+                </Grid>
 
             </Grid>
 
