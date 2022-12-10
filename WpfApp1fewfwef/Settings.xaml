@@ -11,7 +11,8 @@
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
         Height="{Binding}" 
-        Width="{Binding}" MouseDown="Window_MouseDown"
+        Width="{Binding}" 
+        MouseDown="Window_MouseDown"
         BorderBrush="#490ba1"
         BorderThickness="1"
         Background="#1a1a1a"
@@ -102,7 +103,14 @@
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Grid.Column="0">
-                                <MaterialDesign:PackIcon x:Name="settings_icon_selectDB" HorizontalAlignment="Center" Kind="DatabaseTick" Foreground="White" />
+                                
+                                <MaterialDesign:PackIcon 
+                                    x:Name="settings_icon_selectDB" 
+                                    HorizontalAlignment="Center" 
+                                    Kind="DatabaseTick" 
+                                    Foreground="White" 
+                                />
+                            
                             </StackPanel>
 
                             <StackPanel Grid.Column="1">

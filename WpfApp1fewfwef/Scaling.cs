@@ -21,6 +21,7 @@ namespace WpfApp1fewfwef
     {
         public MainWindow? main;
         public Settings? settings;
+        public Import? import;
 
         #pragma warning disable CS8602
         public void SetSizes()
@@ -557,6 +558,98 @@ namespace WpfApp1fewfwef
             settings.textBoxSelectedDB.Height = settings.settings_border.Height * 0.90;
             settings.textBoxSelectedDB.Width = settings.settings_border.Width * 0.8;
             settings.textBoxSelectedDB.FontSize = settings.settings_border.Height * 0.5;
+        }
+
+        public void SetImportSizes()
+        {
+            import.Width = import.CurrentWindowWidth * 0.7;
+            import.Height = import.CurrentWindowHeight * 0.7;
+
+            import.import_row_def_1_1.Height = new GridLength(5, GridUnitType .Star);
+            import.import_row_def_1_2.Height = new GridLength(5, GridUnitType.Star);
+            import.import_row_def_1_3.Height = new GridLength(90, GridUnitType.Star);
+
+            import.import_column_def_1_1.Width = new GridLength(90, GridUnitType.Star);
+            import.import_column_def_1_2.Width = new GridLength(3, GridUnitType.Star);
+            import.import_column_def_1_3.Width = new GridLength(3, GridUnitType.Star);
+
+            import.import_txt_bl_Head.Height = import.Height * 0.0425;
+            import.import_txt_bl_Head.FontSize = import.Height * 0.0325;
+            import.import_txt_bl_Head.Margin = new Thickness(import.Width * 0.08, 0, 0, import.Height * 0.0425);
+
+            import.import_btn_exit.Width = import.Height * 0.04;
+            import.import_btn_exit.Height = import.Height * 0.04;
+            import.import_btn_exit.Margin = new Thickness(0, 0, 0, import.Height * 0.0375);
+
+            import.import_icon_exit.Width = import.Height * 0.04;
+            import.import_icon_exit.Height = import.Height * 0.04;
+            import.import_icon_exit.Margin = new Thickness(-(import.Height * 0.02), -(import.Height * 0.02), -(import.Height * 0.02), -(import.Height * 0.02));
+
+            import.import_btn_min.Width = import.Height * 0.04;
+            import.import_btn_min.Height = import.Height * 0.04;
+            import.import_btn_min.Margin = new Thickness(0, 0, 0, import.Height * 0.0375);
+
+            import.import_icon_min.Width = import.Height * 0.04;
+            import.import_icon_min.Height = import.Height * 0.04;
+            import.import_icon_min.Margin = new Thickness(-(import.Height * 0.02), -(import.Height * 0.02), -(import.Height * 0.02), -(import.Height * 0.02));
+
+            import.import_panel_row_1.Height = import.Height * 0.05;
+            import.import_panel_row_1.Width = import.Width * 0.98;
+
+            import.import_column_def_2_1.Width = new GridLength(70, GridUnitType.Star);
+            import.import_column_def_2_2.Width = new GridLength(15, GridUnitType.Star);
+            import.import_column_def_2_3.Width = new GridLength(15, GridUnitType.Star);
+
+            import.import_panel_column_0.Width = import.Width * 0.7;
+
+            import.import_viewbox_startImport.Height = import.import_panel_row_1.Height;
+            import.import_viewbox_startImport.Width = import.import_panel_row_1.Width * 0.17;
+            import.import_viewbox_openFile.Height = import.import_panel_row_1.Height;
+            import.import_viewbox_openFile.Width = import.import_panel_row_1.Width * 0.17;
+
+            import.import_btn_startImport.Width = import.Width * 0.13;
+            import.import_btn_startImport.Height = import.import_panel_row_1.Height * 0.7;
+            import.import_btn_startImport.Margin = new Thickness(0, import.import_panel_row_1.Height * 0.175, 0, 0);
+            import.import_grid_startImport.Width = import.import_btn_startImport.Width;
+            import.import_grid_startImport.Height = import.import_btn_startImport.Height;
+
+            import.import_column_def_3_1.Width = new GridLength(28, GridUnitType.Star);
+            import.import_column_def_3_2.Width = new GridLength(72, GridUnitType.Star);
+
+            import.import_icon_startImport.Height = import.import_btn_startImport.Height;
+            import.import_icon_startImport.Width = import.import_btn_startImport.Height;
+
+            import.import_txt_bl_startImport.Height = import.import_btn_startImport.Height * 0.6;
+            import.import_txt_bl_startImport.Width = import.import_btn_startImport.Width * 0.8;
+            import.import_txt_bl_startImport.Margin = new Thickness(0, import.import_btn_startImport.Height * 0.16, 0, 0);
+            import.import_txt_bl_startImport.FontSize = import.import_btn_startImport.Height * 0.5;
+
+            import.import_btn_openFile.Width = import.Width * 0.13;
+            import.import_btn_openFile.Height = import.import_panel_row_1.Height * 0.7;
+            import.import_btn_openFile.Margin = new Thickness(0, import.import_panel_row_1.Height * 0.175, 0, 0);
+            import.import_grid_openFile.Width = import.import_btn_openFile.Width;
+            import.import_grid_openFile.Height = import.import_btn_openFile.Height;
+
+            import.import_column_def_4_1.Width = new GridLength(28, GridUnitType.Star);
+            import.import_column_def_4_2.Width = new GridLength(72, GridUnitType.Star);
+
+            import.import_icon_openFile.Height = import.import_btn_openFile.Height;
+            import.import_icon_openFile.Width = import.import_btn_openFile.Height;
+
+            import.import_txt_bl_openFile.Height = import.import_btn_openFile.Height * 0.6;
+            import.import_txt_bl_openFile.Width = import.import_btn_openFile.Width * 0.8;
+            import.import_txt_bl_openFile.Margin = new Thickness(0, import.import_btn_openFile.Height * 0.16, 0, 0);
+            import.import_txt_bl_openFile.FontSize = import.import_btn_openFile.Height * 0.5;
+
+            import.import_border.Height = import.Height * 0.88;
+            import.import_border.Width = import.Width * 0.98;
+
+            import.import_datagrid_ip.Width = (import.import_border.Width - 5) / 6;
+            import.import_datagrid_dt_event.Width = (import.import_border.Width - 5) / 6;
+            import.import_datagrid_event.Width = (import.import_border.Width - 5) / 6;
+            import.import_datagrid_status.Width = (import.import_border.Width - 5) / 6;
+            import.import_datagrid_typ.Width = (import.import_border.Width - 5) / 6;
+            import.import_datagrid_number.Width = (import.import_border.Width - 5) / 6;
         }
     }
 }
