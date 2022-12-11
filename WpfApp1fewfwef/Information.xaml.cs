@@ -21,7 +21,7 @@ namespace WpfApp1fewfwef
     {
         public int CurrentWindowWidth = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenWidth * 0.8));
         public int CurrentWindowHeight = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenHeight * 0.8));
-        Scaling scaling = new();
+        Scaling scaling = new Scaling();
 
         public Information()
         {

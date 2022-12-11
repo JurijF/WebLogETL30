@@ -14,7 +14,7 @@ namespace WpfApp1fewfwef
     {
         private bool mRestoreIfMove = false;
         private readonly Binding binding = new Binding();
-        Scaling scaling = new();
+        Scaling scaling = new Scaling();
         
         public int CurrentWindowWidth = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenWidth * 0.8));
         public int CurrentWindowHeight = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenHeight * 0.8));
@@ -153,7 +153,7 @@ namespace WpfApp1fewfwef
 
         private void btn_main_Import_Click(object sender, EventArgs e)
         {
-            Import import = new();
+            Import import = new Import();
             import.Owner = this;
             import.Show();
         }
