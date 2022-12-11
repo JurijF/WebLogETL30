@@ -22,6 +22,7 @@ namespace WpfApp1fewfwef
         public MainWindow? main;
         public Settings? settings;
         public Import? import;
+        public Information? information;
 
         #pragma warning disable CS8602
         public void SetSizes()
@@ -182,9 +183,9 @@ namespace WpfApp1fewfwef
             main.panel_1.Height = main.border_3.Height;
             main.panel_5.Height = main.Height * 0.99711;
 
-            main.row_def_3_1.Height = new GridLength(4.457, GridUnitType.Star);
-            main.row_def_3_2.Height = new GridLength(69.979, GridUnitType.Star);
-            main.row_def_3_2.Height = new GridLength(25.564, GridUnitType.Star);
+            main.row_def_3_1.Height = new GridLength(10, GridUnitType.Star);
+            main.row_def_3_2.Height = new GridLength(68, GridUnitType.Star);
+            main.row_def_3_2.Height = new GridLength(22, GridUnitType.Star);
 
             main.border_6.Height = main.Height * 0.6666;
 
@@ -691,6 +692,45 @@ namespace WpfApp1fewfwef
             import.import_datagrid_status.Width = (import.import_border.Width - 5) / 6;
             import.import_datagrid_typ.Width = (import.import_border.Width - 5) / 6;
             import.import_datagrid_number.Width = (import.import_border.Width - 5) / 6;
+        }
+
+        public void SetInformationSizes()
+        {
+            information.Width = information.CurrentWindowWidth * 0.5;
+            information.Height = information.CurrentWindowHeight * 0.6;
+
+            information.information_column_def_1_1.Width = new GridLength(30, GridUnitType.Star);
+            information.information_column_def_1_2.Width = new GridLength(70, GridUnitType.Star);
+
+            information.information_row_def_1_1.Height = new GridLength(10, GridUnitType.Star);
+            information.information_row_def_1_2.Height = new GridLength(90, GridUnitType.Star);
+
+            //information.information_panel_header.Height = information.Height * 0.04;
+            //information.information_panel_header.Margin = new Thickness(0, -0.5, 0, 0);
+
+            information.information_column_def_2_1.Width = new GridLength(90, GridUnitType.Star);
+            information.information_column_def_2_2.Width = new GridLength(5, GridUnitType.Star);
+            information.information_column_def_2_3.Width = new GridLength(5, GridUnitType.Star);
+
+            information.information_txt_bl_Head.Height = information.Height * 0.0425;
+            information.information_txt_bl_Head.FontSize = information.Height * 0.0325;
+            information.information_txt_bl_Head.Margin = new Thickness(information.Width * 0.08, 0, 0, information.Height * 0.0425);
+
+            information.information_btn_exit.Width = information.Height * 0.04;
+            information.information_btn_exit.Height = information.Height * 0.04;
+            information.information_btn_exit.Margin = new Thickness(0, 0, 0, information.Height * 0.0375);
+
+            information.information_icon_exit.Width = information.Height * 0.04;
+            information.information_icon_exit.Height = information.Height * 0.04;
+            information.information_icon_exit.Margin = new Thickness(-(information.Height * 0.0225), -(information.Height * 0.0225), -(information.Height * 0.0225), -(information.Height * 0.0225));
+
+            information.information_btn_min.Width = information.Height * 0.04;
+            information.information_btn_min.Height = information.Height * 0.04;
+            information.information_btn_min.Margin = new Thickness(0, 0, 0, information.Height * 0.0375);
+
+            information.information_icon_min.Width = information.Height * 0.04;
+            information.information_icon_min.Height = information.Height * 0.04;
+            information.information_icon_min.Margin = new Thickness(-(information.Height * 0.0225), -(information.Height * 0.0225), -(information.Height * 0.0225), -(information.Height * 0.0225));
         }
     }
 }

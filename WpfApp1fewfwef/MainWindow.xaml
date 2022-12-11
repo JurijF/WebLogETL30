@@ -723,7 +723,7 @@
 
                             <Border x:Name="border_8" BorderBrush="#490ba1" CornerRadius="6 6 6 6" BorderThickness="2,2,2,2" Margin="0 9 0 0" Width="{Binding}" Height="20" >
 
-                                <Button x:Name="btn_import" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Width="{Binding}" Height="20">
+                                <Button x:Name="btn_import" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Click="btn_main_Import_Click" Background="#490ba1" Foreground="White" Width="{Binding}" Height="20">
 
                                     <Grid x:Name="grid_1" Width="{Binding}" Height="20" VerticalAlignment="Center">
 

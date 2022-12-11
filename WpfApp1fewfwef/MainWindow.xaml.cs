@@ -153,10 +153,10 @@ namespace WpfApp1fewfwef
 
         private void btn_main_Import_Click(object sender, EventArgs e)
         {
-            //ImportForm importForm = new ImportForm();
-            //importForm.Show();
+            Import import = new();
+            import.Owner = this;
+            import.Show();
         }
-
 
         private void btn_main_Load_Click(object sender, EventArgs e)
         {

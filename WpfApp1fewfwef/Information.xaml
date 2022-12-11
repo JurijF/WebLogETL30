@@ -1,0 +1,74 @@
+﻿<Window x:Class="WpfApp1fewfwef.Information"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"        
+        xmlns:local="clr-namespace:WpfApp1fewfwef"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Height="{Binding}" 
+        Width="{Binding}" 
+        BorderBrush="#490ba1"
+        BorderThickness="1"
+        Background="#1a1a1a">
+    
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="information_column_def_1_1"/>
+            <ColumnDefinition x:Name="information_column_def_1_2"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Background="#0d011f">
+
+            <StackPanel.Effect>
+                <DropShadowEffect BlurRadius="7" Color="Black" ShadowDepth="4" Direction="360" />
+            </StackPanel.Effect>
+
+        </StackPanel>
+
+        <Grid Grid.Column="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="information_row_def_1_1"/>
+                <RowDefinition x:Name="information_row_def_1_2"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel x:Name="information_panel_header" Grid.Row="0" Background="#FF111111">
+
+                <StackPanel.Effect>
+                    <DropShadowEffect BlurRadius="7" Color="Black" ShadowDepth="4" Direction="270"/>
+                </StackPanel.Effect>
+
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition x:Name="information_column_def_2_1"/>
+                        <ColumnDefinition x:Name="information_column_def_2_2"/>
+                        <ColumnDefinition x:Name="information_column_def_2_3"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" x:Name="information_txt_bl_Head" Text="Informationen" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Segoe UI Variable Text Semibold"/>
+
+                    <Button Grid.Column="2" x:Name="information_btn_exit" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}">
+                        <MaterialDesign:PackIcon x:Name="information_icon_exit" Kind="Close"/>
+                    </Button>
+
+                    <Button Grid.Column="1" x:Name="information_btn_min" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource MaterialDesignFlatButton}">
+                        <MaterialDesign:PackIcon x:Name="information_icon_min" Kind="WindowMinimize"/>
+                    </Button>
+
+                </Grid>
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Height="100" Margin="0 10 0 0"></StackPanel>
+        
+        </Grid>
+        
+    </Grid>
+
+</Window>
