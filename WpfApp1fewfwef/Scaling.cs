@@ -555,8 +555,8 @@ namespace WpfApp1fewfwef
             settings.settings_column_def_4_1.Width = new GridLength(17, GridUnitType.Star);
             settings.settings_column_def_4_2.Width = new GridLength(83, GridUnitType.Star);
 
-            settings.settings_icon_DBLocation.Height = settings.settings_border.Height * 0.95;
-            settings.settings_icon_DBLocation.Width = settings.settings_border.Height * 0.95;
+            //settings.settings_icon_DBLocation.Height = settings.settings_border.Height * 0.95;
+            //settings.settings_icon_DBLocation.Width = settings.settings_border.Height * 0.95;
 
             settings.textBoxSelectedDB.Height = settings.settings_border.Height * 0.90;
             settings.textBoxSelectedDB.Width = settings.settings_border.Width * 0.8;
@@ -593,8 +593,8 @@ namespace WpfApp1fewfwef
             settings.settings_column_def_7_1.Width = new GridLength(45, GridUnitType.Star);
             settings.settings_column_def_7_2.Width = new GridLength(55, GridUnitType.Star);
 
-            settings.settings_icon_cancel.Height = settings.settings_btn_cancel.Height;
-            settings.settings_icon_cancel.Width = settings.settings_btn_cancel.Height;
+            //settings.settings_icon_cancel.Height = settings.settings_btn_cancel.Height;
+            //settings.settings_icon_cancel.Width = settings.settings_btn_cancel.Height;
 
             settings.settings_txt_bl_cancel.Height = settings.settings_btn_cancel.Height * 0.6;
             settings.settings_txt_bl_cancel.Width = settings.settings_btn_cancel.Width * 0.35;

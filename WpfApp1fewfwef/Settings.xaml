@@ -139,7 +139,7 @@
                                 <ColumnDefinition x:Name="settings_column_def_4_2"/>
                             </Grid.ColumnDefinitions>
 
-                            <MaterialDesign:PackIcon x:Name="settings_icon_DBLocation" HorizontalAlignment="Center" Grid.Column="0" Kind="DatabaseLocation" Foreground="White" />
+                            <!--<MaterialDesign:PackIcon x:Name="settings_icon_DBLocation" HorizontalAlignment="Center" Grid.Column="0" Kind="DatabaseLocation" Foreground="White" />-->
                             <TextBox Grid.Column="1" x:Name="textBoxSelectedDB" IsEnabled="True" IsManipulationEnabled="True" MaterialDesign:HintAssist.Hint="Ausgewählte Datenbank" FontFamily="Segoe UI Variable Text Semibold" Foreground="White" Cursor="IBeam" IsReadOnly="True"/>
 
                         </Grid>
@@ -195,9 +195,9 @@
                                     <ColumnDefinition x:Name="settings_column_def_7_2"/>
                                 </Grid.ColumnDefinitions>
 
-                                <StackPanel Grid.Column="0">
+                                <!--<StackPanel Grid.Column="0">
                                     <MaterialDesign:PackIcon x:Name="settings_icon_cancel" HorizontalAlignment="Center" Kind="CancelBox" Foreground="White" />
-                                </StackPanel>
+                                </StackPanel>-->
 
                                 <StackPanel Grid.Column="1">
 

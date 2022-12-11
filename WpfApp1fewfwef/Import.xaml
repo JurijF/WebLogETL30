@@ -96,7 +96,7 @@
 
                 <StackPanel x:Name="import_viewbox_openFile" Grid.Column="2">
 
-                    <Button x:Name="import_btn_openFile" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White">
+                    <Button x:Name="import_btn_openFile" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Click="btn_import_Load_Click">
 
                         <Grid x:Name="import_grid_openFile" HorizontalAlignment="Center" VerticalAlignment="Center">
 
