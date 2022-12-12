@@ -116,7 +116,6 @@ namespace WpfApp1fewfwef
         {
             Settings settings = new Settings();
             settings.Owner = this;
-            //scaling.SetSettingSizes();
             settings.Show();
         }
 
@@ -131,8 +130,6 @@ namespace WpfApp1fewfwef
         }
         private void ExecuteQuery(string query)
         {
-            //binding.Source=DBHandler.ExecuteQuery(query);
-            //DataGrid.DataContext = binding;
             DataGrid.DataContext = DBHandler.ExecuteQuery(query);
         }
 
@@ -145,12 +142,8 @@ namespace WpfApp1fewfwef
             }
             else if (dTPicker_main_DateFrom.SelectedDate != null || dTPicker_main_TimeFrom.SelectedTime != null || dTPicker_main_DateUntil.SelectedDate != null || dTPicker_main_TimeUntil != null)
             {
-                MessageBox.Show("Zeitfilter sind nicht aktiv, um diese zu aktivieren setzten Sie bitte alle Felder.");
+                //MessageBox.Show("Zeitfilter sind nicht aktiv, um diese zu aktivieren setzten Sie bitte alle Felder.");
             }
-            //if (ckbx_Timestamp.IsChecked.Value)
-            //{
-            //    whereS = " WHERE DT_EVENT > '" +dTPicker_main_DateFrom.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + dTPicker_main_TimeFrom.SelectedTime.Value.ToString("HH:mm:ss") + "' AND DT_EVENT < '" + dTPicker_main_DateUntil.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + dTPicker_main_TimeUntil.SelectedTime.Value.ToString("HH:mm:ss") + "'";
-            //}
 
             if (txt_bl_IP_In.Text != "")
             {
@@ -229,12 +222,11 @@ namespace WpfApp1fewfwef
         {
             string whereS = GetDateTAndIpSelection();
             
-            if (txt_bl_ErrorCode.Text != "")
+            if (txtbox_Analysis.Text != "")
             {
-                if (whereS == "") { whereS = " WHERE Status IN (" + "'" + txt_bl_ErrorCode.Text.Replace(",", "','") + "')"; }
-                else { whereS += " AND Status IN (" + "'" + txt_bl_ErrorCode.Text.Replace(",", "','") + "')"; }
+                if (whereS == "") { whereS = " WHERE Status IN (" + "'" + txtbox_Analysis.Text.Replace(",", "','") + "')"; }
+                else { whereS += " AND Status IN (" + "'" + txtbox_Analysis.Text.Replace(",", "','") + "')"; }
             }
-
             ExecuteQuery("SELECT Status as Error, COUNT(*) as Anzahl FROM Logs " + whereS + " GROUP BY Status");
         }
 

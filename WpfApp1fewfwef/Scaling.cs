@@ -71,7 +71,7 @@ namespace WpfApp1fewfwef
             main.border_6.Width = (main.border_1.Width / 100 * main.column_def_1_1.Width.Value) * 0.8;
             main.panel_2.Width = main.border_6.Width;
             main.test.Width = main.panel_2.Width * 0.9;
-            main.combo_Analysis.Width = main.panel_2.Width * 0.7;
+            //main.combo_Analysis.Width = main.panel_2.Width * 0.7;
             main.panel_FirstAnalyse.Width = main.border_6.Width;
 
             main.column_def_5_1.Width = new GridLength(30, GridUnitType.Star);
@@ -462,8 +462,8 @@ namespace WpfApp1fewfwef
             main.txt_bl_HEAD.Margin = new Thickness(main.Width * 0.01, 0, 0, 0);
 
             main.txt_bl_ErrorCode.FontSize = main.Height * 0.025;
-            main.combo_Analysis.FontSize = main.Height * 0.02;
-            main.combo_Analysis.Height = main.Height * 0.04;
+            //main.combo_Analysis.FontSize = main.Height * 0.02;
+            //main.combo_Analysis.Height = main.Height * 0.04;
 
             main.icon_error.Width = main.panel_FourthAnalyse.Height * 0.15;
             main.icon_error.Height = main.panel_FourthAnalyse.Height * 0.15;

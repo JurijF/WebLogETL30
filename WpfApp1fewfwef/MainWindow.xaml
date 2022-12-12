@@ -660,8 +660,8 @@
                                     </Grid.RowDefinitions>
 
                                     <TextBlock x:Name="txt_bl_ErrorCode" Grid.Row="0" Text="Error Code" Margin="0 0 0 0" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Segoe UI Variable Text Semibold"/>
-                                    <ComboBox Grid.Row="1" Foreground="White" x:Name="combo_Analysis" Height="20" Width="180" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Segoe UI Variable Text Semibold"/>
-                                    <Separator Grid.Row="2"/>
+                                    <!--<ComboBox Grid.Row="1" Foreground="White" x:Name="combo_Analysis" Height="20" Width="180" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Segoe UI Variable Text Semibold"/>-->
+                                    <!--<Separator Grid.Row="2"/>-->
                                     <Grid Grid.Row="3">
 
                                         <Grid.ColumnDefinitions>
@@ -670,7 +670,7 @@
                                         </Grid.ColumnDefinitions>
 
                                         <MaterialDesign:PackIcon x:Name="icon_error" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Kind="Error" Height="23" Width="20" Panel.ZIndex="3" Margin="0 0 0 0" Foreground="White" />
-                                        <TextBox HorizontalAlignment="Left" Grid.Column="1" Name="txtbox_Analysis" FontSize="8" IsEnabled="True" IsManipulationEnabled="True" Width="160" MaterialDesign:HintAssist.Hint="Selected Error Codes" Height="20" FontFamily="Segoe UI Variable Text Semibold" Foreground="White"/>
+                                        <TextBox HorizontalAlignment="Left" Grid.Column="1" Name="txtbox_Analysis" FontSize="8" IsEnabled="True" IsManipulationEnabled="True" Width="160" MaterialDesign:HintAssist.Hint="Selected Error Codes" Height="20" FontFamily="Segoe UI Variable Text Semibold" Foreground="Black"/>
 
                                     </Grid>
 
