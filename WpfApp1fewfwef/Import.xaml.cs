@@ -58,7 +58,7 @@ namespace WpfApp1fewfwef
                 }
             }
             DBHandler.NonQuery(Insert.Remove(Insert.Length - 1, 1) + ";");
-            DBHandler.NonQuery("INSERT INTO ImportedFiles (FileHash) VALUES ('" + GetFilekMD5(OpenedFile) + "');");
+            DBHandler.NonQuery("INSERT INTO ImportedFiles (Name, FileHash) VALUES ('"+ OpenedFile + "' , '" + GetFilekMD5(OpenedFile) + "');");
             MessageBox.Show("done");
         }
 
