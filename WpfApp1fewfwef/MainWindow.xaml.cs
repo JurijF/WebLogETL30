@@ -139,16 +139,25 @@ namespace WpfApp1fewfwef
         private string GetDateTAndIpSelection()
         {
             string whereS = "";
+            if(dTPicker_main_DateFrom.SelectedDate != null && dTPicker_main_TimeFrom.SelectedTime != null && dTPicker_main_DateUntil.SelectedDate != null && dTPicker_main_TimeUntil != null)
+            {
+                whereS = " WHERE DT_EVENT > '" + dTPicker_main_DateFrom.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + dTPicker_main_TimeFrom.SelectedTime.Value.ToString("HH:mm:ss") + "' AND DT_EVENT < '" + dTPicker_main_DateUntil.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + dTPicker_main_TimeUntil.SelectedTime.Value.ToString("HH:mm:ss") + "'";
+            }
+            else if (dTPicker_main_DateFrom.SelectedDate != null || dTPicker_main_TimeFrom.SelectedTime != null || dTPicker_main_DateUntil.SelectedDate != null || dTPicker_main_TimeUntil != null)
+            {
+                MessageBox.Show("Zeitfilter sind nicht aktiv, um diese zu aktivieren setzten Sie bitte alle Felder.");
+            }
             //if (ckbx_Timestamp.IsChecked.Value)
             //{
             //    whereS = " WHERE DT_EVENT > '" +dTPicker_main_DateFrom.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + dTPicker_main_TimeFrom.SelectedTime.Value.ToString("HH:mm:ss") + "' AND DT_EVENT < '" + dTPicker_main_DateUntil.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + dTPicker_main_TimeUntil.SelectedTime.Value.ToString("HH:mm:ss") + "'";
             //}
 
-            //if (txt_bl_IP_In.Text != "")
-            //{
-            //    if (whereS == "") { whereS = " WHERE IP IN (" + "'" + txt_bl_IP.Text.Replace(",", "','") + "')"; }
-            //    else { whereS += " AND IP IN (" + "'" + txt_bl_IP.Text.Replace(",", "','") + "')"; }
-            //}
+            if (txt_bl_IP_In.Text != "")
+            {
+                if (whereS == "") { whereS = " WHERE IP IN (" + "'" + txt_bl_IP_In.Text.Replace(",", "','") + "')"; }
+                else { whereS += " AND IP IN (" + "'" + txt_bl_IP_In.Text.Replace(",", "','") + "')"; }
+            }
+            MessageBox.Show(whereS);
             return whereS;
         }
 
@@ -161,8 +170,7 @@ namespace WpfApp1fewfwef
 
         private void btn_main_Load_Click(object sender, EventArgs e)
         {
-            binding.Source= DBHandler.ExecuteQuery("SELECT * FROM ImportedFiles");
-            DataGrid.DataContext= binding;
+            ExecuteQuery("SELECT * FROM ImportedFiles");
         }
 
         private void btn_main_LoadData_FirstAnalyse_Click()
@@ -191,12 +199,12 @@ namespace WpfApp1fewfwef
             //else { grpBox_main_ZeitRaum.Enabled = false; }
         }
 
-        private void btn_main_LoadData_SecondAnalyse_Click(object sender, EventArgs e)
+        private void btn_main_LoadData_SecondAnalyse_Click()
         {
             ExecuteQuery("SELECT IP, COUNT(*) as Anzahl FROM Logs " + GetDateTAndIpSelection() + " GROUP BY IP");
         }
 
-        private void btn_main_LoadData_ThirdAnalyse_Click(object sender, EventArgs e)
+        private void btn_main_LoadData_ThirdAnalyse_Click()
         {
             
             if (ckbx_GET.IsChecked.Value || ckbx_POST.IsChecked.Value || ckbx_HEAD.IsChecked.Value)
@@ -217,7 +225,7 @@ namespace WpfApp1fewfwef
             else { MessageBox.Show("Bitte mindestens eine Methode auswählen."); }
         }
 
-        private void btn_main_LoadData_FourthAnalyse_Click(object sender, EventArgs e)
+        private void btn_main_LoadData_FourthAnalyse_Click()
         {
             string whereS = GetDateTAndIpSelection();
             
@@ -240,9 +248,9 @@ namespace WpfApp1fewfwef
         private void btn_start_Click(object sender, RoutedEventArgs e)
         {
             if(test.Text == "Analyse 1") { btn_main_LoadData_FirstAnalyse_Click(); }
-            if (test.Text == "Analyse 2") { MessageBox.Show("1"); }
-            if (test.Text == "Analyse 3") { MessageBox.Show("1"); }
-            if (test.Text == "Analyse 4") { MessageBox.Show("1"); }
+            if (test.Text == "Analyse 2") { btn_main_LoadData_SecondAnalyse_Click(); }
+            if (test.Text == "Analyse 3") { btn_main_LoadData_ThirdAnalyse_Click(); }
+            if (test.Text == "Analyse 4") { btn_main_LoadData_FourthAnalyse_Click(); }
         }
     }
 }

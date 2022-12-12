@@ -140,7 +140,7 @@
                             </Grid.ColumnDefinitions>
 
                             <!--<MaterialDesign:PackIcon x:Name="settings_icon_DBLocation" HorizontalAlignment="Center" Grid.Column="0" Kind="DatabaseLocation" Foreground="White" />-->
-                            <TextBox Grid.Column="1" x:Name="textBoxSelectedDB" IsEnabled="True" IsManipulationEnabled="True" MaterialDesign:HintAssist.Hint="Ausgewählte Datenbank" FontFamily="Segoe UI Variable Text Semibold" Foreground="White" Cursor="IBeam" IsReadOnly="True"/>
+                            <TextBox Grid.Column="1" x:Name="textBoxSelectedDB" IsEnabled="True" IsManipulationEnabled="True" Background="#1a1a1a" MaterialDesign:HintAssist.Hint="Ausgewählte Datenbank" FontFamily="Segoe UI Variable Text Semibold" Foreground="White" Cursor="IBeam" IsReadOnly="True"/>
 
                         </Grid>
 
