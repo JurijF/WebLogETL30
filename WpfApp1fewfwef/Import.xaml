@@ -39,11 +39,11 @@
 
                 <TextBlock Grid.Column="0" x:Name="import_txt_bl_Head" Text="Import Manager" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Segoe UI Variable Text Semibold"/>
 
-                <Button Grid.Column="2" x:Name="import_btn_exit" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}">
+                <Button Grid.Column="2" x:Name="import_btn_exit" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}" Click="btn_import_Close" Cursor="Hand">
                     <MaterialDesign:PackIcon x:Name="import_icon_exit" Kind="Close"/>
                 </Button>
 
-                <Button Grid.Column="1" x:Name="import_btn_min" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource MaterialDesignFlatButton}">
+                <Button Grid.Column="1" x:Name="import_btn_min" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource MaterialDesignFlatButton}" Click="btn_import_Min" Cursor="Hand">
                     <MaterialDesign:PackIcon x:Name="import_icon_min" Kind="WindowMinimize"/>
                 </Button>
 

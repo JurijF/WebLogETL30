@@ -150,7 +150,7 @@ namespace WpfApp1fewfwef
                 if (whereS == "") { whereS = " WHERE IP IN (" + "'" + txt_bl_IP_In.Text.Replace(",", "','") + "')"; }
                 else { whereS += " AND IP IN (" + "'" + txt_bl_IP_In.Text.Replace(",", "','") + "')"; }
             }
-            MessageBox.Show(whereS);
+            //MessageBox.Show(whereS);
             return whereS;
         }
 

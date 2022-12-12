@@ -184,5 +184,15 @@ namespace WpfApp1fewfwef
             }
         }
 
+        private void btn_import_Close(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_import_Min(object sender, EventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
     }
 }
