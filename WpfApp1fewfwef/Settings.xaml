@@ -157,7 +157,7 @@
 
                     <StackPanel Grid.Column="0" HorizontalAlignment="Right" x:Name="settings_viewbox_apply" >
 
-                        <Button x:Name="settings_btn_apply" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White">
+                        <Button x:Name="settings_btn_apply" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Cursor="Hand" Click="btnExit_Click">
 
                             <Grid x:Name="settings_grid_apply" HorizontalAlignment="Center" VerticalAlignment="Center">
 
@@ -186,7 +186,7 @@
 
                     <StackPanel Grid.Column="1" HorizontalAlignment="Left" x:Name="settings_viewbox_cancel" >
 
-                        <Button x:Name="settings_btn_cancel" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White">
+                        <Button x:Name="settings_btn_cancel" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Click="btnExit_Click" Cursor="Hand">
 
                             <Grid x:Name="settings_grid_cancel" HorizontalAlignment="Center" VerticalAlignment="Center">
 
