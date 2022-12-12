@@ -29,7 +29,11 @@ namespace WpfApp1fewfwef
             test.Items.Add("Analyse 4");
             test.SelectedIndex = 0;
         }
-
+        private void Window_Deactivated(object sender, EventArgs e)
+        {
+            Window window = (Window)sender;
+            window.Topmost = true;
+        }
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch (test.SelectedIndex)

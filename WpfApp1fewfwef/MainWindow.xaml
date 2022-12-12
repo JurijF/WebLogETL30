@@ -15,7 +15,7 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         MouseDown="Window_MouseDown"
-        
+           Deactivated ="Window_Deactivated"
         >
 
 
@@ -478,7 +478,7 @@
 
                                         <Decorator Visibility="Hidden" x:Name="FirstColumnRef" Grid.Column="0"/>
 
-                                        <CheckBox Height="20" x:Name="ckbx_IP" Grid.Column="0" Width="{Binding}" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
+                                        <CheckBox Height="20" x:Name="ckbx_IP" Grid.Column="0" Width="{Binding}" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="True">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
@@ -497,7 +497,7 @@
 
                                         <Decorator Visibility="Hidden" x:Name="Firs" Grid.Column="0"/>
                                         
-                                        <CheckBox x:Name="ckbx_Timestamp" Grid.Column="0" Width="{Binding}" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
+                                        <CheckBox x:Name="ckbx_Timestamp" Grid.Column="0" Width="{Binding}" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="True">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
@@ -514,7 +514,7 @@
                                             <ColumnDefinition x:Name="column_def_10_2" Width="{Binding}"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox x:Name="ckbx_Method" Grid.Column="0" Width="16" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
+                                        <CheckBox x:Name="ckbx_Method" Grid.Column="0" Width="16" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="True">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
@@ -531,7 +531,7 @@
                                             <ColumnDefinition x:Name="column_def_11_2" Width="{Binding}"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox x:Name="ckbx_Event" Grid.Column="0" Width="16" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
+                                        <CheckBox x:Name="ckbx_Event" Grid.Column="0" Width="16" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="True">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
@@ -548,7 +548,7 @@
                                             <ColumnDefinition x:Name="column_def_12_2" Width="{Binding}"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox x:Name="ckbx_Status" Grid.Column="0" Width="16" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
+                                        <CheckBox x:Name="ckbx_Status" Grid.Column="0" Width="16" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="True">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
@@ -565,7 +565,7 @@
                                             <ColumnDefinition x:Name="column_def_13_2" Width="{Binding}"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox x:Name="ckbx_Number" Grid.Column="0" Width="16" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
+                                        <CheckBox x:Name="ckbx_Number" Grid.Column="0" Width="16" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="True">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
@@ -600,7 +600,7 @@
                                             <ColumnDefinition x:Name="column_def_15_2"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox x:Name="ckbx_GET" Grid.Column="0" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
+                                        <CheckBox x:Name="ckbx_GET" Grid.Column="0" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="True">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
@@ -617,7 +617,7 @@
                                             <ColumnDefinition x:Name="column_def_16_2"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox x:Name="ckbx_POST" Grid.Column="0" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
+                                        <CheckBox x:Name="ckbx_POST" Grid.Column="0" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="True">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
@@ -634,7 +634,7 @@
                                             <ColumnDefinition x:Name="column_def_17_2"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox x:Name="ckbx_HEAD" Grid.Column="0" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="False">
+                                        <CheckBox x:Name="ckbx_HEAD" Grid.Column="0" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="True">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
