@@ -66,17 +66,21 @@ namespace WpfApp1fewfwef
 
         private void CreateDataGridFromFile(string path)
         {
-            using (System.IO.StreamReader logStream = System.IO.File.OpenText(path))
+            if (Properties.Settings.Default.DB_FILE != "")
             {
-                
-                while (!logStream.EndOfStream)
+                using (System.IO.StreamReader logStream = System.IO.File.OpenText(path))
                 {
 
-                    ImportDatas = HandleLine(logStream.ReadLine(), ImportDatas);
-                   
+                    while (!logStream.EndOfStream)
+                    {
+
+                        ImportDatas = HandleLine(logStream.ReadLine(), ImportDatas);
+
+                    }
+                    import_DataGrid.ItemsSource = ImportDatas;
                 }
-                import_DataGrid.ItemsSource = ImportDatas;
             }
+            else { MessageBox.Show("Bitte zuerst eine Datenbank wählen!"); }
         }
 
         private List<ImportData> HandleLine(string logLine, List<ImportData> ImportDatas)
@@ -155,24 +159,28 @@ namespace WpfApp1fewfwef
 
         private void btn_import_Load_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog
+            if (Properties.Settings.Default.DB_FILE != "")
             {
-                Filter = "Log (*.log)|*.log",
-                FilterIndex = 2,
-                RestoreDirectory = true
-            };
-
-            if (openFileDialog.ShowDialog().Equals(true))
-            {
-                OpenedFile = openFileDialog.FileName;
-                if (DBHandler.ExecuteQuery("SELECT * FROM ImportedFiles WHERE FileHash = '" + GetFilekMD5(openFileDialog.FileName) + "'").Rows.Count == 0)
+                Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog
                 {
-                    CreateDataGridFromFile(openFileDialog.FileName);
-                    MessageBox.Show("done");
+                    Filter = "Log (*.log)|*.log",
+                    FilterIndex = 2,
+                    RestoreDirectory = true
+                };
+
+                if (openFileDialog.ShowDialog().Equals(true))
+                {
+                    OpenedFile = openFileDialog.FileName;
+                    if (DBHandler.ExecuteQuery("SELECT * FROM ImportedFiles WHERE FileHash = '" + GetFilekMD5(openFileDialog.FileName) + "'").Rows.Count == 0)
+                    {
+                        CreateDataGridFromFile(openFileDialog.FileName);
+                    }
+                    else
+                    { MessageBox.Show("Diese Datei wurde bereits importiert!"); }
                 }
-                else
-                { MessageBox.Show("Diese Datei wurde bereits importiert!"); }
             }
+            else { MessageBox.Show("Bitte zuerst eine Datenbank wählen!"); }
+
         }
 
         private void btn_import_ImportStart_Click(object sender, EventArgs e)
