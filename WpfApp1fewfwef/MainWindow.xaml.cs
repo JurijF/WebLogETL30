@@ -142,12 +142,16 @@ namespace WpfApp1fewfwef
             string whereS = "";
             if(dTPicker_main_DateFrom.SelectedDate != null && dTPicker_main_TimeFrom.SelectedTime != null && dTPicker_main_DateUntil.SelectedDate != null && dTPicker_main_TimeUntil != null)
             {
-                whereS = " WHERE DT_EVENT > '" + dTPicker_main_DateFrom.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + dTPicker_main_TimeFrom.SelectedTime.Value.ToString("HH:mm:ss") + "' AND DT_EVENT < '" + dTPicker_main_DateUntil.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + dTPicker_main_TimeUntil.SelectedTime.Value.ToString("HH:mm:ss") + "'";
+                try
+                {
+                    whereS = " WHERE DT_EVENT > '" + dTPicker_main_DateFrom.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + dTPicker_main_TimeFrom.SelectedTime.Value.ToString("HH:mm:ss") + "' AND DT_EVENT < '" + dTPicker_main_DateUntil.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + dTPicker_main_TimeUntil.SelectedTime.Value.ToString("HH:mm:ss") + "'";
+                }
+                catch
+                {
+                    MessageBox.Show("Zeitraumfilter sind nicht aktiv, um diese zu aktivieren füllen Sie bitte alle dazugehörigen Felder.");
+                }    
             }
-            else if (dTPicker_main_DateFrom.SelectedDate != null || dTPicker_main_TimeFrom.SelectedTime != null || dTPicker_main_DateUntil.SelectedDate != null || dTPicker_main_TimeUntil != null)
-            {
-                //MessageBox.Show("Zeitfilter sind nicht aktiv, um diese zu aktivieren setzten Sie bitte alle Felder.");
-            }
+          
 
             if (txt_bl_IP_In.Text != "")
             {

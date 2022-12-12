@@ -297,7 +297,7 @@
 
                                                     </DatePicker>
                                                 </Viewbox>
-                                                <MaterialDesign:TimePicker VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="dTPicker_main_TimeUntil" Width="{Binding}" MaterialDesign:HintAssist.Hint="12:00 AM" Background="#1a1a1a" Height="25" Foreground="White" Grid.Column="6"/>
+                                                <MaterialDesign:TimePicker VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="dTPicker_main_TimeUntil" Width="{Binding}" MaterialDesign:HintAssist.Hint="00:00:00" Background="#1a1a1a" Height="25" Foreground="White" Grid.Column="6" Is24Hours="True"/>
                                                 <TextBlock VerticalAlignment="Bottom" x:Name="txt_bl_von" Margin="0 0 0 0" HorizontalAlignment="Center" Grid.Column="1" FontSize="11" IsEnabled="True" IsManipulationEnabled="True" Width="{Binding}" Text="Von:" Height="15" FontFamily="Segoe UI Variable Text Semibold" Foreground="White"/>
 
 
@@ -318,7 +318,7 @@
                                                     
                                                 </Viewbox>
 
-                                                <MaterialDesign:TimePicker VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="dTPicker_main_TimeFrom" Width="{Binding}" MaterialDesign:HintAssist.Hint="12:00 AM" Background="#1a1a1a" Height="25" Foreground="White" Grid.Column="3"/>
+                                                <MaterialDesign:TimePicker VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="dTPicker_main_TimeFrom" Width="{Binding}" MaterialDesign:HintAssist.Hint="00:00:00" Background="#1a1a1a" Height="25" Foreground="White" Grid.Column="3" Is24Hours="True" />
         
                                             </Grid>
 
