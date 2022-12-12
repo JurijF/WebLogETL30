@@ -228,16 +228,16 @@
 
                                 <Border x:Name="border_2" Width="{Binding}" Margin="0 20 0 0" Height="280" Grid.Row="0" BorderBrush="#490ba1" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2">
 
-                                    <DataGrid x:Name="DataGrid" Foreground="White" Background="#1a1a1a">
+                                    <DataGrid x:Name="DataGrid" ItemsSource="{Binding}" Foreground="White" Background="#1a1a1a">
 
                                         <DataGrid.Columns>
 
-                                            <DataGridTextColumn x:Name="datagrid_ip" Header="IP" Foreground="White"/>
+                                            <!--<DataGridTextColumn x:Name="datagrid_ip" Header="IP" Foreground="White"/>
                                             <DataGridTextColumn x:Name="datagrid_dt_event" Header="DT-EVENT"/>
                                             <DataGridTextColumn x:Name="datagrid_typ" Width="*" Header="TYP"/>
                                             <DataGridTextColumn x:Name="datagrid_event" Width="*" Header="EVENT"/>
                                             <DataGridTextColumn x:Name="datagrid_status" Width="*" Header="STATUS"/>
-                                            <DataGridTextColumn x:Name="datagrid_number" Width="*" Header="Number"/>
+                                            <DataGridTextColumn x:Name="datagrid_number" Width="*" Header="Number"/>-->
 
                                         </DataGrid.Columns>
 
@@ -684,7 +684,7 @@
 
                                 <Border x:Name="border_10" BorderBrush="#490ba1" CornerRadius="6 6 6 6" BorderThickness="2,2,2,2" Margin="0 9 0 0" Width="110" Height="20" >
 
-                                    <Button x:Name="btn_start" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Width="110" Height="20" Cursor="Hand">
+                                    <Button x:Name="btn_start" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Width="110" Height="20" Cursor="Hand" Click="btn_start_Click">
 
                                         <Grid x:Name="grid_2" Width="110" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
 

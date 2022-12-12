@@ -224,12 +224,12 @@ namespace WpfApp1fewfwef
             main.row_def_8_3.Height = new GridLength(5, GridUnitType.Star);
             main.row_def_8_4.Height = new GridLength(65, GridUnitType.Star);
 
-            main.datagrid_ip.Width = (main.border_2.Width - 5) / 6;
-            main.datagrid_dt_event.Width = (main.border_2.Width - 5) / 6;
-            main.datagrid_event.Width = (main.border_2.Width - 5) / 6;
-            main.datagrid_status.Width = (main.border_2.Width - 5) / 6;
-            main.datagrid_typ.Width = (main.border_2.Width - 5) / 6;
-            main.datagrid_number.Width = (main.border_2.Width - 5) / 6;
+            //main.datagrid_ip.Width = (main.border_2.Width - 5) / 6;
+            //main.datagrid_dt_event.Width = (main.border_2.Width - 5) / 6;
+            //main.datagrid_event.Width = (main.border_2.Width - 5) / 6;
+            //main.datagrid_status.Width = (main.border_2.Width - 5) / 6;
+            //main.datagrid_typ.Width = (main.border_2.Width - 5) / 6;
+            //main.datagrid_number.Width = (main.border_2.Width - 5) / 6;
 
             main.ckbx_IP.MinHeight = main.panel_FirstAnalyse.Height / 100 * 0.1666;
             main.ckbx_IP.MinWidth = main.panel_FirstAnalyse.Width / 100 * 0.1666;

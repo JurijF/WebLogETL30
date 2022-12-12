@@ -131,23 +131,24 @@ namespace WpfApp1fewfwef
         }
         private void ExecuteQuery(string query)
         {
-            binding.Source=DBHandler.ExecuteQuery(query);
-            DataGrid.DataContext = binding;
+            //binding.Source=DBHandler.ExecuteQuery(query);
+            //DataGrid.DataContext = binding;
+            DataGrid.DataContext = DBHandler.ExecuteQuery(query);
         }
 
         private string GetDateTAndIpSelection()
         {
             string whereS = "";
-            if (ckbx_Timestamp.IsChecked.Value)
-            {
-                whereS = " WHERE DT_EVENT > '" +dTPicker_main_DateFrom.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + dTPicker_main_TimeFrom.SelectedTime.Value.ToString("HH:mm:ss") + "' AND DT_EVENT < '" + dTPicker_main_DateUntil.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + dTPicker_main_TimeUntil.SelectedTime.Value.ToString("HH:mm:ss") + "'";
-            }
+            //if (ckbx_Timestamp.IsChecked.Value)
+            //{
+            //    whereS = " WHERE DT_EVENT > '" +dTPicker_main_DateFrom.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + dTPicker_main_TimeFrom.SelectedTime.Value.ToString("HH:mm:ss") + "' AND DT_EVENT < '" + dTPicker_main_DateUntil.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + dTPicker_main_TimeUntil.SelectedTime.Value.ToString("HH:mm:ss") + "'";
+            //}
 
-            if (txt_bl_IP_In.Text != "")
-            {
-                if (whereS == "") { whereS = " WHERE IP IN (" + "'" + txt_bl_IP.Text.Replace(",", "','") + "')"; }
-                else { whereS += " AND IP IN (" + "'" + txt_bl_IP.Text.Replace(",", "','") + "')"; }
-            }
+            //if (txt_bl_IP_In.Text != "")
+            //{
+            //    if (whereS == "") { whereS = " WHERE IP IN (" + "'" + txt_bl_IP.Text.Replace(",", "','") + "')"; }
+            //    else { whereS += " AND IP IN (" + "'" + txt_bl_IP.Text.Replace(",", "','") + "')"; }
+            //}
             return whereS;
         }
 
@@ -164,7 +165,7 @@ namespace WpfApp1fewfwef
             DataGrid.DataContext= binding;
         }
 
-        private void btn_main_LoadData_FirstAnalyse_Click(object sender, EventArgs e)
+        private void btn_main_LoadData_FirstAnalyse_Click()
         {
             if (ckbx_IP.IsChecked.Value || ckbx_Timestamp.IsChecked.Value || ckbx_Method.IsChecked.Value || ckbx_Event.IsChecked.Value || ckbx_Status.IsChecked.Value || ckbx_Number.IsChecked.Value)
             {
@@ -234,6 +235,14 @@ namespace WpfApp1fewfwef
             string allowedCharacters = "0123456789,.";
             if (!allowedCharacters.Contains(e.Key.ToString())) { e.Handled = true; }
             else e.Handled = false;
+        }
+
+        private void btn_start_Click(object sender, RoutedEventArgs e)
+        {
+            if(test.Text == "Analyse 1") { btn_main_LoadData_FirstAnalyse_Click(); }
+            if (test.Text == "Analyse 2") { MessageBox.Show("1"); }
+            if (test.Text == "Analyse 3") { MessageBox.Show("1"); }
+            if (test.Text == "Analyse 4") { MessageBox.Show("1"); }
         }
     }
 }
