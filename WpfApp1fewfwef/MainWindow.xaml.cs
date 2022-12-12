@@ -150,8 +150,19 @@ namespace WpfApp1fewfwef
                 {
                     MessageBox.Show("Zeitraumfilter sind nicht aktiv, um diese zu aktivieren füllen Sie bitte alle dazugehörigen Felder.");
                 }    
+            }else if (dTPicker_main_DateFrom.SelectedDate != null)
+            {
+                string time = "";
+                if (dTPicker_main_TimeFrom.SelectedTime != null) { time = dTPicker_main_TimeFrom.SelectedTime.Value.ToString("HH:mm:ss"); }
+                whereS = " WHERE DT_EVENT > '" + dTPicker_main_DateFrom.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + time + "'";
             }
-          
+            else if (dTPicker_main_DateUntil.SelectedDate != null)
+            {
+                string time = "";
+                if (dTPicker_main_TimeUntil.SelectedTime != null) { time = dTPicker_main_TimeUntil.SelectedTime.Value.ToString("HH:mm:ss"); }
+                whereS = " WHERE DT_EVENT < '" + dTPicker_main_DateUntil.SelectedDate.Value.ToString("yyyy-MM-dd") + " " + time + "'";
+            }
+
 
             if (txt_bl_IP_In.Text != "")
             {
