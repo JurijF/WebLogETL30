@@ -13,7 +13,7 @@
         Width="{Binding}" 
         BorderBrush="#490ba1"
         BorderThickness="1"
-        Background="#1a1a1a">
+        Background="#1a1a1a" MouseDown="Window_MouseDown">
     
     <Grid>
 
@@ -53,7 +53,7 @@
 
                     <TextBlock Grid.Column="0" x:Name="information_txt_bl_Head" Text="Informationen" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Segoe UI Variable Text Semibold"/>
 
-                    <Button Grid.Column="2" x:Name="information_btn_exit" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}">
+                    <Button Grid.Column="2" x:Name="information_btn_exit" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}" Click="information_btn_exit_Click">
                         <MaterialDesign:PackIcon x:Name="information_icon_exit" Kind="Close"/>
                     </Button>
 

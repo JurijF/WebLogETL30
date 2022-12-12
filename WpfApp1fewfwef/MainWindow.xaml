@@ -189,17 +189,17 @@
     <Border x:Name="border_1"  Grid.Row="0" Width="{Binding}" Height="{Binding}" CornerRadius="25,10,25,15" Padding="0" BorderThickness=".65">
 
         <Border.BorderBrush>
-            
+
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#7f02c2" Offset="0.5" />
                 <GradientStop Color="#6e0391" />
             </LinearGradientBrush>
-            
+
         </Border.BorderBrush>
 
         <Grid Background="#1a1a1a">
 
-            
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="column_def_1_1" Width="{Binding}"/>
                 <ColumnDefinition x:Name="column_def_1_2" Width="{Binding}"/>
@@ -217,7 +217,7 @@
                     <StackPanel Grid.Row="1" Background="#1a1a1a">
 
                         <Grid>
-                            
+
                             <Grid.RowDefinitions>
                                 <RowDefinition x:Name="row_def_2_1" Height="315"/>
                                 <RowDefinition x:Name="row_def_2_2" Height="10"/>
@@ -228,7 +228,7 @@
 
                                 <Border x:Name="border_2" Width="{Binding}" Margin="0 20 0 0" Height="280" Grid.Row="0" BorderBrush="#490ba1" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2">
 
-                                    <DataGrid x:Name="DataGrid" ItemsSource="{Binding}" Foreground="White" Background="#1a1a1a">
+                                    <DataGrid x:Name="DataGrid" ItemsSource="{Binding}" Foreground="White" Background="#1a1a1a" IsReadOnly="True">
 
                                         <DataGrid.Columns>
 
@@ -262,7 +262,7 @@
                                         <TextBlock x:Name="txt_bl_Zeitraum" HorizontalAlignment="Left" Height="30" Width="{Binding}" Grid.Row="0" Margin="15 0 0 0" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI Variable Text Semibold">
                                             Zeitraum
                                         </TextBlock>
-                                        
+
                                         <Border x:Name="border_4" HorizontalAlignment="Left" Grid.Row="1" Width="{Binding}" Height="25" BorderBrush="White" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2" VerticalAlignment="Center" Margin="0 15 0 0">
 
                                             <Grid>
@@ -275,8 +275,8 @@
                                                     <ColumnDefinition x:Name="column_def_2_5" Width="{Binding}"/>
                                                     <ColumnDefinition x:Name="column_def_2_6" Width="{Binding}"/>
                                                     <ColumnDefinition x:Name="column_def_2_7" Width="{Binding}"/>
-                                                    
-                                                    
+
+
                                                 </Grid.ColumnDefinitions>
 
                                                 <MaterialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="icon_DateRange_1" Grid.Column="0" Kind="DateRange" Height="23" Width="{Binding}" Panel.ZIndex="3" Margin="0 0 0 0" Foreground="White" />
@@ -315,11 +315,11 @@
                                                         </DatePicker.Resources>
 
                                                     </DatePicker>
-                                                    
+
                                                 </Viewbox>
 
                                                 <MaterialDesign:TimePicker VerticalAlignment="Center" WithSeconds="True" HorizontalAlignment="Center" x:Name="dTPicker_main_TimeFrom" Width="{Binding}" MaterialDesign:HintAssist.Hint="00:00:00" Background="#1a1a1a" Height="25" Foreground="White" Grid.Column="3" Is24Hours="True" />
-        
+
                                             </Grid>
 
                                         </Border>
@@ -327,17 +327,17 @@
                                         <TextBlock x:Name="txt_bl_IP" HorizontalAlignment="Left" Height="30" Width="{Binding}" VerticalAlignment="Top" Grid.Row="3" Margin="15 0 0 0" Foreground="White" FontFamily="Segoe UI Variable Text Semibold">
                                             IP
                                         </TextBlock>
-                                        
+
                                         <Border x:Name="border_5" Grid.Row="4" Width="{Binding}" Height="25" BorderBrush="White" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2" VerticalAlignment="Center" Margin="0 15 0 0">
 
-                                            <Grid>
+                                            <Grid ToolTip="Eingabe der IP Adressen. Bei Mehreren IP Adressen mit Komma trennen.">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition x:Name="column_def_3_1" Width="{Binding}"/>
                                                     <ColumnDefinition x:Name="column_def_3_2" Width="{Binding}"/>
                                                 </Grid.ColumnDefinitions>
 
                                                 <MaterialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="icon_IP" Grid.Column="0" Kind="Ip" Height="23" Width="{Binding}" Panel.ZIndex="3" Margin="0 0 0 0" Foreground="White" />
-                                                <TextBox Grid.Column="1" Name="txt_bl_IP_In" FontSize="8" TextChanged="TextBox_TextChanged" IsEnabled="True" IsManipulationEnabled="True" Width="{Binding}" MaterialDesign:HintAssist.Hint="IP-Adresse angeben" Height="20" FontFamily="Segoe UI Variable Text Semibold" Foreground="Black" KeyDown="txt_bl_IP_In_KeyDown"/>
+                                                <TextBox Grid.Column="1" Name="txt_bl_IP_In" FontSize="8" IsEnabled="True" IsManipulationEnabled="True" Width="{Binding}" MaterialDesign:HintAssist.Hint="IP-Adresse angeben" Height="20" FontFamily="Segoe UI Variable Text Semibold" Foreground="Black" PreviewTextInput="txt_bl_IP_In_PreviewTextInput" PreviewKeyDown="txt_bl_IP_In_PreviewKeyDown" LostFocus="txt_bl_IP_In_LostFocus"/>
 
                                             </Grid>
 
@@ -348,7 +348,7 @@
                                 </StackPanel>
 
                             </Border>
-                            
+
                         </Grid>
 
                     </StackPanel>
@@ -371,7 +371,7 @@
                                 <ColumnDefinition x:Name="column_def_14_3"/>
                                 <ColumnDefinition x:Name="column_def_14_4"/>
                             </Grid.ColumnDefinitions>
-                        
+
                             <TextBlock Grid.Column="0" x:Name="test1" Text="WebLogETL30" Margin="0 0 0 0" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Segoe UI Variable Text Semibold"/>
 
                             <Button VerticalAlignment="Bottom" Grid.Column="3" Click="btnExit_Click" Width="16" Height="16" x:Name="btnExit" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}">
@@ -385,7 +385,7 @@
                             <Button Grid.Column="1" Click="btnMin_Click" Height="16" Width="16" x:Name="btnMin" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource MaterialDesignFlatButton}">
                                 <MaterialDesign:PackIcon x:Name="icon_min" Kind="WindowMinimize" Margin="-16 -4 0 0"/>
                             </Button>
-                            
+
                         </Grid>
 
                     </StackPanel>
@@ -426,7 +426,7 @@
                                 <MaterialDesign:PackIcon Kind="Settings" Height="20" Width="16" Panel.ZIndex="3" Margin="-16 -4 0 0" Foreground="White" />
                             </Button>
 
-                            <Button Grid.Column="1" Margin="0 0 0 0" HorizontalAlignment="Left" Height="20" Width="16" Background="Transparent" BorderBrush="Transparent">
+                            <Button x:Name="btn_Information" Grid.Column="1" HorizontalAlignment="Left" Height="20" Width="16" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Top" Click="btn_Information_Click">
                                 <MaterialDesign:PackIcon Kind="Help" Height="20" Width="16" Panel.ZIndex="3" Margin="-16 -4 0 0" Foreground="White" />
                             </Button>
 
@@ -483,7 +483,7 @@
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
                                         </CheckBox>
-                                        
+
                                         <TextBlock x:Name="txt_bl_IP_Filter" Margin="10 0 0 0" Height="21.5" Width="13" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Text="IP-Addresse" FontFamily="Segoe UI Variable Text Semibold" FontSize="15" TextAlignment="Left"/>
 
                                     </Grid>
@@ -496,13 +496,13 @@
                                         </Grid.ColumnDefinitions>
 
                                         <Decorator Visibility="Hidden" x:Name="Firs" Grid.Column="0"/>
-                                        
+
                                         <CheckBox x:Name="ckbx_Timestamp" Grid.Column="0" Width="{Binding}" HorizontalAlignment="Left" Grid.Row="0" Background="White"  Foreground="white" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="True">
                                             <CheckBox.Resources>
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
                                         </CheckBox>
-                                        
+
                                         <TextBlock x:Name="txt_bl_Timestamp_Filter" Margin="10 0 0 0" Height="21.5" Width="{Binding}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Text="Timestamp" FontFamily="Segoe UI Variable Text Semibold" FontSize="15" TextAlignment="Left"/>
 
                                     </Grid>
@@ -519,7 +519,7 @@
                                                 <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="White"/>
                                             </CheckBox.Resources>
                                         </CheckBox>
-                                        
+
                                         <TextBlock x:Name="txt_bl_Method_Filter" Margin="10 0 0 0" Height="21.5" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Text="Methode" FontFamily="Segoe UI Variable Text Semibold" FontSize="15" TextAlignment="Left"/>
 
                                     </Grid>
@@ -675,7 +675,7 @@
                                     </Grid>
 
                                 </Grid>
-                                
+
                             </StackPanel>
 
                             <StackPanel x:Name="panel_3" Grid.Row="2" Height="40" Width="{Binding}" Background="#2a1342">
@@ -698,11 +698,11 @@
                                             </StackPanel>
 
                                             <StackPanel Grid.Column="1">
-                                                
+
                                                 <TextBlock x:Name="txt_bl_start" TextAlignment="Center" HorizontalAlignment="Center" Width="75" Height="20" Margin="0 0 50 0" Panel.ZIndex="3">
                                                     Start
                                                 </TextBlock>
-                                                
+
                                             </StackPanel>
 
                                         </Grid>
@@ -737,11 +737,11 @@
                                         </StackPanel>
 
                                         <StackPanel Grid.Column="1">
-                                            
+
                                             <TextBlock x:Name="txt_bl_import" HorizontalAlignment="Center" TextAlignment="Center" Width="75" Height="20" Margin="0 0 0 0" Panel.ZIndex="4">
                                                 Import
                                             </TextBlock>
-                                            
+
                                         </StackPanel>
 
                                     </Grid>
@@ -766,11 +766,11 @@
                                         </StackPanel>
 
                                         <StackPanel Grid.Column="1">
-                                            
+
                                             <TextBlock x:Name="txt_bl_load" TextAlignment="Center" HorizontalAlignment="Center" Width="75" Height="20" Margin="0 0 0 0" Panel.ZIndex="3">
                                                 Dateien
                                             </TextBlock>
-                                        
+
                                         </StackPanel>
 
                                     </Grid>

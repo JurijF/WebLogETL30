@@ -29,5 +29,20 @@ namespace WpfApp1fewfwef
             scaling.information = this;
             scaling.SetInformationSizes();
         }
+
+        private void information_btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            this.Owner.IsEnabled = true;
+            this.Owner.Activate();
+        }
+         
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton.ToString() == "Left")
+            {
+                DragMove();
+            }
+        }
     }
 }

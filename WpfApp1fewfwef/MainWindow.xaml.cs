@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -32,7 +34,7 @@ namespace WpfApp1fewfwef
         private void Window_Deactivated(object sender, EventArgs e)
         {
             Window window = (Window)sender;
-            window.Topmost = true;
+            //window.Topmost = true;
         }
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -79,11 +81,6 @@ namespace WpfApp1fewfwef
 
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //kek.Text = kek.Text;
-        }
-
         private void btnMin_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
@@ -118,6 +115,7 @@ namespace WpfApp1fewfwef
 
         private void btn_Settings_Click(object sender, RoutedEventArgs e)
         {
+            this.IsEnabled = false;
             Settings settings = new Settings();
             settings.Owner = this;
             settings.Show();
@@ -126,11 +124,6 @@ namespace WpfApp1fewfwef
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
-        }
-
-        private void btn_import_Click(object sender, RoutedEventArgs e)
-        {
-
         }
         private void ExecuteQuery(string query)
         {
@@ -177,6 +170,7 @@ namespace WpfApp1fewfwef
         {
             Import import = new Import();
             import.Owner = this;
+            this.IsEnabled = false;
             import.Show();
         }
 
@@ -249,19 +243,63 @@ namespace WpfApp1fewfwef
             ExecuteQuery("SELECT Status as Error, COUNT(*) as Anzahl FROM Logs " + whereS + " GROUP BY Status");
         }
 
-        private void txt_bl_IP_In_KeyDown(object sender, KeyEventArgs e)
-        {
-            string allowedCharacters = "0123456789,.";
-            if (!allowedCharacters.Contains(e.Key.ToString())) { e.Handled = true; }
-            else e.Handled = false;
-        }
-
         private void btn_start_Click(object sender, RoutedEventArgs e)
-        {
+        {          
             if(test.Text == "Analyse 1") { btn_main_LoadData_FirstAnalyse_Click(); }
             if (test.Text == "Analyse 2") { btn_main_LoadData_SecondAnalyse_Click(); }
             if (test.Text == "Analyse 3") { btn_main_LoadData_ThirdAnalyse_Click(); }
             if (test.Text == "Analyse 4") { btn_main_LoadData_FourthAnalyse_Click(); }
+        }
+
+        private void txt_bl_IP_In_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int CaretIndex = txt_bl_IP_In.CaretIndex;
+            string allowedCharacters = "0123456789,.";
+            if (allowedCharacters.Contains(e.Text))
+            {
+                txt_bl_IP_In.Text = txt_bl_IP_In.Text.Insert(txt_bl_IP_In.CaretIndex,e.Text);
+            }
+            e.Handled = true;
+            txt_bl_IP_In.CaretIndex = CaretIndex + 1;
+        }
+
+        private void txt_bl_IP_In_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key==Key.Space)
+            {
+                e.Handled=true;
+            }
+        }
+
+        private void btn_Information_Click(object sender, RoutedEventArgs e)
+        {
+            Information information = new Information();
+            information.Owner=this;
+            this.IsEnabled = false;
+            information.Show();
+        }
+
+        private void txt_bl_IP_In_LostFocus(object sender, RoutedEventArgs e)
+        {
+            string Message = "";
+            foreach(string a in txt_bl_IP_In.Text.Split(',',StringSplitOptions.RemoveEmptyEntries))
+            {
+                if(!IPAddress.TryParse(a,out IPAddress ipAddress)||a.Split('.').Length-1!=3) 
+                {
+                    Message += a + "\n";
+                }
+            }
+            if (Message.Length > 0)
+            {
+                if(MessageBox.Show("Die folgenden IP Adressen sind nicht valide:\n\n" + Message + "\nSollen die IP Adressen entfernt werden?", "Invalide IP Adressen", MessageBoxButton.YesNo)==MessageBoxResult.Yes) {
+                    foreach (string a in Message.Split('\n',StringSplitOptions.RemoveEmptyEntries))
+                    {
+                        try { txt_bl_IP_In.Text = txt_bl_IP_In.Text.Replace(a + ",", "");
+                            txt_bl_IP_In.Text = txt_bl_IP_In.Text.Replace(a , ""); }
+                        catch { txt_bl_IP_In.Text = txt_bl_IP_In.Text.Replace(a, ""); }
+                    }
+                }
+            }           
         }
     }
 }

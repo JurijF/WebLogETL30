@@ -25,8 +25,10 @@ namespace WpfApp1fewfwef
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
-        {
+        {            
             this.Close();
+            this.Owner.IsEnabled = true;
+            this.Owner.Activate();
         }
 
         private void btnMin_Click(object sender, RoutedEventArgs e)

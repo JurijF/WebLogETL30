@@ -23,7 +23,7 @@ namespace WpfApp1fewfwef
                 SqliteCmd.ExecuteNonQuery();
                 sqlite_conn.Close();
             }
-            else { MessageBox.Show("Bitte zuerst eine Datenbank wählen!"); }
+            else { MessageBox.Show("Bitte zuerst in den Einstellungen eine Datenbank auswählen oder erstellen!"); }
 
         }
 
@@ -59,7 +59,7 @@ namespace WpfApp1fewfwef
                     queryDG.Rows.Add(dataRows.ToArray());
                 }
                 sqlite_conn.Close();
-            }else { MessageBox.Show("Bitte zuerst eine Datenbank wählen!"); }
+            }else { MessageBox.Show("Bitte zuerst in den Einstellungen eine Datenbank auswählen oder erstellen!"); }
             return queryDG;
         }
     }

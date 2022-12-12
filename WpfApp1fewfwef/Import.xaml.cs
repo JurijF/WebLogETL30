@@ -21,8 +21,6 @@ namespace WpfApp1fewfwef
     /// </summary>
     public partial class Import : Window
     {
-
-
         public class ImportData
         {
             public string IP { set; get; }
@@ -80,7 +78,7 @@ namespace WpfApp1fewfwef
                     import_DataGrid.ItemsSource = ImportDatas;
                 }
             }
-            else { MessageBox.Show("Bitte zuerst eine Datenbank wählen!"); }
+            else { MessageBox.Show("Bitte zuerst in den Einstellungen eine Datenbank auswählen oder erstellen!"); }
         }
 
         private List<ImportData> HandleLine(string logLine, List<ImportData> ImportDatas)
@@ -173,13 +171,15 @@ namespace WpfApp1fewfwef
                     OpenedFile = openFileDialog.FileName;
                     if (DBHandler.ExecuteQuery("SELECT * FROM ImportedFiles WHERE FileHash = '" + GetFilekMD5(openFileDialog.FileName) + "'").Rows.Count == 0)
                     {
+                        this.IsEnabled = false;
                         CreateDataGridFromFile(openFileDialog.FileName);
+                        this.IsEnabled = true;                    
                     }
                     else
                     { MessageBox.Show("Diese Datei wurde bereits importiert!"); }
                 }
             }
-            else { MessageBox.Show("Bitte zuerst eine Datenbank wählen!"); }
+            else { MessageBox.Show("Bitte zuerst in den Einstellungen eine Datenbank auswählen oder erstellen!"); }
 
         }
 
@@ -187,7 +187,11 @@ namespace WpfApp1fewfwef
         {
             if (OpenedFile != null && import_DataGrid.Items.Count > 1)
             {
+                this.IsEnabled = false;
                 WriteToDb();
+                this.IsEnabled = true;
+                this.Owner.IsEnabled = true;
+                this.Owner.Activate();
                 this.Close();
             }
         }
@@ -195,6 +199,8 @@ namespace WpfApp1fewfwef
         private void btn_import_Close(object sender, EventArgs e)
         {
             this.Close();
+            this.Owner.IsEnabled = true;
+            this.Owner.Activate();
         }
 
         private void btn_import_Min(object sender, EventArgs e)
@@ -202,5 +208,12 @@ namespace WpfApp1fewfwef
             this.WindowState = WindowState.Minimized;
         }
 
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton.ToString() == "Left")
+            {
+                DragMove();
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@
         Width="{Binding}" 
         BorderBrush="#490ba1"
         BorderThickness="1"
-        Background="#1a1a1a">
+        Background="#1a1a1a" MouseDown="Window_MouseDown">
 
     <Grid>
 
@@ -129,7 +129,7 @@
 
         <Border Grid.Row="2" x:Name="import_border" BorderBrush="White" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2">
 
-            <DataGrid x:Name="import_DataGrid" Foreground="White" Background="#1a1a1a">
+            <DataGrid x:Name="import_DataGrid" Foreground="White" Background="#1a1a1a" IsReadOnly="True">
 
                 <DataGrid.Columns>
 
