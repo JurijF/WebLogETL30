@@ -686,12 +686,12 @@ namespace WpfApp1fewfwef
             import.import_border.Height = import.Height * 0.88;
             import.import_border.Width = import.Width * 0.98;
 
-            import.import_datagrid_ip.Width = (import.import_border.Width - 5) / 6;
-            import.import_datagrid_dt_event.Width = (import.import_border.Width - 5) / 6;
-            import.import_datagrid_event.Width = (import.import_border.Width - 5) / 6;
-            import.import_datagrid_status.Width = (import.import_border.Width - 5) / 6;
-            import.import_datagrid_typ.Width = (import.import_border.Width - 5) / 6;
-            import.import_datagrid_number.Width = (import.import_border.Width - 5) / 6;
+            //import.import_datagrid_ip.Width = (import.import_border.Width - 5) / 6;
+            //import.import_datagrid_dt_event.Width = (import.import_border.Width - 5) / 6;
+            //import.import_datagrid_event.Width = (import.import_border.Width - 5) / 6;
+            //import.import_datagrid_status.Width = (import.import_border.Width - 5) / 6;
+            //import.import_datagrid_typ.Width = (import.import_border.Width - 5) / 6;
+            //import.import_datagrid_number.Width = (import.import_border.Width - 5) / 6;
         }
 
         public void SetInformationSizes()

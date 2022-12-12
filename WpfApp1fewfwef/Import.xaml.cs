@@ -21,6 +21,20 @@ namespace WpfApp1fewfwef
     /// </summary>
     public partial class Import : Window
     {
+
+
+        public class ImportData
+        {
+            public string IP { set; get; }
+            public string DT_EVENT { set; get; }
+            public string TYP { set; get; }
+            public string EVENT { set; get; }
+            public string STATUS { set; get; }
+            public string Number { set; get; }
+            public string MDHASH { set; get; }
+
+        }
+
         private string OpenedFile;
         Scaling scaling = new Scaling();
         public int CurrentWindowWidth = Convert.ToInt32(Convert.ToDouble(System.Windows.SystemParameters.PrimaryScreenWidth * 0.8));
@@ -36,11 +50,11 @@ namespace WpfApp1fewfwef
         private void WriteToDb()
         {
             string Insert = "INSERT INTO Logs (IP, DT_EVENT, TYP, EVENT, Status, Number, Hash) Values ";
-            foreach (DataGrid row in import_DataGrid.Items)
+            foreach (ImportData row in ImportDatas)
             {
                 if (row != null)
                 {
-                    Insert += "('" + row.Items[0] + "','" + row.Items[1] + "','" + row.Items[2] + "','" + row.Items[3] + "','" + row.Items[4] + "','" + row.Items[5] + "','" + row.Items[6] + "'),";
+                    Insert += "('" + row.IP + "','" + row.DT_EVENT + "','" + row.TYP + "','" + row.EVENT + "','" + row.STATUS+ "','" + row.Number + "','" + row.MDHASH + "'),";
                 }
             }
             DBHandler.NonQuery(Insert.Remove(Insert.Length - 1, 1) + ";");
@@ -48,23 +62,31 @@ namespace WpfApp1fewfwef
             MessageBox.Show("done");
         }
 
+        List<ImportData> ImportDatas = new List<ImportData>();
+
         private void CreateDataGridFromFile(string path)
         {
             using (System.IO.StreamReader logStream = System.IO.File.OpenText(path))
             {
+                
                 while (!logStream.EndOfStream)
                 {
-                    HandleLine(logStream.ReadLine());
+
+                    ImportDatas = HandleLine(logStream.ReadLine(), ImportDatas);
+                   
                 }
+                import_DataGrid.ItemsSource = ImportDatas;
             }
         }
 
-        private void HandleLine(string logLine)
+        private List<ImportData> HandleLine(string logLine, List<ImportData> ImportDatas)
         {
             string eventCode = GetLogEventCode(logLine);
-            string[] values = { GetIP(logLine), GetDateTime(logLine), eventCode, GetLogEvent(logLine, eventCode), GetStatusCode(logLine), GetLastCode(logLine), GetStringMD5(logLine) };
-            import_DataGrid.Items.Add(new object[] { GetIP(logLine), GetDateTime(logLine), eventCode, GetLogEvent(logLine, eventCode), GetStatusCode(logLine), GetLastCode(logLine), GetStringMD5(logLine) });
+      
+            ImportDatas.Add(new ImportData() { IP = GetIP(logLine), DT_EVENT = GetDateTime(logLine), TYP = eventCode, EVENT = GetLogEvent(logLine, eventCode), STATUS = GetStatusCode(logLine), Number = GetLastCode(logLine), MDHASH = GetStringMD5(logLine) });
+            
             DoEvents();
+            return ImportDatas;
         }
         public static void DoEvents()
         {
