@@ -30,6 +30,7 @@ namespace WpfApp1fewfwef
             test.Items.Add("Analyse 3");
             test.Items.Add("Analyse 4");
             test.SelectedIndex = 0;
+            //MessageBox.Show((this.Height * 0.0436).ToString());
         }
         private void Window_Deactivated(object sender, EventArgs e)
         {

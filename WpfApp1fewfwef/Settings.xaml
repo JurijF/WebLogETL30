@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1fewfwef"
         xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Settings"
+        Title="Einstellungen"
         WindowStyle="None"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
@@ -15,16 +15,17 @@
         MouseDown="Window_MouseDown"
         BorderBrush="#490ba1"
         BorderThickness="1"
-        Background="#1a1a1a"
+        Background="#1a1a1a" Closing="Window_Closing"
         >
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition x:Name="settings_row_def_1_1"/>
-            <RowDefinition x:Name="settings_row_def_1_2"/>
+            <RowDefinition x:Name="settings_row_def_1_1" Height="18*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition x:Name="settings_row_def_1_2" Height="205*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Background="#FF111111" Margin="0 0 0 0">
+        <StackPanel Grid.Row="0" Background="#FF111111" Grid.RowSpan="2">
 
             <StackPanel.Effect>
                 <DropShadowEffect BlurRadius="7" Color="Black" ShadowDepth="4" Direction="270" />
@@ -38,7 +39,7 @@
                     <ColumnDefinition x:Name="settings_column_def_1_3"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Column="0" x:Name="settings_txt_bl_Head" Text="Settings" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Segoe UI Variable Text Semibold"/>
+                <TextBlock Grid.Column="0" x:Name="settings_txt_bl_Head" Text="Einstellungen" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Segoe UI Variable Text Semibold"/>
 
                 <Button Grid.Column="2" x:Name="btnExit" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}" Click="btnExit_Click">
                     <MaterialDesign:PackIcon x:Name="settings_icon_exit" Kind="Close"/>
@@ -47,12 +48,12 @@
                 <Button Grid.Column="1" x:Name="btnMin" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource MaterialDesignFlatButton}" Click="btnMin_Click">
                     <MaterialDesign:PackIcon x:Name="settings_icon_min" Kind="WindowMinimize"/>
                 </Button>
-                
+
             </Grid>
-            
+
         </StackPanel>
 
-        <StackPanel x:Name="settings_panel" Grid.Row="1" Background="#1a1a1a" Height="205" VerticalAlignment="Bottom">
+        <StackPanel x:Name="settings_panel" Grid.Row="2" Background="#1a1a1a" Height="205" VerticalAlignment="Center">
 
             <Grid>
 
@@ -81,7 +82,7 @@
                             <StackPanel Grid.Column="1">
 
                                 <TextBlock x:Name="settings_txt_bl_createNewDB" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Variable Text Semibold">
-                                    Datenbank Erstellen
+                                    Datenbank erstellen
                                 </TextBlock>
 
                             </StackPanel>
@@ -94,7 +95,7 @@
 
                 <StackPanel x:Name="settings_viewbox_selectDB" Grid.Row="1">
 
-                    <Button x:Name="btnSelectDB" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Click="btnSelectDB_Click">
+                    <Button x:Name="btnSelectDB" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Click="btnSelectDB_Click" Cursor="Hand">
 
                         <Grid x:Name="settings_grid_selectDB" HorizontalAlignment="Center" VerticalAlignment="Center">
 
@@ -104,14 +105,14 @@
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Grid.Column="0">
-                                
+
                                 <MaterialDesign:PackIcon 
                                     x:Name="settings_icon_selectDB" 
                                     HorizontalAlignment="Center" 
                                     Kind="DatabaseTick" 
                                     Foreground="White" 
                                 />
-                            
+
                             </StackPanel>
 
                             <StackPanel Grid.Column="1">
@@ -202,7 +203,7 @@
                                 <StackPanel Grid.Column="1">
 
                                     <TextBlock x:Name="settings_txt_bl_cancel" TextAlignment="Left" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Segoe UI Variable Text Semibold">
-                                        Cancel
+                                        Abbruch
                                     </TextBlock>
 
                                 </StackPanel>

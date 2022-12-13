@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1fewfwef"
         xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        Title="Import-Manager"
         WindowStyle="None"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"

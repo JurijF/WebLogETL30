@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"        
         xmlns:local="clr-namespace:WpfApp1fewfwef"
+        Title="Informationen"
         mc:Ignorable="d"
         WindowStyle="None"
         WindowStartupLocation="CenterOwner"
@@ -13,7 +14,7 @@
         Width="{Binding}" 
         BorderBrush="#490ba1"
         BorderThickness="1"
-        Background="#1a1a1a" MouseDown="Window_MouseDown">
+        Background="#1a1a1a" MouseDown="Window_MouseDown" Closing="Window_Closing">
     
     <Grid>
 
@@ -102,7 +103,7 @@
                         <MaterialDesign:PackIcon x:Name="information_icon_exit" Kind="Close"/>
                     </Button>
 
-                    <Button Grid.Column="1" x:Name="information_btn_min" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource MaterialDesignFlatButton}">
+                    <Button IsEnabled="False" Grid.Column="1" x:Name="information_btn_min" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource MaterialDesignFlatButton}">
                         <MaterialDesign:PackIcon x:Name="information_icon_min" Kind="WindowMinimize"/>
                     </Button>
 
@@ -115,16 +116,16 @@
                 <StackPanel>
                     
                     <TextBlock Visibility="Collapsed" x:Name="information_txt_bl_first" 
-                               Text=" Folgende Filter können angewandt werden:&#xA;&#xA;  • Zeitraum,&#xA;  • IP-Adressen,&#xA;  • Attribute&#xA;&#xA; Attribute:&#xA;&#xA;  • IP-Addresse&#xA;  • Timestamp&#xA;  • Methode&#xA;  • Event&#xA;  • Status&#xA;  • Byte" Foreground="White"/>
+                               Text=" Folgende Filter können angewandt werden:&#xA;&#xA;  • Zeitraum&#xA;  • IP-Adressen&#xA;  • Attribute&#xA;&#xA; Attribute:&#xA;&#xA;  • IP-Addresse&#xA;  • Timestamp&#xA;  • Methode&#xA;  • Event&#xA;  • Status&#xA;  • Byte" Foreground="White"/>
 
                     <TextBlock Visibility="Collapsed" x:Name="information_txt_bl_second" 
-                               Text=" Folgende Filter können angewandt werden:&#xA;&#xA;  • Zeitraum,&#xA;  • IP-Adressen,&#xA;" Foreground="White"/>
+                               Text=" Folgende Filter können angewandt werden:&#xA;&#xA;  • Zeitraum&#xA;  • IP-Adressen&#xA;" Foreground="White"/>
 
                     <TextBlock Visibility="Collapsed" x:Name="information_txt_bl_third" 
-                               Text=" Folgende Filter können angewandt werden:&#xA;&#xA;  • Zeitraum,&#xA;  • IP-Adressen,&#xA;  • Attribute&#xA;&#xA; Attribute:&#xA;&#xA;  • GET&#xA;  • POST&#xA;  • HEAD&#xA;" Foreground="White"/>
+                               Text=" Folgende Filter können angewandt werden:&#xA;&#xA;  • Zeitraum&#xA;  • IP-Adressen&#xA;  • Attribute&#xA;&#xA; Attribute:&#xA;&#xA;  • GET&#xA;  • POST&#xA;  • HEAD&#xA;" Foreground="White"/>
 
                     <TextBlock Visibility="Collapsed" x:Name="information_txt_bl_fourth" 
-                               Text=" Folgende Filter können angewandt werden:&#xA;&#xA;  • Zeitraum,&#xA;  • IP-Adressen,&#xA;  • ERROR CODE" Foreground="White"/>
+                               Text=" Folgende Filter können angewandt werden:&#xA;&#xA;  • Zeitraum&#xA;  • IP-Adressen&#xA;  • ERROR CODE" Foreground="White"/>
 
                     <Grid Visibility="Visible" x:Name="information_grid_2">
 
@@ -138,8 +139,6 @@
                         </Button>
 
                         <TextBlock x:Name="information_txt_bl_names" Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Text="Juri, Malte, Tim" FontFamily="Segoe UI Variable Text Semibold"/>
-                        <TextBlock x:Name="information_txt_bl_git" Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Text="&#xA;GitHub" FontStyle="Italic" FontFamily="Segoe UI Variable Text Semibold"/>
-
                     </Grid>
 
                 </StackPanel>

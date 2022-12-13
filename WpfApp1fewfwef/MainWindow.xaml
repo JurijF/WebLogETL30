@@ -6,7 +6,7 @@
         xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:WpfApp1fewfwef"
         mc:Ignorable="d"
-        Title="Arch Sucks" 
+        Title="WebLog-ETL" 
         AllowsTransparency="True"
         Background="Transparent"
         Height="{Binding}" 
@@ -264,7 +264,7 @@
                                                 Zeitraum
                                         </TextBlock>
 
-                                        <Grid Margin="0 5 0 0" Grid.Row="1">
+                                        <Grid Margin="0 -7 0 0" Grid.Row="1">
 
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition x:Name="column_def_19_1"/>
@@ -352,7 +352,7 @@
                                                         <StackPanel Grid.Column="1">
 
                                                             <TextBlock x:Name="txt_bl_clear_date" HorizontalAlignment="Left" TextAlignment="Left" Width="75" Height="20" Margin="0 0 0 0" Panel.ZIndex="4">
-                                                                Clear
+                                                                löschen
                                                             </TextBlock>
 
                                                         </StackPanel>
@@ -410,7 +410,7 @@
                                                         <StackPanel Grid.Column="1">
 
                                                             <TextBlock x:Name="txt_bl_clear_ip" HorizontalAlignment="Left" TextAlignment="Left" Width="75" Height="20" Margin="0 0 0 0" Panel.ZIndex="4">
-                                                                Clear
+                                                                löschen
                                                             </TextBlock>
 
                                                         </StackPanel>
@@ -454,11 +454,11 @@
 
                             <TextBlock Grid.Column="0" x:Name="test1" Text="WebLogETL30" Margin="0 0 0 0" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Segoe UI Variable Text Semibold"/>
 
-                            <Button VerticalAlignment="Bottom" Grid.Column="3" Click="btnExit_Click" Width="16" Height="16" x:Name="btnExit" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}">
+                            <Button VerticalAlignment="Center" Grid.Column="3" Click="btnExit_Click" Width="16" Height="16" x:Name="btnExit" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}">
                                 <MaterialDesign:PackIcon HorizontalAlignment="Right" x:Name="icon_close" Kind="Close" Margin="0 -4 0 0"/>
                             </Button>
 
-                            <Button Grid.Column="2" Click="rctHeader_Click" Height="16" Width="16" x:Name="rctHeader" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource MaterialDesignFlatButton}">
+                            <Button Grid.Column="2" Click="rctHeader_Click" Height="16" Width="16" x:Name="rctHeader" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFlatButton}">
                                 <MaterialDesign:PackIcon x:Name="icon_max" Kind="WindowMaximize" Margin="-16 -5 0 0"/>
                             </Button>
 
@@ -488,7 +488,7 @@
                         <RowDefinition x:Name="row_def_3_3" Height="{Binding}"/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel Grid.Row="0" Background="#180336">
+                    <StackPanel x:Name="panel_7" Grid.Row="0" Background="#180336">
 
                         <StackPanel.Effect>
                             <DropShadowEffect BlurRadius="7" Color="Black" ShadowDepth="4" Direction="360" />
@@ -502,12 +502,12 @@
                                 <ColumnDefinition x:Name="column_def_4_3" Width="{Binding}"/>
                             </Grid.ColumnDefinitions>
                             <!--do later-->
-                            <Button Name="btn_Settings" Click="btn_Settings_Click" Grid.Column="0" Margin="20 0 0 0" HorizontalAlignment="Left" Height="20" Width="16" Background="Transparent" BorderBrush="Transparent">
-                                <MaterialDesign:PackIcon Kind="Settings" Height="20" Width="16" Panel.ZIndex="3" Margin="-16 -4 0 0" Foreground="White" />
+                            <Button VerticalAlignment="Center" Name="btn_Settings" Click="btn_Settings_Click" Grid.Column="0" Margin="20 2 0 0" HorizontalAlignment="Left" Height="30" Width="30" Background="Transparent" BorderBrush="Transparent">
+                                <MaterialDesign:PackIcon Kind="Settings" Height="30" Width="30" Panel.ZIndex="3" Margin="-16 -4 -16 -4" Foreground="White" />
                             </Button>
 
-                            <Button x:Name="btn_Information" Grid.Column="1" HorizontalAlignment="Left" Height="20" Width="16" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Top" Click="btn_Information_Click">
-                                <MaterialDesign:PackIcon Kind="Information" Height="20" Width="16" Panel.ZIndex="3" Margin="-16 -4 0 0" Foreground="White" />
+                            <Button Margin="0 2 0 0" x:Name="btn_Information" Grid.Column="1" HorizontalAlignment="Left" Height="30" Width="30" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" Click="btn_Information_Click">
+                                <MaterialDesign:PackIcon Kind="Information" Height="30" Width="30" Panel.ZIndex="3" Margin="-16 -4 -16 -4" Foreground="White" />
                             </Button>
 
                             <StackPanel Grid.Column="2"></StackPanel>

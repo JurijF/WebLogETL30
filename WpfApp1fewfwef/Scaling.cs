@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
+using System.Windows.Media.Media3D;
 
 namespace WpfApp1fewfwef
 {
@@ -30,6 +31,7 @@ namespace WpfApp1fewfwef
             //Good Luck!
 
             main.Width = main.CurrentWindowWidth;
+            main.Height = main.CurrentWindowHeight;
             main.border_1.Width = main.Width;
 
             main.column_def_1_1.Width = new GridLength(31.25, GridUnitType.Star);
@@ -65,9 +67,9 @@ namespace WpfApp1fewfwef
             main.column_def_3_1.Width = new GridLength(9, GridUnitType.Star);
             main.column_def_3_2.Width = new GridLength(91, GridUnitType.Star);
 
-            main.column_def_4_1.Width = new GridLength(7, GridUnitType.Star);
-            main.column_def_4_2.Width = new GridLength(7, GridUnitType.Star);
-            main.column_def_4_3.Width = new GridLength(86, GridUnitType.Star);
+            main.column_def_4_1.Width = new GridLength(13, GridUnitType.Star);
+            main.column_def_4_2.Width = new GridLength(13, GridUnitType.Star);
+            main.column_def_4_3.Width = new GridLength(74, GridUnitType.Star);
 
             main.border_6.Width = (main.border_1.Width / 100 * main.column_def_1_1.Width.Value) * 0.8;
             main.panel_2.Width = main.border_6.Width;
@@ -120,10 +122,10 @@ namespace WpfApp1fewfwef
             main.column_def_13_1.Width = new GridLength(30, GridUnitType.Star);
             main.column_def_13_2.Width = new GridLength(70, GridUnitType.Star);
 
-            main.column_def_14_1.Width = new GridLength(90.25, GridUnitType.Star);
-            main.column_def_14_2.Width = new GridLength(4, GridUnitType.Star);
-            main.column_def_14_3.Width = new GridLength(1.75, GridUnitType.Star);
-            main.column_def_14_4.Width = new GridLength(4, GridUnitType.Star);
+            main.column_def_14_1.Width = new GridLength(89.5, GridUnitType.Star);
+            main.column_def_14_2.Width = new GridLength(3.5, GridUnitType.Star);
+            main.column_def_14_3.Width = new GridLength(3.5, GridUnitType.Star);
+            main.column_def_14_4.Width = new GridLength(3.5, GridUnitType.Star);
 
             main.column_def_15_1.Width = new GridLength(30, GridUnitType.Star);
             main.column_def_15_2.Width = new GridLength(70, GridUnitType.Star);
@@ -145,37 +147,38 @@ namespace WpfApp1fewfwef
 
             //TODO: SCALE THIS SHIT I FORGOT
             #region this shit
-            main.btnExit.Width = 30;
-            main.btnExit.Height = 30;
+            main.btnExit.Width = main.Height * 0.04;
+            main.btnExit.Height = main.Height * 0.04;
 
-            main.icon_close.Width = 30;
-            main.icon_close.Height = 30;
+            main.icon_close.Width = main.Height * 0.04;
+            main.icon_close.Height = main.Height * 0.04;
 
-            main.btnExit.Margin = new Thickness(0, 10, 0, 0);
-            main.icon_close.Margin = new Thickness(-17, -15, -14, -15);
+            main.btnExit.Margin = new Thickness(0, 0, 0, main.Height * 0.005);
+            main.icon_close.Margin = new Thickness(-(main.Height * 0.0225), -(main.Height * 0.02), -(main.Height * 0.02), -(main.Height * 0.02));
 
-            main.rctHeader.Width = 30;
-            main.rctHeader.Height = 30;
+            main.rctHeader.Width = main.Height * 0.04;
+            main.rctHeader.Height = main.Height * 0.04;
 
-            main.icon_max.Width = 30;
-            main.icon_max.Height = 30;
+            main.icon_max.Width = main.Height * 0.04;
+            main.icon_max.Height = main.Height * 0.04;
 
-            main.rctHeader.Margin = new Thickness(0, 10, 0, 0);
-            main.icon_max.Margin = new Thickness(-17, -15, -14, -15);
+            main.rctHeader.Margin = new Thickness(0, 0, 0, main.Height * 0.005);
+            main.icon_max.Margin = new Thickness(-(main.Height * 0.02), -(main.Height * 0.02), -(main.Height * 0.02), -(main.Height * 0.02));
 
-            main.btnMin.Width = 30;
-            main.btnMin.Height = 30;
-            main.icon_min.Width = 30;
-            main.icon_min.Height = 30;
-            main.btnMin.Margin = new Thickness(0, 10, 0, 0);
-            main.icon_min.Margin = new Thickness(-17, -15, -14, -15);
+            main.btnMin.Width = main.Height * 0.04;
+            main.btnMin.Height = main.Height * 0.04;
+            main.icon_min.Width = main.Height * 0.04;
+            main.icon_min.Height = main.Height * 0.04;
+            main.btnMin.Margin = new Thickness(0, 0, 0, main.Height * 0.005);
+            main.icon_min.Margin = new Thickness(-(main.Height * 0.02), -(main.Height * 0.02), -(main.Height * 0.02), -(main.Height * 0.02));
             #endregion
 
-            main.Height = main.CurrentWindowHeight;
+
             main.border_1.Height = main.Height;
 
             main.test.Height = main.Height * 0.05;
-            main.test1.FontSize = main.Height * 0.02;
+            main.test1.FontSize = main.Height * 0.025;
+            main.test1.Margin = new Thickness(main.Width * 0.03, 0, 0, main.Height * 0.01);
 
             main.row_def_1_1.Height = new GridLength(4.44, GridUnitType.Star);
             main.row_def_1_2.Height = new GridLength(95.56, GridUnitType.Star);
@@ -190,8 +193,8 @@ namespace WpfApp1fewfwef
             main.panel_1.Height = main.border_3.Height;
             main.panel_5.Height = main.Height * 0.99711;
 
-            main.row_def_3_1.Height = new GridLength(10, GridUnitType.Star);
-            main.row_def_3_2.Height = new GridLength(68, GridUnitType.Star);
+            main.row_def_3_1.Height = new GridLength(15, GridUnitType.Star);
+            main.row_def_3_2.Height = new GridLength(63, GridUnitType.Star);
             main.row_def_3_2.Height = new GridLength(22, GridUnitType.Star);
 
             main.border_6.Height = main.Height * 0.6666;
@@ -243,7 +246,7 @@ namespace WpfApp1fewfwef
             main.ckbx_IP.LayoutTransform = new ScaleTransform(main.panel_FirstAnalyse.Width * 0.0060606, main.panel_FirstAnalyse.Height / 140);
             main.ckbx_IP.Margin = new Thickness(main.Width * 0.02, 0, 0, 0);
             main.ckbx_IP.Width = main.panel_FirstAnalyse.Width * 0.04137;
-            main.ckbx_IP.Height = main.panel_FirstAnalyse.Height * 0.04137;
+            main.ckbx_IP.Height = main.panel_FirstAnalyse.Height * 0.04337;
 
             //TODO: Fix Checkbox-scaling-bug, occuring on lower resolutions 
             #region Fix Checkbox-scaling-bug
@@ -252,7 +255,7 @@ namespace WpfApp1fewfwef
             main.ckbx_Timestamp.MinWidth = main.panel_FirstAnalyse.Width * 0.1666;
             main.ckbx_Timestamp.LayoutTransform = new ScaleTransform(main.panel_FirstAnalyse.Width / 165, main.panel_FirstAnalyse.Height / 140);
             main.ckbx_Timestamp.Margin = new Thickness(main.Width * 0.02, 0, 0, 0);
-            main.ckbx_Timestamp.Width = main.panel_FirstAnalyse.Width * 0.05137;
+            main.ckbx_Timestamp.Width = main.panel_FirstAnalyse.Width * 0.04137;
             main.ckbx_Timestamp.Height = main.panel_FirstAnalyse.Height * 0.04137;
 
             main.ckbx_Method.MinHeight = main.panel_FirstAnalyse.Height / 100 * 0.1666;
@@ -478,8 +481,8 @@ namespace WpfApp1fewfwef
             main.txtbox_Analysis.Width = main.panel_FourthAnalyse.Width * 0.7;
             main.txtbox_Analysis.FontSize = main.panel_FourthAnalyse.Height * 0.07;
 
-            main.border_11.Width = main.border_4.Width * 0.18;
-            main.border_11.Height = main.border_4.Height * 0.5;
+            main.border_11.Width = main.border_4.Width * 0.25;
+            main.border_11.Height = main.border_4.Height * 0.6;
 
             main.btn_clear_date_filter.Width = main.border_11.Width;
             main.btn_clear_date_filter.Height = main.border_11.Height;
@@ -490,14 +493,14 @@ namespace WpfApp1fewfwef
 
             main.icon_clear_date.Width = main.btn_clear_date_filter.Height * 0.8;
             main.icon_clear_date.Height = main.btn_clear_date_filter.Height * 0.8;
-            main.icon_clear_date.Margin = new Thickness(0, -(main.btn_clear_date_filter.Height * 0.125), 0, 0);
+            main.icon_clear_date.Margin = new Thickness(0, -(main.btn_clear_date_filter.Height * 0.05), 0, 0);
 
             main.txt_bl_clear_date.FontSize = main.border_11.Height * 0.55;
             main.txt_bl_clear_date.Height = main.border_11.Height * 0.7;
-            main.txt_bl_clear_date.Margin = new Thickness(0, -(main.btn_clear_date_filter.Height * 0.125), 0, 0);
+            main.txt_bl_clear_date.Margin = new Thickness(0, -(main.btn_clear_date_filter.Height * 0.05), 0, 0);
 
-            main.border_12.Width = main.border_5.Width * 0.18;
-            main.border_12.Height = main.border_5.Height * 0.5;
+            main.border_12.Width = main.border_5.Width * 0.25;
+            main.border_12.Height = main.border_5.Height * 0.6;
             main.border_12.Margin = new Thickness(0, main.border_5.Height * 0.35, 0, 0);
 
             main.btn_clear_ip_filter.Width = main.border_12.Width;
@@ -509,11 +512,13 @@ namespace WpfApp1fewfwef
 
             main.icon_clear_ip.Width = main.btn_clear_ip_filter.Height * 0.8;
             main.icon_clear_ip.Height = main.btn_clear_ip_filter.Height * 0.8;
-            main.icon_clear_ip.Margin = new Thickness(0, -(main.btn_clear_ip_filter.Height * 0.125), 0, 0);
+            main.icon_clear_ip.Margin = new Thickness(0, -(main.btn_clear_ip_filter.Height * 0.05), 0, 0);
 
             main.txt_bl_clear_ip.FontSize = main.border_12.Height * 0.55;
             main.txt_bl_clear_ip.Height = main.border_12.Height * 0.7;
-            main.txt_bl_clear_ip.Margin = new Thickness(0, -(main.btn_clear_ip_filter.Height * 0.125), 0, 0);
+            main.txt_bl_clear_ip.Margin = new Thickness(0, -(main.btn_clear_ip_filter.Height * 0.05), 0, 0);
+
+            main.panel_7.Height = main.Height * 0.04;
 
             main.test1.Text = "WebLog-ETL";
         }
@@ -539,7 +544,7 @@ namespace WpfApp1fewfwef
 
             settings.settings_icon_exit.Width = settings.Height * 0.07;
             settings.settings_icon_exit.Height = settings.Height * 0.07;
-            settings.settings_icon_exit.Margin = new Thickness(-(settings.Height * 0.045), -(settings.Height * 0.03), -(settings.Height * 0.045), -(settings.Height * 0.03));
+            settings.settings_icon_exit.Margin = new Thickness(-(settings.Height * 0.0625), -(settings.Height * 0.03), -(settings.Height * 0.045), -(settings.Height * 0.03));
 
             settings.btnMin.Width = settings.Height * 0.07;
             settings.btnMin.Height = settings.Height * 0.07;
@@ -547,7 +552,7 @@ namespace WpfApp1fewfwef
 
             settings.settings_icon_min.Width = settings.Height * 0.07;
             settings.settings_icon_min.Height = settings.Height * 0.07;
-            settings.settings_icon_min.Margin = new Thickness(-(settings.Height * 0.047), -(settings.Height * 0.03), -(settings.Height * 0.047), -(settings.Height * 0.03));
+            settings.settings_icon_min.Margin = new Thickness(-(settings.Height * 0.0625), -(settings.Height * 0.03), -(settings.Height * 0.047), -(settings.Height * 0.03));
 
             settings.settings_panel.Height = settings.Height * 0.85;
             settings.settings_row_def_2_1.Height = new GridLength(27, GridUnitType.Star);
@@ -566,8 +571,8 @@ namespace WpfApp1fewfwef
             settings.settings_grid_createDB.Width = settings.btnCreateDB.Width;
             settings.settings_grid_createDB.Height = settings.btnCreateDB.Height;
 
-            settings.settings_column_def_2_1.Width = new GridLength(17, GridUnitType.Star);
-            settings.settings_column_def_2_2.Width = new GridLength(83, GridUnitType.Star);
+            settings.settings_column_def_2_1.Width = new GridLength(20, GridUnitType.Star);
+            settings.settings_column_def_2_2.Width = new GridLength(80, GridUnitType.Star);
 
             settings.settings_icon_addDB.Height = settings.btnCreateDB.Height;
             settings.settings_icon_addDB.Width = settings.btnCreateDB.Height;
@@ -582,8 +587,8 @@ namespace WpfApp1fewfwef
             settings.settings_grid_selectDB.Width = settings.btnSelectDB.Width;
             settings.settings_grid_selectDB.Height = settings.btnSelectDB.Height;
 
-            settings.settings_column_def_3_1.Width = new GridLength(17, GridUnitType.Star);
-            settings.settings_column_def_3_2.Width = new GridLength(83, GridUnitType.Star);
+            settings.settings_column_def_3_1.Width = new GridLength(20, GridUnitType.Star);
+            settings.settings_column_def_3_2.Width = new GridLength(80, GridUnitType.Star);
 
             settings.settings_icon_selectDB.Height = settings.btnSelectDB.Height;
             settings.settings_icon_selectDB.Width = settings.btnSelectDB.Height;
@@ -596,8 +601,8 @@ namespace WpfApp1fewfwef
             settings.settings_border.Height = settings.settings_panel.Height * 0.2;
             settings.settings_border.Width = settings.Width * 0.7;
 
-            settings.settings_column_def_4_1.Width = new GridLength(17, GridUnitType.Star);
-            settings.settings_column_def_4_2.Width = new GridLength(83, GridUnitType.Star);
+            settings.settings_column_def_4_1.Width = new GridLength(18, GridUnitType.Star);
+            settings.settings_column_def_4_2.Width = new GridLength(82, GridUnitType.Star);
 
             settings.settings_icon_DBLocation.Height = settings.settings_border.Height * 0.95;
             settings.settings_icon_DBLocation.Width = settings.settings_border.Height * 0.95;
@@ -611,7 +616,7 @@ namespace WpfApp1fewfwef
             settings.settings_column_def_5_1.Width = new GridLength(50, GridUnitType.Star);
             settings.settings_column_def_5_2.Width = new GridLength(50, GridUnitType.Star);
 
-            settings.settings_btn_apply.Width = settings.Width * 0.2;
+            settings.settings_btn_apply.Width = settings.Width * 0.275;
             settings.settings_btn_apply.Height = settings.settings_panel.Height * 0.1;
             settings.settings_btn_apply.Margin = new Thickness(0, 0, settings.settings_btn_apply.Width * 0.075, settings.settings_btn_apply.Height * 0.1);
             settings.settings_grid_apply.Width = settings.settings_btn_apply.Width;
@@ -628,7 +633,7 @@ namespace WpfApp1fewfwef
             settings.settings_txt_bl_apply.Margin = new Thickness(0, settings.settings_btn_apply.Height * 0.16, 0, 0);
             settings.settings_txt_bl_apply.FontSize = settings.settings_btn_apply.Height * 0.5;
 
-            settings.settings_btn_cancel.Width = settings.Width * 0.2;
+            settings.settings_btn_cancel.Width = settings.Width * 0.275;
             settings.settings_btn_cancel.Height = settings.settings_panel.Height * 0.1;
             settings.settings_btn_cancel.Margin = new Thickness(settings.settings_btn_apply.Width * 0.075, 0, 0, settings.settings_btn_cancel.Height * 0.1);
             settings.settings_grid_cancel.Width = settings.settings_btn_apply.Width;
@@ -669,7 +674,7 @@ namespace WpfApp1fewfwef
 
             import.import_icon_exit.Width = import.Height * 0.04;
             import.import_icon_exit.Height = import.Height * 0.04;
-            import.import_icon_exit.Margin = new Thickness(-(import.Height * 0.02), -(import.Height * 0.02), -(import.Height * 0.02), -(import.Height * 0.02));
+            import.import_icon_exit.Margin = new Thickness(-(import.Height * 0.025), -(import.Height * 0.02), -(import.Height * 0.02), -(import.Height * 0.02));
 
             import.import_btn_min.Width = import.Height * 0.04;
             import.import_btn_min.Height = import.Height * 0.04;
@@ -677,7 +682,7 @@ namespace WpfApp1fewfwef
 
             import.import_icon_min.Width = import.Height * 0.04;
             import.import_icon_min.Height = import.Height * 0.04;
-            import.import_icon_min.Margin = new Thickness(-(import.Height * 0.02), -(import.Height * 0.02), -(import.Height * 0.02), -(import.Height * 0.02));
+            import.import_icon_min.Margin = new Thickness(-(import.Height * 0.025), -(import.Height * 0.02), -(import.Height * 0.02), -(import.Height * 0.02));
 
             import.import_panel_row_1.Height = import.Height * 0.05;
             import.import_panel_row_1.Width = import.Width * 0.98;
@@ -693,24 +698,24 @@ namespace WpfApp1fewfwef
             import.import_viewbox_openFile.Height = import.import_panel_row_1.Height;
             import.import_viewbox_openFile.Width = import.import_panel_row_1.Width * 0.17;
 
-            import.import_btn_startImport.Width = import.Width * 0.13;
+            import.import_btn_startImport.Width = import.Width * 0.15;
             import.import_btn_startImport.Height = import.import_panel_row_1.Height * 0.7;
             import.import_btn_startImport.Margin = new Thickness(0, import.import_panel_row_1.Height * 0.175, 0, 0);
             import.import_grid_startImport.Width = import.import_btn_startImport.Width;
             import.import_grid_startImport.Height = import.import_btn_startImport.Height;
 
-            import.import_column_def_3_1.Width = new GridLength(28, GridUnitType.Star);
-            import.import_column_def_3_2.Width = new GridLength(72, GridUnitType.Star);
+            import.import_column_def_3_1.Width = new GridLength(30, GridUnitType.Star);
+            import.import_column_def_3_2.Width = new GridLength(70, GridUnitType.Star);
 
             import.import_icon_startImport.Height = import.import_btn_startImport.Height;
             import.import_icon_startImport.Width = import.import_btn_startImport.Height;
 
             import.import_txt_bl_startImport.Height = import.import_btn_startImport.Height * 0.6;
-            import.import_txt_bl_startImport.Width = import.import_btn_startImport.Width * 0.8;
+            import.import_txt_bl_startImport.Width = import.import_btn_startImport.Width * 0.7;
             import.import_txt_bl_startImport.Margin = new Thickness(0, import.import_btn_startImport.Height * 0.16, 0, 0);
             import.import_txt_bl_startImport.FontSize = import.import_btn_startImport.Height * 0.5;
 
-            import.import_btn_openFile.Width = import.Width * 0.13;
+            import.import_btn_openFile.Width = import.Width * 0.15;
             import.import_btn_openFile.Height = import.import_panel_row_1.Height * 0.7;
             import.import_btn_openFile.Margin = new Thickness(0, import.import_panel_row_1.Height * 0.175, 0, 0);
             import.import_grid_openFile.Width = import.import_btn_openFile.Width;
@@ -825,7 +830,6 @@ namespace WpfApp1fewfwef
             information.information_column_def_3_2.Height = new GridLength(30, GridUnitType.Star);
 
             information.information_txt_bl_names.FontSize = information.information_grid_2.Height * 0.1;
-            information.information_txt_bl_git.FontSize = information.information_grid_2.Height * 0.1;
         }
     }
 }

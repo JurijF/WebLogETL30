@@ -28,7 +28,7 @@ namespace WpfApp1fewfwef
             public string TYP { set; get; }
             public string EVENT { set; get; }
             public string STATUS { set; get; }
-            public string Number { set; get; }
+            public string Byte { set; get; }
             public string MDHASH { set; get; }
 
         }
@@ -52,12 +52,12 @@ namespace WpfApp1fewfwef
             {
                 if (row != null)
                 {
-                    Insert += "('" + row.IP + "','" + row.DT_EVENT + "','" + row.TYP + "','" + row.EVENT + "','" + row.STATUS+ "','" + row.Number + "','" + row.MDHASH + "'),";
+                    Insert += "('" + row.IP + "','" + row.DT_EVENT + "','" + row.TYP + "','" + row.EVENT + "','" + row.STATUS+ "','" + row.Byte + "','" + row.MDHASH + "'),";
                 }
             }
             DBHandler.NonQuery(Insert.Remove(Insert.Length - 1, 1) + ";");
             DBHandler.NonQuery("INSERT INTO ImportedFiles (Name, FileHash) VALUES ('"+ OpenedFile + "' , '" + GetFilekMD5(OpenedFile) + "');");
-            MessageBox.Show("done");
+            MessageBox.Show("Der Import wurde abgeschlossen!");
         }
 
         List<ImportData> ImportDatas = new List<ImportData>();
@@ -85,7 +85,7 @@ namespace WpfApp1fewfwef
         {
             string eventCode = GetLogEventCode(logLine);
       
-            ImportDatas.Add(new ImportData() { IP = GetIP(logLine), DT_EVENT = GetDateTime(logLine), TYP = eventCode, EVENT = GetLogEvent(logLine, eventCode), STATUS = GetStatusCode(logLine), Number = GetLastCode(logLine), MDHASH = GetStringMD5(logLine) });
+            ImportDatas.Add(new ImportData() { IP = GetIP(logLine), DT_EVENT = GetDateTime(logLine), TYP = eventCode, EVENT = GetLogEvent(logLine, eventCode), STATUS = GetStatusCode(logLine), Byte = GetLastCode(logLine), MDHASH = GetStringMD5(logLine) });
             
             DoEvents();
             return ImportDatas;
@@ -172,6 +172,7 @@ namespace WpfApp1fewfwef
                     if (DBHandler.ExecuteQuery("SELECT * FROM ImportedFiles WHERE FileHash = '" + GetFilekMD5(openFileDialog.FileName) + "'").Rows.Count == 0)
                     {
                         this.IsEnabled = false;
+                        
                         CreateDataGridFromFile(openFileDialog.FileName);
                         this.IsEnabled = true;                    
                     }
@@ -188,6 +189,7 @@ namespace WpfApp1fewfwef
             if (OpenedFile != null && import_DataGrid.Items.Count > 1)
             {
                 this.IsEnabled = false;
+                MessageBox.Show("Import läuft...");
                 WriteToDb();
                 this.IsEnabled = true;
                 this.Owner.IsEnabled = true;
@@ -214,6 +216,11 @@ namespace WpfApp1fewfwef
             {
                 DragMove();
             }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            this.Owner.IsEnabled = true;
         }
     }
 }

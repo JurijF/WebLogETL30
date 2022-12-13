@@ -89,5 +89,10 @@ namespace WpfApp1fewfwef
             this.information_txt_bl_fourth.Visibility = Visibility.Collapsed;
             this.information_grid_2.Visibility = Visibility.Visible;
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            this.Owner.IsEnabled = true;
+        }
     }
 }

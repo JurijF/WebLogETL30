@@ -52,6 +52,7 @@ namespace WpfApp1fewfwef
                 Properties.Settings.Default.DB_FILE = saveFileDialog.FileName;
                 CreateTables();
                 textBoxSelectedDB.Text = Properties.Settings.Default.DB_FILE;
+                textBoxSelectedDB.ToolTip = textBoxSelectedDB.Text;
             }
         }
                
@@ -77,6 +78,7 @@ namespace WpfApp1fewfwef
                     Properties.Settings.Default.DB_FILE = openFileDialog.FileName;
                 }
                 textBoxSelectedDB.Text = Properties.Settings.Default.DB_FILE;
+                textBoxSelectedDB.ToolTip = textBoxSelectedDB.Text;
             }            
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -105,6 +107,11 @@ namespace WpfApp1fewfwef
             if (tableInfos[1][4].ToString() != "CREATE TABLE Logs ( ID INTEGER PRIMARY KEY   AUTOINCREMENT, Hash VARCHAR(32) NOT NULL, TimestampInsert DATETIME DEFAULT CURRENT_TIMESTAMP, IP TEXT(128), DT_EVENT DATETIME, TYP VARCHAR(32), EVENT TEXT(8192), Status INTEGER, Byte INTEGER)") { Properties.Settings.Default.DB_FILE = oldFilePath; return false; }
 
             return true;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            this.Owner.IsEnabled = true;
         }
     }
 }
