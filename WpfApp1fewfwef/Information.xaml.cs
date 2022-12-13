@@ -44,5 +44,50 @@ namespace WpfApp1fewfwef
                 DragMove();
             }
         }
+
+        private void information_btn_firstanalysis_Click(object sender, RoutedEventArgs e)
+        {
+            this.information_txt_bl_first.Visibility = Visibility.Visible;
+            this.information_txt_bl_second.Visibility = Visibility.Collapsed;
+            this.information_txt_bl_third.Visibility = Visibility.Collapsed;
+            this.information_txt_bl_fourth.Visibility = Visibility.Collapsed;
+            this.information_grid_2.Visibility = Visibility.Collapsed;
+        }
+
+        private void information_btn_secondanalysis_Click(object sender, RoutedEventArgs e)
+        {
+            this.information_txt_bl_first.Visibility = Visibility.Collapsed;
+            this.information_txt_bl_second.Visibility = Visibility.Visible;
+            this.information_txt_bl_third.Visibility = Visibility.Collapsed;
+            this.information_txt_bl_fourth.Visibility = Visibility.Collapsed;
+            this.information_grid_2.Visibility = Visibility.Collapsed;
+        }
+
+        private void information_btn_thirdanalysis_Click(object sender, RoutedEventArgs e)
+        {
+            this.information_txt_bl_first.Visibility = Visibility.Collapsed;
+            this.information_txt_bl_second.Visibility = Visibility.Collapsed;
+            this.information_txt_bl_third.Visibility = Visibility.Visible;
+            this.information_txt_bl_fourth.Visibility = Visibility.Collapsed;
+            this.information_grid_2.Visibility = Visibility.Collapsed;
+        }
+
+        private void information_btn_fourthanalysis_Click(object sender, RoutedEventArgs e)
+        {
+            this.information_txt_bl_first.Visibility = Visibility.Collapsed;
+            this.information_txt_bl_second.Visibility = Visibility.Collapsed;
+            this.information_txt_bl_third.Visibility = Visibility.Collapsed;
+            this.information_txt_bl_fourth.Visibility = Visibility.Visible;
+            this.information_grid_2.Visibility = Visibility.Collapsed;
+        }
+
+        private void information_btn_info_Click(object sender, RoutedEventArgs e)
+        {
+            this.information_txt_bl_first.Visibility = Visibility.Collapsed;
+            this.information_txt_bl_second.Visibility = Visibility.Collapsed;
+            this.information_txt_bl_third.Visibility = Visibility.Collapsed;
+            this.information_txt_bl_fourth.Visibility = Visibility.Collapsed;
+            this.information_grid_2.Visibility = Visibility.Visible;
+        }
     }
 }

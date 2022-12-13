@@ -28,6 +28,51 @@
                 <DropShadowEffect BlurRadius="7" Color="Black" ShadowDepth="4" Direction="360" />
             </StackPanel.Effect>
 
+            <Grid x:Name="information_grid">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition x:Name="information_row_def_2_1"/>
+                    <RowDefinition x:Name="information_row_def_2_2"/>
+                </Grid.RowDefinitions>
+ 
+                <Border Grid.Row="1" BorderThickness="1" BorderBrush="Transparent">
+
+                    <Grid>
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="information_row_def_3_1"/>
+                            <RowDefinition x:Name="information_row_def_3_2"/>
+                            <RowDefinition x:Name="information_row_def_3_3"/>
+                            <RowDefinition x:Name="information_row_def_3_4"/>
+                            <RowDefinition x:Name="information_row_def_3_5"/>
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="0" x:Name="information_btn_firstanalysis" Click="information_btn_firstanalysis_Click" Opacity="0.5" Background="#490ba1" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource MaterialDesignFlatAccentButton}">
+                            Analyse 1
+                        </Button>
+
+                        <Button Grid.Row="1" x:Name="information_btn_secondanalysis" Click="information_btn_secondanalysis_Click" Opacity="0.5" Background="#490ba1" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource MaterialDesignFlatAccentButton}">
+                            Analyse 2
+                        </Button>
+
+                        <Button Grid.Row="2" x:Name="information_btn_thirdanalysis" Click="information_btn_thirdanalysis_Click" Opacity="0.5" Background="#490ba1" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource MaterialDesignFlatAccentButton}">
+                            Analyse 3
+                        </Button>
+
+                        <Button Grid.Row="3" x:Name="information_btn_fourthanalysis" Click="information_btn_fourthanalysis_Click" Opacity="0.5" Background="#490ba1" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource MaterialDesignFlatAccentButton}">
+                            Analyse 4
+                        </Button>
+
+                        <Button Grid.Row="4" x:Name="information_btn_info" Opacity="0.5" Click="information_btn_info_Click" Background="#490ba1" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource MaterialDesignFlatAccentButton}">
+                            About
+                        </Button>
+
+                    </Grid>
+
+                </Border>
+                
+            </Grid>
+                
         </StackPanel>
 
         <Grid Grid.Column="1">
@@ -65,7 +110,41 @@
 
             </StackPanel>
 
-            <StackPanel Grid.Row="1" Height="100" Margin="0 10 0 0"></StackPanel>
+            <Border x:Name="information_border_1" Grid.Row="1" BorderThickness="1" BorderBrush="White">
+
+                <StackPanel>
+                    
+                    <TextBlock Visibility="Collapsed" x:Name="information_txt_bl_first" 
+                               Text=" Folgende Filter können angewandt werden:&#xA;&#xA;  • Zeitraum,&#xA;  • IP-Adressen,&#xA;  • Attribute&#xA;&#xA; Attribute:&#xA;&#xA;  • IP-Addresse&#xA;  • Timestamp&#xA;  • Methode&#xA;  • Event&#xA;  • Status&#xA;  • Byte" Foreground="White"/>
+
+                    <TextBlock Visibility="Collapsed" x:Name="information_txt_bl_second" 
+                               Text=" Folgende Filter können angewandt werden:&#xA;&#xA;  • Zeitraum,&#xA;  • IP-Adressen,&#xA;" Foreground="White"/>
+
+                    <TextBlock Visibility="Collapsed" x:Name="information_txt_bl_third" 
+                               Text=" Folgende Filter können angewandt werden:&#xA;&#xA;  • Zeitraum,&#xA;  • IP-Adressen,&#xA;  • Attribute&#xA;&#xA; Attribute:&#xA;&#xA;  • GET&#xA;  • POST&#xA;  • HEAD&#xA;" Foreground="White"/>
+
+                    <TextBlock Visibility="Collapsed" x:Name="information_txt_bl_fourth" 
+                               Text=" Folgende Filter können angewandt werden:&#xA;&#xA;  • Zeitraum,&#xA;  • IP-Adressen,&#xA;  • ERROR CODE" Foreground="White"/>
+
+                    <Grid Visibility="Visible" x:Name="information_grid_2">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="information_column_def_3_1"/>
+                            <RowDefinition x:Name="information_column_def_3_2"/>
+                        </Grid.RowDefinitions>
+                        
+                        <Button Grid.Row="0" x:Name="information_btn_about" HorizontalAlignment="Center" Foreground="White" Style="{StaticResource MaterialDesignIconButton}">
+                            <MaterialDesign:PackIcon x:Name="information_icon_about" Kind="Git"/>
+                        </Button>
+
+                        <TextBlock x:Name="information_txt_bl_names" Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Text="Juri, Malte, Tim" FontFamily="Segoe UI Variable Text Semibold"/>
+                        <TextBlock x:Name="information_txt_bl_git" Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Text="&#xA;GitHub" FontStyle="Italic" FontFamily="Segoe UI Variable Text Semibold"/>
+
+                    </Grid>
+
+                </StackPanel>
+
+            </Border>
         
         </Grid>
         

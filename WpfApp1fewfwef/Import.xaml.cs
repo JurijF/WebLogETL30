@@ -47,7 +47,7 @@ namespace WpfApp1fewfwef
 
         private void WriteToDb()
         {
-            string Insert = "INSERT INTO Logs (IP, DT_EVENT, TYP, EVENT, Status, Number, Hash) Values ";
+            string Insert = "INSERT INTO Logs (IP, DT_EVENT, TYP, EVENT, Status, Byte, Hash) Values ";
             foreach (ImportData row in ImportDatas)
             {
                 if (row != null)

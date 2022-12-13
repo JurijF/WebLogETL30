@@ -246,7 +246,8 @@
                                 </Border>
 
                             </StackPanel>
-                            <Border VerticalAlignment="Center" x:Name="border_3" Width="{Binding}" Height="100" Grid.Row="2" BorderBrush="#490ba1" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2">
+
+                            <Border Grid.Column="0" VerticalAlignment="Center" x:Name="border_3" Width="{Binding}" Height="100" Grid.Row="2" BorderBrush="#490ba1" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2">
 
                                 <StackPanel x:Name="panel_1" Height="100" Width="{Binding}" Background="#121212">
 
@@ -260,88 +261,167 @@
                                         </Grid.RowDefinitions>
 
                                         <TextBlock x:Name="txt_bl_Zeitraum" HorizontalAlignment="Left" Height="30" Width="{Binding}" Grid.Row="0" Margin="15 0 0 0" VerticalAlignment="Center" Foreground="White" FontFamily="Segoe UI Variable Text Semibold">
-                                            Zeitraum
+                                                Zeitraum
                                         </TextBlock>
 
-                                        <Border x:Name="border_4" HorizontalAlignment="Left" Grid.Row="1" Width="{Binding}" Height="25" BorderBrush="White" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2" VerticalAlignment="Center" Margin="0 15 0 0">
+                                        <Grid Margin="0 5 0 0" Grid.Row="1">
 
-                                            <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition x:Name="column_def_19_1"/>
+                                                <ColumnDefinition x:Name="column_def_19_2"/>
+                                            </Grid.ColumnDefinitions>
 
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition x:Name="column_def_2_1" Width="{Binding}"/>
-                                                    <ColumnDefinition x:Name="column_def_2_2" Width="{Binding}"/>
-                                                    <ColumnDefinition x:Name="column_def_2_3" Width="{Binding}"/>
-                                                    <ColumnDefinition x:Name="column_def_2_4" Width="{Binding}"/>
-                                                    <ColumnDefinition x:Name="column_def_2_5" Width="{Binding}"/>
-                                                    <ColumnDefinition x:Name="column_def_2_6" Width="{Binding}"/>
-                                                    <ColumnDefinition x:Name="column_def_2_7" Width="{Binding}"/>
+                                            <Border Grid.Column="0" x:Name="border_4" HorizontalAlignment="Left" Width="{Binding}" Height="25" BorderBrush="White" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2" VerticalAlignment="Center" >
 
+                                                <Grid>
 
-                                                </Grid.ColumnDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition x:Name="column_def_2_1" Width="{Binding}"/>
+                                                        <ColumnDefinition x:Name="column_def_2_2" Width="{Binding}"/>
+                                                        <ColumnDefinition x:Name="column_def_2_3" Width="{Binding}"/>
+                                                        <ColumnDefinition x:Name="column_def_2_4" Width="{Binding}"/>
+                                                        <ColumnDefinition x:Name="column_def_2_5" Width="{Binding}"/>
+                                                        <ColumnDefinition x:Name="column_def_2_6" Width="{Binding}"/>
+                                                        <ColumnDefinition x:Name="column_def_2_7" Width="{Binding}"/>
 
-                                                <MaterialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="icon_DateRange_1" Grid.Column="0" Kind="DateRange" Height="23" Width="{Binding}" Panel.ZIndex="3" Margin="0 0 0 0" Foreground="White" />
-                                                <TextBlock x:Name="txt_bl_bis" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="4" FontSize="11" IsEnabled="True" IsManipulationEnabled="True" Width="{Binding}" Text="Bis:" Height="15" FontFamily="Segoe UI Variable Text Semibold" Foreground="White"/>
+                                                    </Grid.ColumnDefinitions>
 
-                                                <Viewbox x:Name="view_1" Grid.Column="5">
-                                                    <DatePicker x:Name="dTPicker_main_DateUntil" MaterialDesign:HintAssist.Hint="04.02.2020" Foreground="White"  Margin="0 0 0 0" Height="25">
+                                                    <MaterialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="icon_DateRange_1" Grid.Column="0" Kind="DateRange" Height="23" Width="{Binding}" Panel.ZIndex="3" Margin="0 0 0 0" Foreground="White" />
+                                                    <TextBlock x:Name="txt_bl_bis" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="4" FontSize="11" IsEnabled="True" IsManipulationEnabled="True" Width="{Binding}" Text="Bis:" Height="15" FontFamily="Segoe UI Variable Text Semibold" Foreground="White"/>
 
-                                                        <DatePicker.Resources>
+                                                    <Viewbox x:Name="view_1" Grid.Column="5">
+                                                        
+                                                        <DatePicker x:Name="dTPicker_main_DateUntil" MaterialDesign:HintAssist.Hint="04.02.2020" Foreground="White"  Margin="0 0 0 0" Height="25">
 
-                                                            <Style TargetType="Calendar" BasedOn="{StaticResource  MaterialDesignCalendarPortrait}">
-                                                                <Style.Resources>
-                                                                    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="Red" />
-                                                                </Style.Resources>
-                                                            </Style>
+                                                            <DatePicker.Resources>
 
-                                                        </DatePicker.Resources>
+                                                                <Style TargetType="Calendar" BasedOn="{StaticResource  MaterialDesignCalendarPortrait}">
+                                                                    <Style.Resources>
+                                                                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="Red" />
+                                                                    </Style.Resources>
+                                                                </Style>
 
-                                                    </DatePicker>
-                                                </Viewbox>
-                                                <MaterialDesign:TimePicker VerticalAlignment="Center" WithSeconds="True" HorizontalAlignment="Center" x:Name="dTPicker_main_TimeUntil" Width="{Binding}" MaterialDesign:HintAssist.Hint="00:00:00" Background="#1a1a1a" Height="25" Foreground="White" Grid.Column="6" Is24Hours="True"/>
-                                                <TextBlock VerticalAlignment="Bottom" x:Name="txt_bl_von" Margin="0 0 0 0" HorizontalAlignment="Center" Grid.Column="1" FontSize="11" IsEnabled="True" IsManipulationEnabled="True" Width="{Binding}" Text="Von:" Height="15" FontFamily="Segoe UI Variable Text Semibold" Foreground="White"/>
+                                                            </DatePicker.Resources>
 
+                                                        </DatePicker>
+                                                        
+                                                    </Viewbox>
+                                                    
+                                                    <MaterialDesign:TimePicker VerticalAlignment="Center" WithSeconds="True" HorizontalAlignment="Center" x:Name="dTPicker_main_TimeUntil" Width="{Binding}" MaterialDesign:HintAssist.Hint="00:00:00" Background="#121212" Height="25" Foreground="White" Grid.Column="6" Is24Hours="True"/>
+                                                    <TextBlock VerticalAlignment="Bottom" x:Name="txt_bl_von" Margin="0 0 0 0" HorizontalAlignment="Center" Grid.Column="1" FontSize="11" IsEnabled="True" IsManipulationEnabled="True" Width="{Binding}" Text="Von:" Height="15" FontFamily="Segoe UI Variable Text Semibold" Foreground="White"/>
 
-                                                <Viewbox x:Name="view_2" Grid.Column="2">
-                                                    <DatePicker x:Name="dTPicker_main_DateFrom" MaterialDesign:HintAssist.Hint="04.02.2020" Foreground="White" Grid.Column="2" Margin="0 0 0 0" Height="25">
+                                                    <Viewbox x:Name="view_2" Grid.Column="2">
+                                                        
+                                                        <DatePicker x:Name="dTPicker_main_DateFrom" MaterialDesign:HintAssist.Hint="04.02.2020" Foreground="White" Grid.Column="2" Margin="0 0 0 0" Height="25">
 
-                                                        <DatePicker.Resources>
+                                                            <DatePicker.Resources>
 
-                                                            <Style TargetType="Calendar" BasedOn="{StaticResource  MaterialDesignCalendarPortrait}">
-                                                                <Style.Resources>
-                                                                    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="Red" />
-                                                                </Style.Resources>
-                                                            </Style>
+                                                                <Style TargetType="Calendar" BasedOn="{StaticResource  MaterialDesignCalendarPortrait}">
+                                                                    <Style.Resources>
+                                                                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="Red" />
+                                                                    </Style.Resources>
+                                                                </Style>
 
-                                                        </DatePicker.Resources>
+                                                            </DatePicker.Resources>
 
-                                                    </DatePicker>
+                                                        </DatePicker>
 
-                                                </Viewbox>
+                                                    </Viewbox>
 
-                                                <MaterialDesign:TimePicker VerticalAlignment="Center" WithSeconds="True" HorizontalAlignment="Center" x:Name="dTPicker_main_TimeFrom" Width="{Binding}" MaterialDesign:HintAssist.Hint="00:00:00" Background="#1a1a1a" Height="25" Foreground="White" Grid.Column="3" Is24Hours="True" />
+                                                    <MaterialDesign:TimePicker VerticalAlignment="Center" WithSeconds="True" HorizontalAlignment="Center" x:Name="dTPicker_main_TimeFrom" Width="{Binding}" MaterialDesign:HintAssist.Hint="00:00:00" Background="#121212" Height="25" Foreground="White" Grid.Column="3" Is24Hours="True" />
 
-                                            </Grid>
+                                                </Grid>
 
-                                        </Border>
+                                            </Border>
+
+                                            <Border HorizontalAlignment="Left" Grid.Column="1" x:Name="border_11" BorderBrush="#490ba1" CornerRadius="6 6 6 6" BorderThickness="2,2,2,2" Margin="0 0 0 0" Width="{Binding}" Height="20" >
+
+                                                <Button x:Name="btn_clear_date_filter" Click="btn_clear_date_filter_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Width="{Binding}" Height="20">
+
+                                                    <Grid x:Name="grid_7" Width="{Binding}" Height="20" VerticalAlignment="Center">
+
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition x:Name="column_def_20_1" Width="{Binding}"/>
+                                                            <ColumnDefinition x:Name="column_def_20_2" Width="{Binding}"/>
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <StackPanel Grid.Column="0">
+                                                            <MaterialDesign:PackIcon x:Name="icon_clear_date" Kind="Clear" Height="20" Width="16" Panel.ZIndex="3" Margin="0 0 0 0" Foreground="White" />
+                                                        </StackPanel>
+
+                                                        <StackPanel Grid.Column="1">
+
+                                                            <TextBlock x:Name="txt_bl_clear_date" HorizontalAlignment="Left" TextAlignment="Left" Width="75" Height="20" Margin="0 0 0 0" Panel.ZIndex="4">
+                                                                Clear
+                                                            </TextBlock>
+
+                                                        </StackPanel>
+
+                                                    </Grid>
+
+                                                </Button>
+
+                                            </Border>
+
+                                        </Grid>
 
                                         <TextBlock x:Name="txt_bl_IP" HorizontalAlignment="Left" Height="30" Width="{Binding}" VerticalAlignment="Top" Grid.Row="3" Margin="15 0 0 0" Foreground="White" FontFamily="Segoe UI Variable Text Semibold">
-                                            IP
+                                                IP
                                         </TextBlock>
 
-                                        <Border x:Name="border_5" Grid.Row="4" Width="{Binding}" Height="25" BorderBrush="White" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2" VerticalAlignment="Center" Margin="0 15 0 0">
+                                        <Grid Margin="0 0 0 0" Grid.Row="3">
 
-                                            <Grid ToolTip="Eingabe der IP Adressen. Bei Mehreren IP Adressen mit Komma trennen.">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition x:Name="column_def_3_1" Width="{Binding}"/>
-                                                    <ColumnDefinition x:Name="column_def_3_2" Width="{Binding}"/>
-                                                </Grid.ColumnDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition x:Name="column_def_21_1"/>
+                                                <ColumnDefinition x:Name="column_def_21_2"/>
+                                            </Grid.ColumnDefinitions>
 
-                                                <MaterialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="icon_IP" Grid.Column="0" Kind="Ip" Height="23" Width="{Binding}" Panel.ZIndex="3" Margin="0 0 0 0" Foreground="White" />
-                                                <TextBox Grid.Column="1" Name="txt_bl_IP_In" FontSize="8" IsEnabled="True" IsManipulationEnabled="True" Width="{Binding}" MaterialDesign:HintAssist.Hint="IP-Adresse angeben" Height="20" FontFamily="Segoe UI Variable Text Semibold" Foreground="Black" PreviewTextInput="txt_bl_IP_In_PreviewTextInput" PreviewKeyDown="txt_bl_IP_In_PreviewKeyDown" LostFocus="txt_bl_IP_In_LostFocus"/>
+                                            <Border HorizontalAlignment="Left" x:Name="border_5" Grid.Row="4" Width="{Binding}" Height="25" BorderBrush="White" CornerRadius="2,2,2,2" BorderThickness="2,2,2,2" VerticalAlignment="Center" Margin="0 15 0 0">
 
-                                            </Grid>
+                                                <Grid ToolTip="Eingabe der IP Adressen. Bei Mehreren IP Adressen mit Komma trennen.">
+                                                    
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition x:Name="column_def_3_1" Width="{Binding}"/>
+                                                        <ColumnDefinition x:Name="column_def_3_2" Width="{Binding}"/>
+                                                    </Grid.ColumnDefinitions>
 
-                                        </Border>
+                                                    <MaterialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="icon_IP" Grid.Column="0" Kind="Ip" Height="23" Width="{Binding}" Panel.ZIndex="3" Margin="0 0 0 0" Foreground="White" />
+                                                    <TextBox Grid.Column="1" Name="txt_bl_IP_In" FontSize="8" IsEnabled="True" IsManipulationEnabled="True" Width="{Binding}" MaterialDesign:HintAssist.Hint="IP-Adresse angeben" Height="20" FontFamily="Segoe UI Variable Text Semibold" Foreground="White" PreviewTextInput="txt_bl_IP_In_PreviewTextInput" Background="#121212" PreviewKeyDown="txt_bl_IP_In_PreviewKeyDown" LostFocus="txt_bl_IP_In_LostFocus"/>
+
+                                                </Grid>
+
+                                            </Border>
+
+                                            <Border HorizontalAlignment="Left" Grid.Column="1" x:Name="border_12" BorderBrush="#490ba1" CornerRadius="6 6 6 6" BorderThickness="2,2,2,2" Margin="0 0 0 0" Width="{Binding}" Height="20" >
+
+                                                <Button x:Name="btn_clear_ip_filter" Click="btn_clear_ip_filter_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#490ba1" Foreground="White" Width="{Binding}" Height="20">
+
+                                                    <Grid x:Name="grid_8" Width="{Binding}" Height="20" VerticalAlignment="Center">
+
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition x:Name="column_def_22_1" Width="{Binding}"/>
+                                                            <ColumnDefinition x:Name="column_def_22_2" Width="{Binding}"/>
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <StackPanel Grid.Column="0">
+                                                            <MaterialDesign:PackIcon x:Name="icon_clear_ip" Kind="Clear" Height="20" Width="16" Panel.ZIndex="3" Margin="0 0 0 0" Foreground="White" />
+                                                        </StackPanel>
+
+                                                        <StackPanel Grid.Column="1">
+
+                                                            <TextBlock x:Name="txt_bl_clear_ip" HorizontalAlignment="Left" TextAlignment="Left" Width="75" Height="20" Margin="0 0 0 0" Panel.ZIndex="4">
+                                                                Clear
+                                                            </TextBlock>
+
+                                                        </StackPanel>
+
+                                                    </Grid>
+
+                                                </Button>
+
+                                            </Border>
+
+                                        </Grid>
 
                                     </Grid>
 
@@ -427,12 +507,14 @@
                             </Button>
 
                             <Button x:Name="btn_Information" Grid.Column="1" HorizontalAlignment="Left" Height="20" Width="16" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Top" Click="btn_Information_Click">
-                                <MaterialDesign:PackIcon Kind="Help" Height="20" Width="16" Panel.ZIndex="3" Margin="-16 -4 0 0" Foreground="White" />
-                            </Button>
-
-                            <Button Panel.ZIndex="3" Grid.Column="2" Margin="0 0 20 0" HorizontalAlignment="Right" Height="20" Width="16" Background="Transparent" BorderBrush="Transparent">
                                 <MaterialDesign:PackIcon Kind="Information" Height="20" Width="16" Panel.ZIndex="3" Margin="-16 -4 0 0" Foreground="White" />
                             </Button>
+
+                            <StackPanel Grid.Column="2"></StackPanel>
+                            <!--
+                            <Button Panel.ZIndex="3" Grid.Column="2" Margin="0 0 20 0" HorizontalAlignment="Right" Height="20" Width="16" Background="Transparent" BorderBrush="Transparent">
+                                <MaterialDesign:PackIcon Kind="Information" Height="20" Width="16" Panel.ZIndex="3" Margin="-16 -4 0 0" Foreground="White" />
+                            </Button>!-->
 
                         </Grid>
 
@@ -571,7 +653,7 @@
                                             </CheckBox.Resources>
                                         </CheckBox>
 
-                                        <TextBlock x:Name="txt_bl_Number_Filter" Margin="10 0 0 0" Height="21.5" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Text="Nummer" FontFamily="Segoe UI Variable Text Semibold" FontSize="15" TextAlignment="Left"/>
+                                        <TextBlock x:Name="txt_bl_Number_Filter" Margin="10 0 0 0" Height="21.5" Width="75" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Foreground="White" Text="Byte" FontFamily="Segoe UI Variable Text Semibold" FontSize="15" TextAlignment="Left"/>
 
                                     </Grid>
 
@@ -670,7 +752,7 @@
                                         </Grid.ColumnDefinitions>
 
                                         <MaterialDesign:PackIcon x:Name="icon_error" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Kind="Error" Height="23" Width="20" Panel.ZIndex="3" Margin="0 0 0 0" Foreground="White" />
-                                        <TextBox HorizontalAlignment="Left" Grid.Column="1" Name="txtbox_Analysis" FontSize="8" IsEnabled="True" IsManipulationEnabled="True" Width="160" MaterialDesign:HintAssist.Hint="Selected Error Codes" Height="20" FontFamily="Segoe UI Variable Text Semibold" Foreground="Black"/>
+                                        <TextBox HorizontalAlignment="Left" Grid.Column="1" Name="txtbox_Analysis" FontSize="8" IsEnabled="True" IsManipulationEnabled="True" Width="160" MaterialDesign:HintAssist.Hint="Selected Error Codes" Height="20" FontFamily="Segoe UI Variable Text Semibold" Background="#0d011f" Foreground="White"/>
 
                                     </Grid>
 

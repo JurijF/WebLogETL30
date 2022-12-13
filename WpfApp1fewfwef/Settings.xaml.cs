@@ -90,7 +90,7 @@ namespace WpfApp1fewfwef
         private void CreateTables()
         {
             DBHandler.NonQuery("CREATE TABLE ImportedFiles( ID INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT,FileHash VARCHAR(32), Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP);");
-            DBHandler.NonQuery("CREATE TABLE Logs ( ID INTEGER PRIMARY KEY   AUTOINCREMENT, Hash VARCHAR(32) NOT NULL, TimestampInsert DATETIME DEFAULT CURRENT_TIMESTAMP, IP TEXT(128), DT_EVENT DATETIME, TYP VARCHAR(32), EVENT TEXT(8192), Status INTEGER, Number INTEGER);");
+            DBHandler.NonQuery("CREATE TABLE Logs ( ID INTEGER PRIMARY KEY   AUTOINCREMENT, Hash VARCHAR(32) NOT NULL, TimestampInsert DATETIME DEFAULT CURRENT_TIMESTAMP, IP TEXT(128), DT_EVENT DATETIME, TYP VARCHAR(32), EVENT TEXT(8192), Status INTEGER, Byte INTEGER);");
         }
 
         private bool CheckDbSchema(string dbPath)
@@ -102,7 +102,7 @@ namespace WpfApp1fewfwef
             DataRow[] tableInfos = checkTable.Select("name IN ('Logs','ImportedFiles')");
             if (tableInfos.Length != 2) { Properties.Settings.Default.DB_FILE = oldFilePath; return false; }
             if (tableInfos[0][4].ToString() != "CREATE TABLE ImportedFiles( ID INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT,FileHash VARCHAR(32), Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP)") { Properties.Settings.Default.DB_FILE = oldFilePath; return false; }
-            if (tableInfos[1][4].ToString() != "CREATE TABLE Logs ( ID INTEGER PRIMARY KEY   AUTOINCREMENT, Hash VARCHAR(32) NOT NULL, TimestampInsert DATETIME DEFAULT CURRENT_TIMESTAMP, IP TEXT(128), DT_EVENT DATETIME, TYP VARCHAR(32), EVENT TEXT(8192), Status INTEGER, Number INTEGER)") { Properties.Settings.Default.DB_FILE = oldFilePath; return false; }
+            if (tableInfos[1][4].ToString() != "CREATE TABLE Logs ( ID INTEGER PRIMARY KEY   AUTOINCREMENT, Hash VARCHAR(32) NOT NULL, TimestampInsert DATETIME DEFAULT CURRENT_TIMESTAMP, IP TEXT(128), DT_EVENT DATETIME, TYP VARCHAR(32), EVENT TEXT(8192), Status INTEGER, Byte INTEGER)") { Properties.Settings.Default.DB_FILE = oldFilePath; return false; }
 
             return true;
         }

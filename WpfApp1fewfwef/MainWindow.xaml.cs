@@ -190,7 +190,7 @@ namespace WpfApp1fewfwef
                 if (ckbx_Method.IsChecked.Value) selection += "TYP,";
                 if (ckbx_Event.IsChecked.Value) selection += "EVENT,";
                 if (ckbx_Status.IsChecked.Value) selection += "Status,";
-                if (ckbx_Number.IsChecked.Value) selection += "Number,";
+                if (ckbx_Number.IsChecked.Value) selection += "Byte,";
 
                 selection = selection.Substring(0, selection.Length - 1);
 
@@ -300,6 +300,19 @@ namespace WpfApp1fewfwef
                     }
                 }
             }           
+        }
+
+        private void btn_clear_date_filter_Click(object sender, RoutedEventArgs e)
+        {
+            this.dTPicker_main_TimeUntil.SelectedTime = null;
+            this.dTPicker_main_DateUntil.SelectedDate = null;
+            this.dTPicker_main_TimeFrom.SelectedTime = null;
+            this.dTPicker_main_DateFrom.SelectedDate = null;
+        }
+
+        private void btn_clear_ip_filter_Click(object sender, RoutedEventArgs e)
+        {
+            this.txt_bl_IP_In.Clear();
         }
     }
 }
